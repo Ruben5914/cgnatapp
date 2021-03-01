@@ -9,16 +9,16 @@ data class Usuario(
         val id: Int,
         val nickname: String,
         val password: String,
-        val high_card: Int,
-        val pair: Int,
-        val two_pair: Int,
-        val three_kind: Int,
-        val straight: Int,
-        val flush: Int,
-        val full: Int,
-        val poker: Int,
-        val straight_flush: Int,
-        val royal_flush: Int
+        val high_card: Int = 0,
+        val pair: Int = 0,
+        val two_pair: Int = 0,
+        val three_kind: Int = 0,
+        val straight: Int = 0,
+        val flush: Int = 0,
+        val full: Int = 0,
+        val poker: Int = 0,
+        val straight_flush: Int = 0,
+        val royal_flush: Int = 0
 
 
 )

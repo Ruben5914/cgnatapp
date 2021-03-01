@@ -32,4 +32,10 @@
         android:name="com.uc3m.apppoker.views.conexionApiFragment"
         android:label="fragment_save"
         tools:layout="@layout/fragment_conexion_api" />
+
+    <fragment
+        android:id="@+id/principal"
+        android:name="com.uc3m.apppoker.views.principal"
+        android:label="fragment_principal"
+        tools:layout="@layout/fragment_principal" />
 </navigation>

@@ -1,5 +1,5 @@
 package com.uc3m.apppoker.views
-
+/*
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -7,7 +7,7 @@ import com.uc3m.apppoker.databinding.RecyclerViewItemBinding
 import com.uc3m.apppoker.models.Usuario
 
 
-class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
+class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>(), android.widget.ListAdapter {
 
     private var userList = emptyList<Usuario>()
 
@@ -37,4 +37,4 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         notifyDataSetChanged()
     }
 
-}
+}*/
