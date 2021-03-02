@@ -14,7 +14,7 @@ class ApiViewModel (private val repositoryApi: RepositoryApi): ViewModel(){
     val responseWinner: MutableLiveData<Response<winners>> = MutableLiveData()
     val responsePlayers: MutableLiveData<Response<players>> = MutableLiveData()
 
-    fun getWinner(mesa: String, manos: String){
+    fun getWinner(mesa: String, manos: List<String>){
 
         viewModelScope.launch {
 

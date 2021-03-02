@@ -37,5 +37,36 @@
         android:id="@+id/principal"
         android:name="com.uc3m.apppoker.views.principal"
         android:label="fragment_principal"
-        tools:layout="@layout/fragment_principal" />
+        tools:layout="@layout/fragment_principal" >
+        <action
+            android:id="@+id/action_principal_to_visualizarCartasSeleccionadasFragment"
+            app:destination="@id/visualizarCartasSeleccionadasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartasFragment"
+        android:name="com.uc3m.apppoker.cartasFragment"
+        android:label="fragment_cartas"
+        tools:layout="@layout/fragment_cartas" >
+        <action
+            android:id="@+id/action_cartasFragment_to_visualizarCartasSeleccionadasFragment"
+            app:destination="@id/visualizarCartasSeleccionadasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/visualizarCartasSeleccionadasFragment"
+        android:name="com.uc3m.apppoker.visualizarCartasSeleccionadasFragment"
+        android:label="fragment_visualizar_cartas_seleccionadas"
+        tools:layout="@layout/fragment_visualizar_cartas_seleccionadas" >
+        <action
+            android:id="@+id/action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment"
+            app:destination="@id/elegirPaloFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/elegirPaloFragment"
+        android:name="com.uc3m.apppoker.elegirPaloFragment"
+        android:label="fragment_elegir_palo"
+        tools:layout="@layout/fragment_elegir_palo" >
+        <action
+            android:id="@+id/action_elegirPaloFragment_to_cartasFragment"
+            app:destination="@id/cartasFragment" />
+    </fragment>
 </navigation>

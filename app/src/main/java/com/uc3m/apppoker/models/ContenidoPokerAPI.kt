@@ -13,7 +13,7 @@ data class winners(
 )
 
 data class players(
-    val jugador: List<contenido>
+    val mano: List<String>
 )
 
 

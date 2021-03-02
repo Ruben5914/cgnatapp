@@ -21,10 +21,13 @@ class conexionApiFragment : Fragment() {
         val viewModelFactory = MainViewModelFactory(repositoryApi)
         val viewModel = ViewModelProvider(this,viewModelFactory).get(ApiViewModel::class.java)
 
-        var mesa = "AC,KD,QH,JS,7C"
-        var manos = "10S,8C"
-       // var manos: List<String> = listOf("10S,8C","3S,2C","QS,JH")
+        //var mesa = "AC,KD,QH,JS,7C"
+       // var manos = "10S,8C"
+      //  var manos: List<String> = listOf("10S,8C","3S,2C","QS,JH")
 
+        var mesa =  "AC,KD,QH,JS,7C"
+
+        var manos: List<String> = listOf("10S","8C")
         viewModel.getWinner(mesa, manos)
 
         viewModel.responseWinner.observe(this, Observer { response ->
