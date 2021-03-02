@@ -6,14 +6,11 @@ data class  contenido(
         var result: String
 )
 
-data class winners(
 
-    //@SerializedName("nuevoNombre")
-    val jugador : contenido
-)
+data class poker(
 
-data class players(
-    val mano: List<String>
+        val winners : List<contenido>,
+        val players: List<contenido>
 )
 
 

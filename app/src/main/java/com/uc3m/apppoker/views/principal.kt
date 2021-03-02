@@ -25,7 +25,7 @@ class principal : Fragment() {
         val view = binding.root
 
         binding.botonGuest.setOnClickListener(){
-            // findNavController().navigate(R.id.action_principal_to_cartasFragment)
+             findNavController().navigate(R.id.action_principal_to_visualizarCartasSeleccionadasFragment)
         }
 
 

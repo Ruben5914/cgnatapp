@@ -27,14 +27,14 @@ class conexionApiFragment : Fragment() {
 
         var mesa =  "AC,KD,QH,JS,7C"
 
-        var manos: List<String> = listOf("10S","8C")
+        var manos = "10S,8C"
         viewModel.getWinner(mesa, manos)
 
         viewModel.responseWinner.observe(this, Observer { response ->
 
             if(response.isSuccessful){
-                val ganadores = response.body()?.jugador?.result.toString()
-               // val displayText = "The winner hand is: {ganadores.}"
+                val ganadores = response.body()?.winners?.get(0)?.result
+                // displayText = "The winner hand is: {ganadores.}"
                 Log.d("Response -------->", ganadores.toString())
             }else{
 

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/listFragment">
+    app:startDestination="@id/principal">
 
     <fragment
         android:id="@+id/listFragment"
@@ -43,15 +43,6 @@
             app:destination="@id/visualizarCartasSeleccionadasFragment" />
     </fragment>
     <fragment
-        android:id="@+id/cartasFragment"
-        android:name="com.uc3m.apppoker.cartasFragment"
-        android:label="fragment_cartas"
-        tools:layout="@layout/fragment_cartas" >
-        <action
-            android:id="@+id/action_cartasFragment_to_visualizarCartasSeleccionadasFragment"
-            app:destination="@id/visualizarCartasSeleccionadasFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/visualizarCartasSeleccionadasFragment"
         android:name="com.uc3m.apppoker.visualizarCartasSeleccionadasFragment"
         android:label="fragment_visualizar_cartas_seleccionadas"
@@ -66,7 +57,52 @@
         android:label="fragment_elegir_palo"
         tools:layout="@layout/fragment_elegir_palo" >
         <action
-            android:id="@+id/action_elegirPaloFragment_to_cartasFragment"
-            app:destination="@id/cartasFragment" />
+            android:id="@+id/action_elegirPaloFragment_to_cartaspicasFragment"
+            app:destination="@id/cartaspicasFragment" />
+        <action
+            android:id="@+id/action_elegirPaloFragment_to_cartascorazonesFragment"
+            app:destination="@id/cartascorazonesFragment" />
+        <action
+            android:id="@+id/action_elegirPaloFragment_to_cartastrebolesFragment"
+            app:destination="@id/cartastrebolesFragment" />
+        <action
+            android:id="@+id/action_elegirPaloFragment_to_cartasdiamantesFragment"
+            app:destination="@id/cartasdiamantesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartaspicasFragment"
+        android:name="com.uc3m.apppoker.cartaspicasFragment"
+        android:label="fragment_cartas_picas"
+        tools:layout="@layout/fragment_cartas_picas" >
+        <action
+            android:id="@+id/action_cartaspicasFragment_to_visualizarCartasSeleccionadasFragment"
+            app:destination="@id/visualizarCartasSeleccionadasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartascorazonesFragment"
+        android:name="com.uc3m.apppoker.views.cartasCorazonesFragment"
+        android:label="fragment_cartas_corazones"
+        tools:layout="@layout/fragment_cartas_corazones" >
+        <action
+            android:id="@+id/action_cartascorazonesFragment_to_visualizarCartasSeleccionadasFragment"
+            app:destination="@id/visualizarCartasSeleccionadasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartastrebolesFragment"
+        android:name="com.uc3m.apppoker.cartastrebolesFragment"
+        android:label="fragment_cartas_treboles"
+        tools:layout="@layout/fragment_cartas_treboles" >
+        <action
+            android:id="@+id/action_cartastrebolesFragment_to_visualizarCartasSeleccionadasFragment"
+            app:destination="@id/visualizarCartasSeleccionadasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartasdiamantesFragment"
+        android:name="com.uc3m.apppoker.cartasdiamantesFragment"
+        android:label="fragment_cartas_diamantes"
+        tools:layout="@layout/fragment_cartas_diamantes" >
+        <action
+            android:id="@+id/action_cartasdiamantesFragment_to_visualizarCartasSeleccionadasFragment"
+            app:destination="@id/visualizarCartasSeleccionadasFragment" />
     </fragment>
 </navigation>

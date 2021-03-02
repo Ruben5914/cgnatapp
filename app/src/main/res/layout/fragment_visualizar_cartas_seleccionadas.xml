@@ -7,43 +7,73 @@
     tools:context=".visualizarCartasSeleccionadasFragment">
 
     <ImageButton
-        android:id="@+id/imageButton12"
+        android:id="@+id/anadirCarta2Mano"
+        android:layout_width="60dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="260dp"
+        android:background="@drawable/addcard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/anadirCarta1Mano"
+        android:layout_width="60dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="260dp"
+        android:background="@drawable/addcard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textoSeleccionarCartasMesa3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="224dp"
+        android:layout_marginEnd="296dp"
+        android:text="Jugador 1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/anadirCarta2Mesa"
         android:layout_width="60dp"
         android:layout_height="66dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="144dp"
         android:background="@drawable/addcard"
-        app:layout_constraintStart_toEndOf="@+id/imageButton11"
+        app:layout_constraintStart_toEndOf="@+id/anadirCarta1Mesa"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton13"
+        android:id="@+id/anadirCarta3Mesa"
         android:layout_width="60dp"
         android:layout_height="66dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="144dp"
         android:background="@drawable/addcard"
-        app:layout_constraintStart_toEndOf="@+id/imageButton12"
+        app:layout_constraintStart_toEndOf="@+id/anadirCarta2Mesa"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton14"
+        android:id="@+id/anadirCarta4Mesa"
         android:layout_width="60dp"
         android:layout_height="66dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="144dp"
         android:background="@drawable/addcard"
-        app:layout_constraintStart_toEndOf="@+id/imageButton13"
+        app:layout_constraintStart_toEndOf="@+id/anadirCarta3Mesa"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton15"
+        android:id="@+id/anadirCarta5Mesa"
         android:layout_width="60dp"
         android:layout_height="66dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="144dp"
         android:background="@drawable/addcard"
-        app:layout_constraintStart_toEndOf="@+id/imageButton14"
+        app:layout_constraintStart_toEndOf="@+id/anadirCarta4Mesa"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -57,7 +87,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton11"
+        android:id="@+id/anadirCarta1Mesa"
         android:layout_width="60dp"
         android:layout_height="66dp"
         android:layout_marginStart="16dp"
@@ -65,6 +95,17 @@
         android:background="@drawable/addcard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="60dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="336dp"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
