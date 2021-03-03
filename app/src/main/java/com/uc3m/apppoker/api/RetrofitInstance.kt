@@ -14,3 +14,4 @@ object RetrofitInstance {
         retrofit.create(PokerAPI::class.java)
     }
 }
+
