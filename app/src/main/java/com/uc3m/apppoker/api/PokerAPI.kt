@@ -9,7 +9,7 @@ import retrofit2.http.Query
 
 interface PokerAPI {
     @GET("v1/winner/texas_holdem")
-
+//rabo polla
     suspend fun getWinner(@Query( value = "cc", encoded = true) mesa: String, @Query (value ="pc[]", encoded = true) manos: String): Response<poker>
 
 
