@@ -10,8 +10,8 @@ import retrofit2.Response
 
 class ApiViewModel (private val repositoryApi: RepositoryApi): ViewModel(){
 
-    val responseWinner: MutableLiveData<Response<poker>> = MutableLiveData()
-
+   // val responseWinner: MutableLiveData<Response<poker>> = MutableLiveData()
+   val responseWinner: MutableLiveData<Response<poker>> = MutableLiveData()
 
     fun getWinner(mesa: String, manos: String){
 

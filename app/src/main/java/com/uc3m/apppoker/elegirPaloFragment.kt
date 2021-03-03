@@ -24,6 +24,15 @@ class elegirPaloFragment : Fragment() {
         binding.corazon.setOnClickListener(){
             findNavController().navigate(R.id.action_elegirPaloFragment_to_cartascorazonesFragment)
         }
+        binding.diamante.setOnClickListener(){
+            findNavController().navigate(R.id.action_elegirPaloFragment_to_cartasdiamantesFragment)
+        }
+        binding.pica.setOnClickListener(){
+            findNavController().navigate(R.id.action_elegirPaloFragment_to_cartaspicasFragment)
+        }
+        binding.trebol.setOnClickListener(){
+            findNavController().navigate(R.id.action_elegirPaloFragment_to_cartastrebolesFragment)
+        }
 
 
         return view

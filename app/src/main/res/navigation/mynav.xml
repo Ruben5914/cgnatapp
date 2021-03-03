@@ -71,7 +71,7 @@
     </fragment>
     <fragment
         android:id="@+id/cartaspicasFragment"
-        android:name="com.uc3m.apppoker.cartaspicasFragment"
+        android:name="com.uc3m.apppoker.views.CartasPicasFragment"
         android:label="fragment_cartas_picas"
         tools:layout="@layout/fragment_cartas_picas" >
         <action
@@ -89,7 +89,7 @@
     </fragment>
     <fragment
         android:id="@+id/cartastrebolesFragment"
-        android:name="com.uc3m.apppoker.cartastrebolesFragment"
+        android:name="com.uc3m.apppoker.views.CartasTrebolesFragment"
         android:label="fragment_cartas_treboles"
         tools:layout="@layout/fragment_cartas_treboles" >
         <action
@@ -98,7 +98,7 @@
     </fragment>
     <fragment
         android:id="@+id/cartasdiamantesFragment"
-        android:name="com.uc3m.apppoker.cartasdiamantesFragment"
+        android:name="com.uc3m.apppoker.views.cartasDiamantesFragment"
         android:label="fragment_cartas_diamantes"
         tools:layout="@layout/fragment_cartas_diamantes" >
         <action

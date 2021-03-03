@@ -21,6 +21,7 @@ import com.uc3m.apppoker.repository.RepositoryApi
 import com.uc3m.apppoker.viewModels.ApiViewModel
 import com.uc3m.apppoker.viewModels.MainViewModelFactory
 import com.uc3m.apppoker.viewModels.UsuarioViewModel
+import okhttp3.internal.wait
 
 
 class visualizarCartasSeleccionadasFragment : Fragment() {
@@ -56,6 +57,7 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
         var mano: String
         binding.botonEnviarInfoApi.setOnClickListener() {
             mano = pedirDatosApi(viewModel)
+            Log.d("Response -------->OJO ", mano)
             val usuario= Usuario  (0,"UsuarioRegistroGeneral")
             usuarioViewModel.addUsuario(usuario)
             guardarEnBaseDatos(mano)
@@ -81,13 +83,15 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
             var mesa: List<String> = datos.toString().split('/')
             viewModel.getWinner(mesa.get(0), mesa.get(1))
 
+
             viewModel.responseWinner.observe(viewLifecycleOwner, Observer { response ->
 
                 if (response.isSuccessful) {
                     val ganadores = response.body()?.winners?.get(0)?.result
                     // displayText = "The winner hand is: {ganadores.}"
+                    Log.d("Response --------> 1", "")
                     mano = ganadores.toString()
-                    Log.d("Response -------->", ganadores.toString())
+                    Log.d("Response -------->SEGURO?", ganadores.toString())
                 } else {
 
                     Log.d("Response -------->>>>", response.code().toString())
@@ -96,8 +100,9 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
 
                 }
 
-
             })
+
+
 
             return mano
 
@@ -123,7 +128,8 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
 
     }
     private fun guardarEnBaseDatos (hand:String){
-        val hand = Hand(0, 0, hand)
+        Log.d("Response --------> 2", "")
+        val hand = Hand(0, 1, hand)
         usuarioViewModel.addHandToUser(hand)
     }
 

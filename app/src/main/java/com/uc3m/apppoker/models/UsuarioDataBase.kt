@@ -24,7 +24,7 @@ abstract class UsuarioDataBase: RoomDatabase() {
                             context.applicationContext,
                             UsuarioDataBase::class.java,
                             "user_database"
-                    ).fallbackToDestructiveMigration().build()
+                    ).allowMainThreadQueries().build()
                 }
                 return instance
             }

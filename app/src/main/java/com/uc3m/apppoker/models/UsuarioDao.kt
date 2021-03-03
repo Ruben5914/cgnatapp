@@ -20,4 +20,8 @@ interface UsuarioDao {
     fun readAllHand(id_hand_user: Int): LiveData<List<Hand>>
 
 
+
+
+
+
 }
