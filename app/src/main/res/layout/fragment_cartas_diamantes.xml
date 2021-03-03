@@ -9,120 +9,158 @@
     android:background="@color/pokerOriginal">
 
     <ImageButton
-        android:id="@+id/uno"
+        android:id="@+id/ad"
         android:layout_width="91dp"
         android:layout_height="134dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/ad"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/dos"
+        android:id="@+id/_d2"
         android:layout_width="91dp"
         android:layout_height="134dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="5dp"
         android:background="@drawable/_2d"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintEnd_toStartOf="@+id/_d3"
+        app:layout_constraintStart_toEndOf="@+id/ad"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/anadirCarta4Mesa"
+        android:id="@+id/_d3"
         android:layout_width="91dp"
         android:layout_height="134dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/_3d"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="255dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/_d4"
         android:layout_width="91dp"
         android:layout_height="134dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/_4d"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="150dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ad"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/_d5"
         android:layout_width="91dp"
         android:layout_height="134dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:background="@drawable/_5d"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="150dp" />
+        app:layout_constraintEnd_toStartOf="@+id/_d6"
+        app:layout_constraintStart_toEndOf="@+id/_d4"
+        app:layout_constraintTop_toBottomOf="@+id/_d2"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/imageButton9"
+        android:id="@+id/_d6"
         android:layout_width="91dp"
         android:layout_height="134dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/_6d"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="255dp"
-        tools:layout_editor_absoluteY="150dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_d2"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/imageButton10"
+        android:id="@+id/_d7"
         android:layout_width="91dp"
         android:layout_height="134dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/_7d"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="284dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_d4"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/anadirCarta1Mesa"
+        android:id="@+id/_d8"
         android:layout_width="91dp"
         android:layout_height="134dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:background="@drawable/_8d"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="284dp" />
+        app:layout_constraintEnd_toStartOf="@+id/_d9"
+        app:layout_constraintStart_toEndOf="@+id/_d7"
+        app:layout_constraintTop_toBottomOf="@+id/_d5"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/anadirCarta2Mesa"
+        android:id="@+id/_d9"
         android:layout_width="91dp"
         android:layout_height="134dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/_9d"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="255dp"
-        tools:layout_editor_absoluteY="284dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_d6"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/anadirCarta3Mesa"
+        android:id="@+id/_d10"
         android:layout_width="91dp"
         android:layout_height="134dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/_0d"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="418dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_d7"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/anadirCarta5Mesa"
+        android:id="@+id/jd"
         android:layout_width="91dp"
         android:layout_height="134dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:background="@drawable/jd"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="418dp" />
+        app:layout_constraintEnd_toStartOf="@+id/qd"
+        app:layout_constraintStart_toEndOf="@+id/_d10"
+        app:layout_constraintTop_toBottomOf="@+id/_d8"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/imageButton16"
+        android:id="@+id/qd"
         android:layout_width="91dp"
         android:layout_height="134dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/qd"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="255dp"
-        tools:layout_editor_absoluteY="418dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_d9"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
-        android:id="@+id/imageButton17"
+        android:id="@+id/kd"
         android:layout_width="91dp"
         android:layout_height="134dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/kd"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="552dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jd"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
