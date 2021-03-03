@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cartastrebolesFragment"
+    android:background="@color/pokerOriginal">
+
+    <ImageButton
+        android:id="@+id/uno"
+        android:layout_width="91dp"
+        android:layout_height="134dp"
+        android:background="@drawable/ac"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageButton
+        android:id="@+id/dos"
+        android:layout_width="91dp"
+        android:layout_height="134dp"
+        android:background="@drawable/_2c"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageButton
+        android:id="@+id/anadirCarta4Mesa"
+        android:layout_width="91dp"
+        android:layout_height="134dp"
+        android:background="@drawable/_3c"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="255dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="91dp"
+        android:layout_height="134dp"
+        android:background="@drawable/_4c"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="150dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="91dp"
+        android:layout_height="134dp"
+        android:background="@drawable/_5c"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="150dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="91dp"
+        android:layout_height="134dp"
+        android:background="@drawable/_6c"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="255dp"
+        tools:layout_editor_absoluteY="150dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton10"
+        android:layout_width="91dp"
+        android:layout_height="134dp"
+        android:background="@drawable/_7c"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="284dp" />
+
+    <ImageButton
+        android:id="@+id/anadirCarta1Mesa"
+        android:layout_width="91dp"
+        android:layout_height="134dp"
+        android:background="@drawable/_8c"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="284dp" />
+
+    <ImageButton
+        android:id="@+id/anadirCarta2Mesa"
+        android:layout_width="91dp"
+        android:layout_height="134dp"
+        android:background="@drawable/_9c"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="255dp"
+        tools:layout_editor_absoluteY="284dp" />
+
+    <ImageButton
+        android:id="@+id/anadirCarta3Mesa"
+        android:layout_width="91dp"
+        android:layout_height="134dp"
+        android:background="@drawable/_0c"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="418dp" />
+
+    <ImageButton
+        android:id="@+id/anadirCarta5Mesa"
+        android:layout_width="91dp"
+        android:layout_height="134dp"
+        android:background="@drawable/jc"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="418dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton16"
+        android:layout_width="91dp"
+        android:layout_height="134dp"
+        android:background="@drawable/qc"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="255dp"
+        tools:layout_editor_absoluteY="418dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton17"
+        android:layout_width="91dp"
+        android:layout_height="134dp"
+        android:background="@drawable/kc"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="552dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
