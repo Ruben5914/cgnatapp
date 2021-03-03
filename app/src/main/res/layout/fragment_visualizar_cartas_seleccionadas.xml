@@ -10,8 +10,8 @@
         android:id="@+id/anadirCarta2Mano"
         android:layout_width="60dp"
         android:layout_height="66dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="280dp"
         android:background="@drawable/addcard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,8 +20,8 @@
         android:id="@+id/anadirCarta1Mano"
         android:layout_width="60dp"
         android:layout_height="66dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="280dp"
         android:background="@drawable/addcard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +30,7 @@
         android:id="@+id/textoSeleccionarCartasMesa3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="244dp"
         android:layout_marginEnd="296dp"
         android:text="Jugador 1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,16 +96,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="60dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="336dp"
-        android:clickable="true"
-        android:src="@drawable/ic_baseline_add_24"
+    <Button
+        android:id="@+id/botonEnviarInfoApi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="204dp"
+        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/intorducirCartas"
+        android:layout_width="361dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="396dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/IntroducirCartas"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mostrarResultadoApi"
+        android:layout_width="167dp"
+        android:layout_height="195dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

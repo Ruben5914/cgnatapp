@@ -5,6 +5,7 @@
 
     <string name="last_name">Last name</string>
     <string name="first_name">First name</string>
+    <string name="IntroducirCartas">Introducir mesa separada por , / mano </string>
     <string name="a_adir">Añadir</string>
 
     <string name="add">Add</string>
