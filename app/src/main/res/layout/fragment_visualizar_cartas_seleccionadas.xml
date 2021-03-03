@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".visualizarCartasSeleccionadasFragment">
+    tools:context=".views.visualizarCartasSeleccionadasFragment">
 
     <ImageButton
         android:id="@+id/anadirCarta2Mano"
@@ -101,19 +101,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginBottom="204dp"
+        android:layout_marginTop="92dp"
         android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/introducirCartas" />
 
     <EditText
-        android:id="@+id/intorducirCartas"
-        android:layout_width="361dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="396dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/introducirCartas"
+        android:layout_width="304dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="404dp"
+        android:layout_marginEnd="88dp"
         android:ems="10"
-        android:hint="@string/IntroducirCartas"
+        android:hint="@string/introducirCartas"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

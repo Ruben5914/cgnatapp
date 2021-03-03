@@ -13,19 +13,28 @@ class UsuarioViewModel(application: Application): AndroidViewModel(application) 
 
     val readAll: LiveData<List<Usuario>>
     private val repository: UsuarioRepository
+    val readAllHands: LiveData<List <Hand>>
 
 
     init {
         val usuarioDao = UsuarioDataBase.getDatabase(application).UsuarioDao()
         repository = UsuarioRepository(usuarioDao)
         readAll = repository.readAll
+        readAllHands = repository.readAllHand
     }
 
-    fun addStudent(usuario: Usuario){
+    fun addUsuario(usuario: Usuario){
         viewModelScope.launch(Dispatchers.IO) {
             repository.addUsuario(usuario)
         }
     }
+
+    fun addHandToUser(hand: Hand){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.addHandToUser(hand)
+        }
+    }
+
 
 
 

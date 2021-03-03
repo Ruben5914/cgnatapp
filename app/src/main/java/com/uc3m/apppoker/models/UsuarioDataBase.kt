@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = [Usuario::class], version = 1, exportSchema = false)
+@Database(entities = [Usuario::class, Hand::class], version = 1, exportSchema = false)
 abstract class UsuarioDataBase: RoomDatabase() {
 
     abstract fun UsuarioDao(): UsuarioDao
@@ -23,7 +23,7 @@ abstract class UsuarioDataBase: RoomDatabase() {
                     instance = Room.databaseBuilder(
                             context.applicationContext,
                             UsuarioDataBase::class.java,
-                            "usuario_database"
+                            "user_database"
                     ).fallbackToDestructiveMigration().build()
                 }
                 return instance

@@ -44,7 +44,7 @@
     </fragment>
     <fragment
         android:id="@+id/visualizarCartasSeleccionadasFragment"
-        android:name="com.uc3m.apppoker.visualizarCartasSeleccionadasFragment"
+        android:name="com.uc3m.apppoker.views.visualizarCartasSeleccionadasFragment"
         android:label="fragment_visualizar_cartas_seleccionadas"
         tools:layout="@layout/fragment_visualizar_cartas_seleccionadas" >
         <action

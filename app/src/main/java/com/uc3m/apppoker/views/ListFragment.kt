@@ -15,6 +15,7 @@ import com.uc3m.apppoker.viewModels.UsuarioViewModel
 
 
 class ListFragment : Fragment() {
+    /*
     private lateinit var binding: FragmentListBinding
     private lateinit var usuarioViewModel: UsuarioViewModel
 
@@ -24,7 +25,7 @@ class ListFragment : Fragment() {
     ): View? {
         binding = FragmentListBinding.inflate(inflater, container, false)
         val view = binding.root
-/*
+
         val adapter = ListAdapter()
         val recyclerView = binding.recyclerView
         recyclerView.adapter = adapter
@@ -34,7 +35,7 @@ class ListFragment : Fragment() {
         usuarioViewModel.readAll.observe(viewLifecycleOwner, {
             student -> adapter.setData(student)
         })
-*/
+
         binding.addButton.setOnClickListener{
             findNavController().navigate(R.id.action_listFragment_to_saveFragment)
         }
@@ -44,7 +45,7 @@ class ListFragment : Fragment() {
 
         return view
     }
-
+*/
 
 
 

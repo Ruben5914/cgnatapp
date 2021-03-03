@@ -17,7 +17,7 @@ import com.uc3m.apppoker.viewModels.UsuarioViewModel
 
 
 class SaveFragment : Fragment() {
-
+/*
     private lateinit var binding: FragmentSaveBinding
     private lateinit var usuarioViewModel: UsuarioViewModel
 
@@ -52,4 +52,5 @@ class SaveFragment : Fragment() {
         return !(TextUtils.isEmpty(firstName) || TextUtils.isEmpty(lastName))
     }
 }
-
+*/
+}

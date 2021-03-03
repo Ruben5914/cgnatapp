@@ -8,7 +8,7 @@
     tools:context="views.SaveFragment">
 
     <EditText
-        android:id="@+id/intorducirCartas"
+        android:id="@+id/nickName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="148dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/LastName"
+        android:id="@+id/Manos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intorducirCartas" />
+        app:layout_constraintTop_toBottomOf="@+id/nickName" />
 
 
     <Button
@@ -44,7 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LastName" />
+        app:layout_constraintTop_toBottomOf="@+id/Manos" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
