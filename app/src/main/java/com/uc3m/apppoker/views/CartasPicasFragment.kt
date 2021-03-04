@@ -4,13 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.uc3m.apppoker.R
 import com.uc3m.apppoker.databinding.FragmentCartasPicasBinding
 
 
-class CartasPicasFragment {
+class CartasPicasFragment : Fragment(){
     private lateinit var binding: FragmentCartasPicasBinding
-    /*override fun onCreateView(
+    override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
@@ -19,10 +21,10 @@ class CartasPicasFragment {
 
         binding.`as`.setOnClickListener(){
 
-           // findNavController().navigate(R.id.action_cartascorazonesFragment_to_visualizarCartasSeleccionadasFragment)
+            findNavController().navigate(R.id.action_cartascorazonesFragment_to_visualizarCartasSeleccionadasFragment)
         }
 
 
         return view
-    }*/
+    }
 }

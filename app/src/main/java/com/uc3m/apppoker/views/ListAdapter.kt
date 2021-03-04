@@ -25,7 +25,7 @@ import com.uc3m.apppoker.models.Usuario
         val currentItemHand = handList[position]
         val currentItemUser =
         with(holder){
-            binding.nickName.text = "Registro de todas las manos"
+            //binding.nickName.text = "Registro de todas las manos"
             binding.Manos.text = currentItemHand.hand.toString()
 
 

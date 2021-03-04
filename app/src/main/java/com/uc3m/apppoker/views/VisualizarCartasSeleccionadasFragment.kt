@@ -14,6 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.uc3m.apppoker.R
 import com.uc3m.apppoker.databinding.FragmentVisualizarCartasSeleccionadasBinding
+
 import com.uc3m.apppoker.models.Hand
 import com.uc3m.apppoker.models.Usuario
 
@@ -57,7 +58,7 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
         var mano: String
         binding.botonEnviarInfoApi.setOnClickListener() {
             mano = pedirDatosApi(viewModel)
-            Log.d("Response -------->OJO ", mano)
+            Log.d("Response -------->Despues de la funcion llamada a API:  ", mano)
             val usuario= Usuario  (0,"UsuarioRegistroGeneral")
             usuarioViewModel.addUsuario(usuario)
             guardarEnBaseDatos(mano)
@@ -90,8 +91,9 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
                     val ganadores = response.body()?.winners?.get(0)?.result
                     // displayText = "The winner hand is: {ganadores.}"
                     Log.d("Response --------> 1", "")
+
                     mano = ganadores.toString()
-                    Log.d("Response -------->SEGURO?", ganadores.toString())
+                    Log.d("Response -------->La API devuelve?", ganadores.toString())
                 } else {
 
                     Log.d("Response -------->>>>", response.code().toString())
@@ -119,7 +121,7 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
 
         usuarioViewModel = ViewModelProvider(this).get(UsuarioViewModel::class.java)
         usuarioViewModel.readAllHands.observe(viewLifecycleOwner,{
-            usuario -> adapter.setData( usuario)
+            hands -> adapter.setData( hands)
         })
 
 

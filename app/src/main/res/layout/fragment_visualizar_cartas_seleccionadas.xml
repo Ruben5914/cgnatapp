@@ -8,13 +8,12 @@
     tools:context=".views.visualizarCartasSeleccionadasFragment">
 
 
-
     <ImageButton
         android:id="@+id/anadirCarta2Mano"
         android:layout_width="60dp"
         android:layout_height="66dp"
         android:layout_marginStart="112dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="236dp"
         android:background="@drawable/addcard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,8 +22,8 @@
         android:id="@+id/anadirCarta1Mano"
         android:layout_width="60dp"
         android:layout_height="66dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="236dp"
         android:background="@drawable/addcard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +32,7 @@
         android:id="@+id/textoSeleccionarCartasMesa3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="244dp"
+        android:layout_marginTop="200dp"
         android:layout_marginEnd="296dp"
         android:text="Jugador 1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,8 +42,8 @@
         android:id="@+id/anadirCarta2Mesa"
         android:layout_width="60dp"
         android:layout_height="66dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="96dp"
         android:background="@drawable/addcard"
         app:layout_constraintStart_toEndOf="@+id/anadirCarta1Mesa"
         app:layout_constraintTop_toTopOf="parent" />
@@ -53,8 +52,8 @@
         android:id="@+id/anadirCarta3Mesa"
         android:layout_width="60dp"
         android:layout_height="66dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="96dp"
         android:background="@drawable/addcard"
         app:layout_constraintStart_toEndOf="@+id/anadirCarta2Mesa"
         app:layout_constraintTop_toTopOf="parent" />
@@ -63,8 +62,8 @@
         android:id="@+id/anadirCarta4Mesa"
         android:layout_width="60dp"
         android:layout_height="66dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="96dp"
         android:background="@drawable/addcard"
         app:layout_constraintStart_toEndOf="@+id/anadirCarta3Mesa"
         app:layout_constraintTop_toTopOf="parent" />
@@ -73,8 +72,8 @@
         android:id="@+id/anadirCarta5Mesa"
         android:layout_width="60dp"
         android:layout_height="66dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="96dp"
         android:background="@drawable/addcard"
         app:layout_constraintStart_toEndOf="@+id/anadirCarta4Mesa"
         app:layout_constraintTop_toTopOf="parent" />
@@ -83,7 +82,7 @@
         android:id="@+id/textoSeleccionarCartasMesa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="120dp"
         android:text="Selecciona las cartas de la mesa"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,7 +93,7 @@
         android:layout_width="60dp"
         android:layout_height="66dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="96dp"
         android:background="@drawable/addcard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -103,18 +102,18 @@
         android:id="@+id/botonEnviarInfoApi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
         android:text="Button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/introducirCartas" />
 
     <EditText
         android:id="@+id/introducirCartas"
-        android:layout_width="304dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="404dp"
-        android:layout_marginEnd="88dp"
+        android:layout_width="309dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginEnd="52dp"
         android:ems="10"
         android:hint="@string/introducirCartas"
         android:inputType="textPersonName"
@@ -123,11 +122,21 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mostrarResultadoApi"
-        android:layout_width="167dp"
-        android:layout_height="195dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="60dp"
+        android:layout_width="153dp"
+        android:layout_height="138dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="24dp"
+        android:text="Registro de todas las manos"
+        app:layout_constraintBottom_toTopOf="@+id/mostrarResultadoApi"
         app:layout_constraintEnd_toEndOf="parent" />
 
 
