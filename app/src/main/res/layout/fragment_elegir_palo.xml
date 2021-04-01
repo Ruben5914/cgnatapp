@@ -11,11 +11,15 @@
         android:id="@+id/textView2"
         android:layout_width="82dp"
         android:layout_height="24dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="180dp"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="165dp"
+        android:layout_marginBottom="700dp"
         android:text="Elegir palo"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -23,9 +27,13 @@
         android:id="@+id/trebol"
         android:layout_width="152dp"
         android:layout_height="173dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="156dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/club"
+        app:layout_constraintBottom_toTopOf="@+id/corazon"
+        app:layout_constraintEnd_toStartOf="@+id/pica"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,29 +41,41 @@
         android:id="@+id/diamante"
         android:layout_width="136dp"
         android:layout_height="175dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="92dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="156dp"
         android:background="@drawable/diamond"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/corazon" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/corazon"
+        app:layout_constraintTop_toBottomOf="@+id/pica" />
 
     <ImageButton
         android:id="@+id/corazon"
         android:layout_width="146dp"
         android:layout_height="174dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="92dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="156dp"
         android:background="@drawable/heart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/diamante"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trebol" />
 
     <ImageButton
         android:id="@+id/pica"
         android:layout_width="138dp"
         android:layout_height="179dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="156dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/spade"
+        app:layout_constraintBottom_toTopOf="@+id/diamante"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/trebol"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

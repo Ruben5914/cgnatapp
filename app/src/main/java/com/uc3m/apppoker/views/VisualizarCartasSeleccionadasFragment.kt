@@ -72,7 +72,7 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
 
 
         }
-        binding.botonLogOut.setOnClickListener(){
+        binding.BotonLogOut.setOnClickListener(){
 
             auth.signOut()
             val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
