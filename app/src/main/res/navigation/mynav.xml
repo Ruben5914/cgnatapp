@@ -50,6 +50,9 @@
         <action
             android:id="@+id/action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment"
             app:destination="@id/elegirPaloFragment" />
+        <action
+            android:id="@+id/action_visualizarCartasSeleccionadasFragment_to_principal"
+            app:destination="@id/principal" />
     </fragment>
     <fragment
         android:id="@+id/elegirPaloFragment"

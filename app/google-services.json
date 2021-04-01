@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "804172464095",
+    "project_id": "apppoker-406f4",
+    "storage_bucket": "apppoker-406f4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:804172464095:android:0ab30024710af611dfce6a",
+        "android_client_info": {
+          "package_name": "com.uc3m.apppoker"
+        }
+      },
+      "oauth_client": [
+        {
+          ".requestIdToken(804172464095-oaq7lhmti1a3aeeotl8787jj0og0depf.apps.googleusercontent.com)": "804172464095-oaq7lhmti1a3aeeotl8787jj0og0depf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uc3m.apppoker",
+            "certificate_hash": "784ba9edc550789abadcc1b1d4a66c9263f0b2fe"
+          }
+        },
+        {
+          "client_id": "804172464095-6mkpi9n3mh7s5a2n3s79acp7d5uptaah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6EMtyu7w2p8LOitdxZUcLsU9jGgsKPzg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "804172464095-6mkpi9n3mh7s5a2n3s79acp7d5uptaah.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

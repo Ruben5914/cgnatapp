@@ -1,5 +1,7 @@
 package com.uc3m.apppoker.views
 
+import android.app.Application
+import android.content.Context
 import android.os.Bundle
 
 import android.util.Log
@@ -12,11 +14,16 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.auth.FirebaseAuth
 import com.uc3m.apppoker.R
 import com.uc3m.apppoker.databinding.FragmentVisualizarCartasSeleccionadasBinding
 
 import com.uc3m.apppoker.models.Hand
 import com.uc3m.apppoker.models.Usuario
+import com.uc3m.apppoker.models.UsuarioDataBase
 
 import com.uc3m.apppoker.repository.RepositoryApi
 import com.uc3m.apppoker.viewModels.ApiViewModel
@@ -32,14 +39,14 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
 
     private lateinit var binding: FragmentVisualizarCartasSeleccionadasBinding
     private lateinit var usuarioViewModel: UsuarioViewModel
-
-
+    private lateinit var auth : FirebaseAuth
+    private lateinit var googleSignInClient: GoogleSignInClient
 
 
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
 
         val repositoryApi = RepositoryApi()
@@ -47,6 +54,7 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
         val viewModel = ViewModelProvider(this, viewModelFactory).get(ApiViewModel::class.java)
         super.onCreate(savedInstanceState)
         usuarioViewModel = ViewModelProvider(this).get(UsuarioViewModel::class.java)
+        auth = FirebaseAuth.getInstance()
 
         binding = FragmentVisualizarCartasSeleccionadasBinding.inflate(inflater, container, false)
         val view = binding.root
@@ -61,10 +69,26 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
             Log.d("Response -------->Despues de la funcion llamada a API:  ", mano)
             val usuario= Usuario  (0,"UsuarioRegistroGeneral")
             usuarioViewModel.addUsuario(usuario)
-            guardarEnBaseDatos(mano)
+
 
         }
-        mostrarManosBaseDatos()
+        binding.botonLogOut.setOnClickListener(){
+
+            auth.signOut()
+            val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                    .requestIdToken(getString(R.string.default_web_client_id))
+                    .requestEmail()
+                    .build()
+
+            googleSignInClient = GoogleSignIn.getClient(requireContext(), gso)
+            googleSignInClient.signOut()
+
+            //println(auth.currentUser?.email)
+            //auth.signOut()
+
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_principal)
+        }
+
 
 
 
@@ -81,38 +105,40 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
 
 
 
-            var mesa: List<String> = datos.toString().split('/')
-            viewModel.getWinner(mesa.get(0), mesa.get(1))
+        var mesa: List<String> = datos.toString().split('/')
+        viewModel.getWinner(mesa.get(0), mesa.get(1))
 
 
-            viewModel.responseWinner.observe(viewLifecycleOwner, Observer { response ->
+        viewModel.responseWinner.observe(viewLifecycleOwner, Observer { response ->
 
-                if (response.isSuccessful) {
-                    val ganadores = response.body()?.winners?.get(0)?.result
-                    // displayText = "The winner hand is: {ganadores.}"
-                    Log.d("Response --------> 1", "")
+            if (response.isSuccessful) {
+                val ganadores = response.body()?.winners?.get(0)?.result
+                // displayText = "The winner hand is: {ganadores.}"
+                Log.d("Response --------> 1", "")
 
-                    mano = ganadores.toString()
-                    Log.d("Response -------->La API devuelve?", ganadores.toString())
-                } else {
+                mano = ganadores.toString()
+                guardarEnBaseDatos(mano)
+                mostrarManosBaseDatos()
+                Log.d("Response -------->La API devuelve?", ganadores.toString())
+            } else {
 
-                    Log.d("Response -------->>>>", response.code().toString())
-                    Log.d("Response -------->>>>", response.errorBody().toString())
-
-
-                }
-
-            })
+                Log.d("Response -------->>>>", response.code().toString())
+                Log.d("Response -------->>>>", response.errorBody().toString())
 
 
+            }
 
-            return mano
+        })
+
+
+
+        return mano
 
 
     }
 
     private fun mostrarManosBaseDatos() {
-       //Log.d("Response -------->>>>", usuarioViewModel.findUsuario(0))
+        //Log.d("Response -------->>>>", usuarioViewModel.findUsuario(0))
 
         val adapter = ListAdapter()
         val recyclerView = binding.mostrarResultadoApi
@@ -121,7 +147,7 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
 
         usuarioViewModel = ViewModelProvider(this).get(UsuarioViewModel::class.java)
         usuarioViewModel.readAllHands.observe(viewLifecycleOwner,{
-            hands -> adapter.setData( hands)
+                hands -> adapter.setData( hands)
         })
 
 
@@ -136,7 +162,4 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
     }
 
 }
-
-
-
 
