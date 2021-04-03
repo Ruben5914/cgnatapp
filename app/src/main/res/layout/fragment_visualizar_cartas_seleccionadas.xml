@@ -95,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="23dp"
         android:layout_marginEnd="300dp"
         android:layout_marginBottom="5dp"
         android:text="Jugador 1"
@@ -121,76 +121,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
-    <Button
-        android:id="@+id/botonEnviarInfoApi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="420dp"
-        android:layout_marginEnd="280dp"
-        android:layout_marginBottom="250dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/introducirCartas"
-        android:layout_width="309dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="350dp"
-        android:layout_marginEnd="51dp"
-        android:layout_marginBottom="330dp"
-        android:ems="10"
-        android:hint="@string/introducirCartas"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mostrarResultadoApi"
-        android:layout_width="153dp"
-        android:layout_height="138dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="181dp"
-        android:layout_marginTop="500dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="5dp"
-        android:text="Registro de todas las manos"
-        app:layout_constraintBottom_toTopOf="@+id/mostrarResultadoApi"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="370dp"
+        android:layout_height="358dp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="289dp" />
 
     <Button
         android:id="@+id/BotonLogOut"
-        android:layout_width="113dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="56dp"
+        android:layout_width="122dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
         android:text="Log out"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,5 @@
 package com.uc3m.apppoker.views
 
-import android.app.Application
-import android.content.Context
 import android.os.Bundle
 
 import android.util.Log
@@ -25,10 +23,8 @@ import com.uc3m.apppoker.databinding.FragmentVisualizarCartasSeleccionadasBindin
 
 import com.uc3m.apppoker.models.Hand
 import com.uc3m.apppoker.models.Usuario
-import com.uc3m.apppoker.models.UsuarioDataBase
 
 import com.uc3m.apppoker.repository.RepositoryApi
-import com.uc3m.apppoker.util.Constants
 import com.uc3m.apppoker.util.VariablesGlobales
 import com.uc3m.apppoker.util.VariablesGlobales.Companion.seleccionTotalCartasMesa
 import com.uc3m.apppoker.viewModels.ApiViewModel
@@ -68,14 +64,14 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
         var mano: String
-        binding.botonEnviarInfoApi.setOnClickListener() {
+       /* binding.botonEnviarInfoApi.setOnClickListener() {
             mano = pedirDatosApi(viewModel)
             Log.d("Response -------->Despues de la funcion llamada a API:  ", mano)
             val usuario= Usuario  (0,"UsuarioRegistroGeneral")
             usuarioViewModel.addUsuario(usuario)
 
 
-        }
+        }*/
         binding.BotonLogOut.setOnClickListener(){
 
             auth.signOut()
@@ -95,8 +91,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
 
-
-
+       // view.findViewById<ImageButton>(R.id.anadirCarta7).setVisibility(View.GONE)
 
 
 
@@ -144,13 +139,10 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         }
 
             cartaSeleccionada = args.CartasPicas
+            var cartas = arrayOf("_0c","js","_5d","ad")
+            VariablesGlobales.traducirCartas(cartas)
 
 
-        Log.d("Response -------->##########1?", VariablesGlobales.seleccionTotalCartasMesa[0].toString())
-        Log.d("Response -------->##########2?", VariablesGlobales.seleccionTotalCartasMesa[1].toString())
-        Log.d("Response -------->##########3?", VariablesGlobales.seleccionTotalCartasMesa[2].toString())
-        Log.d("Response -------->##########4?", VariablesGlobales.seleccionTotalCartasMesa[3].toString())
-        Log.d("Response -------->##########5?", VariablesGlobales.seleccionTotalCartasMesa[4].toString())
         return view
     }
 
@@ -158,6 +150,11 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         colocarCarta()
+        Log.d("Response -------->##########1?", VariablesGlobales.seleccionTotalCartasMesa[0].toString())
+        Log.d("Response -------->##########2?", VariablesGlobales.seleccionTotalCartasMesa[1].toString())
+        Log.d("Response -------->##########3?", VariablesGlobales.seleccionTotalCartasMesa[2].toString())
+        Log.d("Response -------->##########4?", VariablesGlobales.seleccionTotalCartasMesa[3].toString())
+        Log.d("Response -------->##########5?", VariablesGlobales.seleccionTotalCartasMesa[4].toString())
     }
 
 
@@ -167,9 +164,9 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         Log.d("Response -------->Fragmento devuelve:  ", cartaSeleccionada)
     }
 
-    fun colocarCarta(){
+    private fun colocarCarta(){
 
-        var imagen ="_0c"
+
         if (VariablesGlobales.posicionCarta != 0){
 
             VariablesGlobales.seleccionTotalCartasMesa[VariablesGlobales.posicionCarta-1] = cartaSeleccionada
@@ -193,40 +190,40 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
     fun pedirDatosApi(viewModel: ApiViewModel) :String {
-        var datos = binding.introducirCartas.text.toString()
+       // var datos = binding.introducirCartas.text.toString()
 
         var mano: String
-        mano = "nulo"
+         mano = "nulo"
+        /*
 
 
-
-        var mesa: List<String> = datos.toString().split('/')
-        viewModel.getWinner(mesa.get(0), mesa.get(1))
-
-
-        viewModel.responseWinner.observe(viewLifecycleOwner, Observer { response ->
-
-            if (response.isSuccessful) {
-                val ganadores = response.body()?.winners?.get(0)?.result
-                // displayText = "The winner hand is: {ganadores.}"
-                Log.d("Response --------> 1", "")
-
-                mano = ganadores.toString()
-                guardarEnBaseDatos(mano)
-                mostrarManosBaseDatos()
-                Log.d("Response -------->La API devuelve?", ganadores.toString())
-            } else {
-
-                Log.d("Response -------->>>>", response.code().toString())
-                Log.d("Response -------->>>>", response.errorBody().toString())
+                var mesa: List<String> = datos.toString().split('/')
+                viewModel.getWinner(mesa.get(0), mesa.get(1))
 
 
-            }
+                viewModel.responseWinner.observe(viewLifecycleOwner, Observer { response ->
 
-        })
+                    if (response.isSuccessful) {
+                        val ganadores = response.body()?.winners?.get(0)?.result
+                        // displayText = "The winner hand is: {ganadores.}"
+                        Log.d("Response --------> 1", "")
+
+                        mano = ganadores.toString()
+                        guardarEnBaseDatos(mano)
+                        mostrarManosBaseDatos()
+                        Log.d("Response -------->La API devuelve?", ganadores.toString())
+                    } else {
+
+                        Log.d("Response -------->>>>", response.code().toString())
+                        Log.d("Response -------->>>>", response.errorBody().toString())
 
 
+                    }
 
+                })
+
+
+        */
         return mano
 
 
@@ -260,6 +257,10 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         val hand = Hand(0, 1, hand)
         usuarioViewModel.addHandToUser(hand)
     }
+
+
+
+
 
 }
 

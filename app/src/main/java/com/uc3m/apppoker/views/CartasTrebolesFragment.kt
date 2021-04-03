@@ -22,10 +22,71 @@ class CartasTrebolesFragment : Fragment(){
         val view = binding.root
 
         binding.ac.setOnClickListener(){
-            val action = CartasTrebolesFragmentDirections.actionCartastrebolesFragmentToVisualizarCartasSeleccionadasFragment("ac")
+            val action = CartasTrebolesFragmentDirections.
+            actionCartastrebolesFragmentToVisualizarCartasSeleccionadasFragment("ac")
             findNavController().navigate(action)
-           // findNavController().navigate(R.id.action_cartascorazonesFragment_to_visualizarCartasSeleccionadasFragment)
         }
+        binding.C2.setOnClickListener(){
+            val action = CartasTrebolesFragmentDirections.
+            actionCartastrebolesFragmentToVisualizarCartasSeleccionadasFragment("_2c")
+            findNavController().navigate(action)
+        }
+        binding.C3.setOnClickListener(){
+            val action = CartasTrebolesFragmentDirections.
+            actionCartastrebolesFragmentToVisualizarCartasSeleccionadasFragment("_3c")
+            findNavController().navigate(action)
+        }
+        binding.C4.setOnClickListener(){
+            val action = CartasTrebolesFragmentDirections.
+            actionCartastrebolesFragmentToVisualizarCartasSeleccionadasFragment("_4c")
+            findNavController().navigate(action)
+        }
+        binding.C5.setOnClickListener(){
+            val action = CartasTrebolesFragmentDirections.
+            actionCartastrebolesFragmentToVisualizarCartasSeleccionadasFragment("_5c")
+            findNavController().navigate(action)
+        }
+        binding.C6.setOnClickListener(){
+            val action = CartasTrebolesFragmentDirections.
+            actionCartastrebolesFragmentToVisualizarCartasSeleccionadasFragment("_6c")
+            findNavController().navigate(action)
+        }
+        binding.C7.setOnClickListener(){
+            val action = CartasTrebolesFragmentDirections.
+            actionCartastrebolesFragmentToVisualizarCartasSeleccionadasFragment("_7c")
+            findNavController().navigate(action)
+        }
+        binding.C8.setOnClickListener(){
+            val action = CartasTrebolesFragmentDirections.
+            actionCartastrebolesFragmentToVisualizarCartasSeleccionadasFragment("_8c")
+            findNavController().navigate(action)
+        }
+        binding.C9.setOnClickListener(){
+            val action = CartasTrebolesFragmentDirections.
+            actionCartastrebolesFragmentToVisualizarCartasSeleccionadasFragment("_9c")
+            findNavController().navigate(action)
+        }
+        binding.C10.setOnClickListener(){
+            val action = CartasTrebolesFragmentDirections.
+            actionCartastrebolesFragmentToVisualizarCartasSeleccionadasFragment("_0c")
+            findNavController().navigate(action)
+        }
+        binding.jc.setOnClickListener(){
+            val action = CartasTrebolesFragmentDirections.
+            actionCartastrebolesFragmentToVisualizarCartasSeleccionadasFragment("jc")
+            findNavController().navigate(action)
+        }
+        binding.qc.setOnClickListener(){
+            val action = CartasTrebolesFragmentDirections.
+            actionCartastrebolesFragmentToVisualizarCartasSeleccionadasFragment("qc")
+            findNavController().navigate(action)
+        }
+        binding.kc.setOnClickListener(){
+            val action = CartasTrebolesFragmentDirections.
+            actionCartastrebolesFragmentToVisualizarCartasSeleccionadasFragment("kc")
+            findNavController().navigate(action)
+        }
+
 
 
         return view

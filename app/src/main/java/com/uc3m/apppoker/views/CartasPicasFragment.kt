@@ -22,10 +22,94 @@ class CartasPicasFragment : Fragment(){
         val view = binding.root
 
         binding.`as`.setOnClickListener(){
-            //view.findNavController().navigate("AS")
-            val action = CartasPicasFragmentDirections.actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("as")
 
-           // findNavController().navigate(R.id.action_cartaspicasFragment_to_visualizarCartasSeleccionadasFragment)
+            val action = CartasPicasFragmentDirections.
+            actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("as")
+            findNavController().navigate(action)
+
+        }
+
+        binding.S2.setOnClickListener(){
+
+            val action = CartasPicasFragmentDirections.
+            actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("_2s")
+            findNavController().navigate(action)
+
+        }
+        binding.S3.setOnClickListener(){
+
+            val action = CartasPicasFragmentDirections.
+            actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("_3s")
+            findNavController().navigate(action)
+
+        }
+        binding.S4.setOnClickListener(){
+
+            val action = CartasPicasFragmentDirections.
+            actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("_4s")
+            findNavController().navigate(action)
+
+        }
+        binding.S5.setOnClickListener(){
+
+            val action = CartasPicasFragmentDirections.
+            actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("_5s")
+            findNavController().navigate(action)
+
+        }
+        binding.S6.setOnClickListener(){
+
+            val action = CartasPicasFragmentDirections.
+            actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("_6s")
+            findNavController().navigate(action)
+
+        }
+        binding.S7.setOnClickListener(){
+
+            val action = CartasPicasFragmentDirections.
+            actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("_7s")
+            findNavController().navigate(action)
+
+        }
+        binding.S8.setOnClickListener(){
+
+            val action = CartasPicasFragmentDirections.
+            actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("_8s")
+            findNavController().navigate(action)
+
+        }
+        binding.S9.setOnClickListener(){
+
+            val action = CartasPicasFragmentDirections.
+            actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("_9s")
+            findNavController().navigate(action)
+
+        }
+        binding.S10.setOnClickListener(){
+
+            val action = CartasPicasFragmentDirections.
+            actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("_0s")
+            findNavController().navigate(action)
+
+        }
+        binding.js.setOnClickListener(){
+
+            val action = CartasPicasFragmentDirections.
+            actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("js")
+            findNavController().navigate(action)
+
+        }
+        binding.qs.setOnClickListener(){
+
+            val action = CartasPicasFragmentDirections.
+            actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("qs")
+            findNavController().navigate(action)
+
+        }
+        binding.ks.setOnClickListener(){
+
+            val action = CartasPicasFragmentDirections.
+            actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("ks")
             findNavController().navigate(action)
 
         }

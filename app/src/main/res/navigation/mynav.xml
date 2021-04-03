@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/elegirPaloFragment"
-        android:name="com.uc3m.apppoker.elegirPaloFragment"
+        android:name="com.uc3m.apppoker.views.elegirPaloFragment"
         android:label="fragment_elegir_palo"
         tools:layout="@layout/fragment_elegir_palo" >
         <action
