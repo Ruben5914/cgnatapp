@@ -30,6 +30,7 @@ import com.uc3m.apppoker.models.UsuarioDataBase
 import com.uc3m.apppoker.repository.RepositoryApi
 import com.uc3m.apppoker.util.Constants
 import com.uc3m.apppoker.util.VariablesGlobales
+import com.uc3m.apppoker.util.VariablesGlobales.Companion.seleccionTotalCartasMesa
 import com.uc3m.apppoker.viewModels.ApiViewModel
 import com.uc3m.apppoker.viewModels.MainViewModelFactory
 import com.uc3m.apppoker.viewModels.UsuarioViewModel
@@ -99,43 +100,43 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
 
-        binding.anadirCarta1Mesa.setOnClickListener() {
+        binding.anadirCarta1.setOnClickListener() {
             findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
             VariablesGlobales.posicionCarta = 1
 
 
         }
-        binding.anadirCarta2Mesa.setOnClickListener() {
+        binding.anadirCarta2.setOnClickListener() {
             findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
             VariablesGlobales.posicionCarta = 2
 
 
         }
-        binding.anadirCarta3Mesa.setOnClickListener() {
+        binding.anadirCarta3.setOnClickListener() {
             findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
             VariablesGlobales.posicionCarta = 3
 
 
         }
-        binding.anadirCarta4Mesa.setOnClickListener() {
+        binding.anadirCarta4.setOnClickListener() {
             findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
             VariablesGlobales.posicionCarta = 4
 
 
         }
-        binding.anadirCarta5Mesa.setOnClickListener() {
+        binding.anadirCarta5.setOnClickListener() {
             findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
             VariablesGlobales.posicionCarta = 5
 
 
         }
-        binding.anadirCarta1Mano.setOnClickListener() {
+        binding.anadirCarta6.setOnClickListener() {
             findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
             VariablesGlobales.posicionCarta = 6
 
 
         }
-        binding.anadirCarta2Mano.setOnClickListener() {
+        binding.anadirCarta7.setOnClickListener() {
             findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
             VariablesGlobales.posicionCarta = 7
 
@@ -168,39 +169,20 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
     fun colocarCarta(){
 
-
+        var imagen ="_0c"
         if (VariablesGlobales.posicionCarta != 0){
 
             VariablesGlobales.seleccionTotalCartasMesa[VariablesGlobales.posicionCarta-1] = cartaSeleccionada
-            if(VariablesGlobales.posicionCarta == 1){
-              var btn =  ImageButton(context)
+            var n = 1
+            for (i in VariablesGlobales.seleccionTotalCartasMesa){
 
-                btn.findViewById<ImageButton>(R.id.anadirCarta1Mesa).setBackgroundResource(R.drawable._2h)
+                if (i != null){
 
-
-
-            }
-            if(VariablesGlobales.posicionCarta == 2){
-
-            }
-            if(VariablesGlobales.posicionCarta == 3){
-
-            }
-            if(VariablesGlobales.posicionCarta == 4){
-
-            }
-            if(VariablesGlobales.posicionCarta == 5){
-
-            }
-            if(VariablesGlobales.posicionCarta == 6){
-
-            }
-            if(VariablesGlobales.posicionCarta == 7){
-
+                    view?.findViewById<ImageButton>(getResources().getIdentifier("anadirCarta"+n.toString(),"id", context?.getPackageName()))?.setBackgroundResource(getResources().getIdentifier(i,"drawable", context?.getPackageName()))
+                     }
+                n++
             }
 
-                Log.d("Response -------->carta:  ", cartaSeleccionada)
-                Log.d("Response -------->mesa:  ", VariablesGlobales.posicionCarta.toString())
             VariablesGlobales.posicionCarta = 0
 
         }

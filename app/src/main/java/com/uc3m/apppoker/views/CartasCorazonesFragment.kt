@@ -25,7 +25,7 @@ class CartasCorazonesFragment : Fragment() {
         val view = binding.root
 
         binding.ah.setOnClickListener(){
-            val action = CartasCorazonesFragmentDirections.actionCartascorazonesFragmentToVisualizarCartasSeleccionadasFragment("AH")
+            val action = CartasCorazonesFragmentDirections.actionCartascorazonesFragmentToVisualizarCartasSeleccionadasFragment("ah")
             findNavController().navigate(action)
         }
 

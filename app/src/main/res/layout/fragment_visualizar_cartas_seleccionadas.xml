@@ -8,62 +8,62 @@
     tools:context="views.VisualizarCartasSeleccionadasFragment">
 
     <ImageButton
-        android:id="@+id/anadirCarta1Mesa"
+        android:id="@+id/anadirCarta1"
         android:layout_width="60dp"
         android:layout_height="66dp"
         android:layout_marginTop="96dp"
         android:background="@drawable/addcard"
-        app:layout_constraintEnd_toStartOf="@+id/anadirCarta2Mesa"
+        app:layout_constraintEnd_toStartOf="@+id/anadirCarta2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/anadirCarta4Mesa"
+        android:id="@+id/anadirCarta4"
         android:layout_width="60dp"
         android:layout_height="66dp"
         android:layout_marginTop="96dp"
         android:background="@drawable/addcard"
-        app:layout_constraintEnd_toStartOf="@+id/anadirCarta5Mesa"
+        app:layout_constraintEnd_toStartOf="@+id/anadirCarta5"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/anadirCarta3Mesa"
+        app:layout_constraintStart_toEndOf="@+id/anadirCarta3"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/anadirCarta2Mesa"
+        android:id="@+id/anadirCarta2"
         android:layout_width="60dp"
         android:layout_height="66dp"
         android:layout_marginTop="96dp"
         android:background="@drawable/addcard"
-        app:layout_constraintEnd_toStartOf="@+id/anadirCarta3Mesa"
+        app:layout_constraintEnd_toStartOf="@+id/anadirCarta3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/anadirCarta1Mesa"
+        app:layout_constraintStart_toEndOf="@+id/anadirCarta1"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/anadirCarta5Mesa"
+        android:id="@+id/anadirCarta5"
         android:layout_width="60dp"
         android:layout_height="66dp"
         android:layout_marginTop="96dp"
         android:background="@drawable/addcard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/anadirCarta4Mesa"
+        app:layout_constraintStart_toEndOf="@+id/anadirCarta4"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/anadirCarta3Mesa"
+        android:id="@+id/anadirCarta3"
         android:layout_width="60dp"
         android:layout_height="66dp"
         android:layout_marginTop="96dp"
         android:background="@drawable/addcard"
-        app:layout_constraintEnd_toStartOf="@+id/anadirCarta4Mesa"
+        app:layout_constraintEnd_toStartOf="@+id/anadirCarta4"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/anadirCarta2Mesa"
+        app:layout_constraintStart_toEndOf="@+id/anadirCarta2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/anadirCarta2Mano"
+        android:id="@+id/anadirCarta7"
         android:layout_width="60dp"
         android:layout_height="66dp"
         android:layout_marginStart="10dp"
@@ -73,11 +73,11 @@
         android:background="@drawable/addcard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/anadirCarta1Mano"
-        app:layout_constraintTop_toBottomOf="@+id/anadirCarta2Mesa" />
+        app:layout_constraintStart_toEndOf="@+id/anadirCarta6"
+        app:layout_constraintTop_toBottomOf="@+id/anadirCarta2" />
 
     <ImageButton
-        android:id="@+id/anadirCarta1Mano"
+        android:id="@+id/anadirCarta6"
         android:layout_width="60dp"
         android:layout_height="66dp"
         android:layout_marginStart="50dp"
@@ -86,7 +86,7 @@
         android:layout_marginBottom="450dp"
         android:background="@drawable/addcard"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/anadirCarta2Mano"
+        app:layout_constraintEnd_toStartOf="@+id/anadirCarta7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textoSeleccionarCartasMesa3" />
 
@@ -99,10 +99,10 @@
         android:layout_marginEnd="300dp"
         android:layout_marginBottom="5dp"
         android:text="Jugador 1"
-        app:layout_constraintBottom_toTopOf="@+id/anadirCarta1Mano"
+        app:layout_constraintBottom_toTopOf="@+id/anadirCarta6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/anadirCarta1Mesa" />
+        app:layout_constraintTop_toBottomOf="@+id/anadirCarta1" />
 
 
 
@@ -115,7 +115,7 @@
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="20dp"
         android:text="Selecciona las cartas de la mesa"
-        app:layout_constraintBottom_toTopOf="@+id/anadirCarta3Mesa"
+        app:layout_constraintBottom_toTopOf="@+id/anadirCarta3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

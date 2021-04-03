@@ -26,7 +26,7 @@ class CartasDiamantesFragment : Fragment(){
         binding.ad.setOnClickListener(){
 
 
-            val action = CartasDiamantesFragmentDirections.actionCartasdiamantesFragmentToVisualizarCartasSeleccionadasFragment("AD")
+            val action = CartasDiamantesFragmentDirections.actionCartasdiamantesFragmentToVisualizarCartasSeleccionadasFragment("ad")
 
             findNavController().navigate(action)
 

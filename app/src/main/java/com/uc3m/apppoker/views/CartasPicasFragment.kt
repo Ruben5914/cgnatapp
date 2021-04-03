@@ -23,7 +23,7 @@ class CartasPicasFragment : Fragment(){
 
         binding.`as`.setOnClickListener(){
             //view.findNavController().navigate("AS")
-            val action = CartasPicasFragmentDirections.actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("AS")
+            val action = CartasPicasFragmentDirections.actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("as")
 
            // findNavController().navigate(R.id.action_cartaspicasFragment_to_visualizarCartasSeleccionadasFragment)
             findNavController().navigate(action)
