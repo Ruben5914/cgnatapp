@@ -6,36 +6,8 @@
     app:startDestination="@id/principal">
 
     <fragment
-        android:id="@+id/listFragment"
-        android:name="com.uc3m.apppoker.views.ListFragment"
-        android:label="fragment_list"
-        tools:layout="@layout/fragment_list" >
-        <action
-            android:id="@+id/action_listFragment_to_saveFragment"
-            app:destination="@id/saveFragment" />
-        <action
-            android:id="@+id/action_listFragment_to_conexionApiFragment"
-            app:destination="@id/conexionApiFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/saveFragment"
-        android:name="com.uc3m.apppoker.views.SaveFragment"
-        android:label="fragment_save"
-        tools:layout="@layout/fragment_save" >
-        <action
-            android:id="@+id/action_saveFragment_to_listFragment"
-            app:destination="@id/listFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/conexionApiFragment"
-        android:name="com.uc3m.apppoker.views.conexionApiFragment"
-        android:label="fragment_save"
-        tools:layout="@layout/fragment_conexion_api" />
-
-    <fragment
         android:id="@+id/principal"
-        android:name="com.uc3m.apppoker.views.principal"
+        android:name="com.uc3m.apppoker.views.Principal"
         android:label="fragment_principal"
         tools:layout="@layout/fragment_principal" >
         <action
@@ -44,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/visualizarCartasSeleccionadasFragment"
-        android:name="com.uc3m.apppoker.views.visualizarCartasSeleccionadasFragment"
+        android:name="com.uc3m.apppoker.views.VisualizarCartasSeleccionadasFragment"
         android:label="fragment_visualizar_cartas_seleccionadas"
         tools:layout="@layout/fragment_visualizar_cartas_seleccionadas" >
         <action
@@ -56,7 +28,7 @@
         <argument
             android:name="CartasPicas"
             app:argType="string"
-            android:defaultValue="default" />
+            android:defaultValue="ninguna" />
     </fragment>
     <fragment
         android:id="@+id/elegirPaloFragment"
@@ -83,11 +55,12 @@
         tools:layout="@layout/fragment_cartas_picas" >
         <action
             android:id="@+id/action_cartaspicasFragment_to_visualizarCartasSeleccionadasFragment"
+
             app:destination="@id/visualizarCartasSeleccionadasFragment" />
     </fragment>
     <fragment
         android:id="@+id/cartascorazonesFragment"
-        android:name="com.uc3m.apppoker.views.cartasCorazonesFragment"
+        android:name="com.uc3m.apppoker.views.CartasCorazonesFragment"
         android:label="fragment_cartas_corazones"
         tools:layout="@layout/fragment_cartas_corazones" >
         <action
@@ -105,7 +78,7 @@
     </fragment>
     <fragment
         android:id="@+id/cartasdiamantesFragment"
-        android:name="com.uc3m.apppoker.views.cartasDiamantesFragment"
+        android:name="com.uc3m.apppoker.views.CartasDiamantesFragment"
         android:label="fragment_cartas_diamantes"
         tools:layout="@layout/fragment_cartas_diamantes" >
         <action

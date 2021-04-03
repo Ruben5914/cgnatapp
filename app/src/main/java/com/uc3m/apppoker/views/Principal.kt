@@ -15,12 +15,11 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.uc3m.apppoker.R
-import com.uc3m.apppoker.databinding.FragmentListBinding
 import com.uc3m.apppoker.databinding.FragmentPrincipalBinding
 import com.uc3m.apppoker.viewModels.UsuarioViewModel
 
 
-class principal : Fragment() {
+class Principal : Fragment() {
 
     private lateinit var binding: FragmentPrincipalBinding
     private lateinit var auth : FirebaseAuth

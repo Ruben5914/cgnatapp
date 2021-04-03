@@ -5,8 +5,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/pokerClarito"
-    tools:context=".views.visualizarCartasSeleccionadasFragment">
+    tools:context="views.VisualizarCartasSeleccionadasFragment">
 
+    <ImageButton
+        android:id="@+id/anadirCarta1Mesa"
+        android:layout_width="60dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/addcard"
+        app:layout_constraintEnd_toStartOf="@+id/anadirCarta2Mesa"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/anadirCarta4Mesa"
+        android:layout_width="60dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/addcard"
+        app:layout_constraintEnd_toStartOf="@+id/anadirCarta5Mesa"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/anadirCarta3Mesa"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/anadirCarta2Mesa"
+        android:layout_width="60dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/addcard"
+        app:layout_constraintEnd_toStartOf="@+id/anadirCarta3Mesa"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/anadirCarta1Mesa"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/anadirCarta5Mesa"
+        android:layout_width="60dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/addcard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/anadirCarta4Mesa"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/anadirCarta3Mesa"
+        android:layout_width="60dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/addcard"
+        app:layout_constraintEnd_toStartOf="@+id/anadirCarta4Mesa"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/anadirCarta2Mesa"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/anadirCarta2Mano"
@@ -50,61 +104,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/anadirCarta1Mesa" />
 
-    <ImageButton
-        android:id="@+id/anadirCarta2Mesa"
-        android:layout_width="60dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="570dp"
-        android:background="@drawable/addcard"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/anadirCarta3Mesa"
-        app:layout_constraintStart_toEndOf="@+id/anadirCarta1Mesa"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/anadirCarta3Mesa"
-        android:layout_width="60dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="570dp"
-        android:background="@drawable/addcard"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/anadirCarta4Mesa"
-        app:layout_constraintStart_toEndOf="@+id/anadirCarta2Mesa"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/anadirCarta4Mesa"
-        android:layout_width="60dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="570dp"
-        android:background="@drawable/addcard"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/anadirCarta5Mesa"
-        app:layout_constraintStart_toEndOf="@+id/anadirCarta3Mesa"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/anadirCarta5Mesa"
-        android:layout_width="60dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="570dp"
-        android:background="@drawable/addcard"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/anadirCarta4Mesa"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textoSeleccionarCartasMesa"
@@ -120,19 +120,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/anadirCarta1Mesa"
-        android:layout_width="60dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="570dp"
-        android:background="@drawable/addcard"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/anadirCarta2Mesa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <Button
         android:id="@+id/botonEnviarInfoApi"

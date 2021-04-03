@@ -5,5 +5,9 @@ package com.uc3m.apppoker.util
 class Constants {
     companion object {
         const val POKER_URL = "https://api.pokerapi.dev/"
+
+
+
     }
+
 }

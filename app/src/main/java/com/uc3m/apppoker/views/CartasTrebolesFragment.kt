@@ -22,8 +22,9 @@ class CartasTrebolesFragment : Fragment(){
         val view = binding.root
 
         binding.ac.setOnClickListener(){
-
-            findNavController().navigate(R.id.action_cartascorazonesFragment_to_visualizarCartasSeleccionadasFragment)
+            val action = CartasTrebolesFragmentDirections.actionCartastrebolesFragmentToVisualizarCartasSeleccionadasFragment("AC")
+            findNavController().navigate(action)
+           // findNavController().navigate(R.id.action_cartascorazonesFragment_to_visualizarCartasSeleccionadasFragment)
         }
 
 

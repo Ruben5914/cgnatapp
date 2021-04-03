@@ -10,8 +10,9 @@ import androidx.navigation.fragment.findNavController
 
 import com.uc3m.apppoker.R
 import com.uc3m.apppoker.databinding.FragmentCartasDiamantesBinding
+import com.uc3m.apppoker.util.VariablesGlobales
 
-class cartasDiamantesFragment : Fragment(){
+class CartasDiamantesFragment : Fragment(){
     private lateinit var binding: FragmentCartasDiamantesBinding
 
 
@@ -24,7 +25,12 @@ class cartasDiamantesFragment : Fragment(){
 
         binding.ad.setOnClickListener(){
 
-            findNavController().navigate(R.id.action_elegirPaloFragment_to_cartasdiamantesFragment)
+
+            val action = CartasDiamantesFragmentDirections.actionCartasdiamantesFragmentToVisualizarCartasSeleccionadasFragment("AD")
+
+            findNavController().navigate(action)
+
+
         }
 
 

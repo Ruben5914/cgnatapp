@@ -13,7 +13,7 @@ import com.uc3m.apppoker.databinding.FragmentCartasCorazonesBinding
 
 
 
-class cartasCorazonesFragment : Fragment() {
+class CartasCorazonesFragment : Fragment() {
     private lateinit var binding: FragmentCartasCorazonesBinding
 
 
@@ -25,8 +25,8 @@ class cartasCorazonesFragment : Fragment() {
         val view = binding.root
 
         binding.ah.setOnClickListener(){
-
-            findNavController().navigate(R.id.action_cartascorazonesFragment_to_visualizarCartasSeleccionadasFragment)
+            val action = CartasCorazonesFragmentDirections.actionCartascorazonesFragmentToVisualizarCartasSeleccionadasFragment("AH")
+            findNavController().navigate(action)
         }
 
 

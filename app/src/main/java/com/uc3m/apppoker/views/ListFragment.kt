@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.uc3m.apppoker.R
-import com.uc3m.apppoker.databinding.FragmentListBinding
+
 import com.uc3m.apppoker.viewModels.UsuarioViewModel
 
 
@@ -45,8 +45,8 @@ class ListFragment : Fragment() {
 
         return view
     }
-*/
 
+*/
 
 
 }

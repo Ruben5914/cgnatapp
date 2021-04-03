@@ -9,10 +9,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -26,13 +28,15 @@ import com.uc3m.apppoker.models.Usuario
 import com.uc3m.apppoker.models.UsuarioDataBase
 
 import com.uc3m.apppoker.repository.RepositoryApi
+import com.uc3m.apppoker.util.Constants
+import com.uc3m.apppoker.util.VariablesGlobales
 import com.uc3m.apppoker.viewModels.ApiViewModel
 import com.uc3m.apppoker.viewModels.MainViewModelFactory
 import com.uc3m.apppoker.viewModels.UsuarioViewModel
 import okhttp3.internal.wait
 
 
-class visualizarCartasSeleccionadasFragment : Fragment() {
+class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
     private lateinit var apiViewModel: ApiViewModel
@@ -41,7 +45,9 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
     private lateinit var usuarioViewModel: UsuarioViewModel
     private lateinit var auth : FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
+    val args: VisualizarCartasSeleccionadasFragmentArgs by navArgs()
 
+    private var cartaSeleccionada = "ninguna"
 
 
     override fun onCreateView(
@@ -59,10 +65,7 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
         binding = FragmentVisualizarCartasSeleccionadasBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        binding.anadirCarta1Mesa.setOnClickListener() {
-            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
 
-        }
         var mano: String
         binding.botonEnviarInfoApi.setOnClickListener() {
             mano = pedirDatosApi(viewModel)
@@ -76,9 +79,9 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
 
             auth.signOut()
             val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                    .requestIdToken(getString(R.string.default_web_client_id))
-                    .requestEmail()
-                    .build()
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build()
 
             googleSignInClient = GoogleSignIn.getClient(requireContext(), gso)
             googleSignInClient.signOut()
@@ -94,8 +97,118 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
 
 
 
+
+
+        binding.anadirCarta1Mesa.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 1
+
+
+        }
+        binding.anadirCarta2Mesa.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 2
+
+
+        }
+        binding.anadirCarta3Mesa.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 3
+
+
+        }
+        binding.anadirCarta4Mesa.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 4
+
+
+        }
+        binding.anadirCarta5Mesa.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 5
+
+
+        }
+        binding.anadirCarta1Mano.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 6
+
+
+        }
+        binding.anadirCarta2Mano.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 7
+
+
+        }
+
+            cartaSeleccionada = args.CartasPicas
+
+
+        Log.d("Response -------->##########1?", VariablesGlobales.seleccionTotalCartasMesa[0].toString())
+        Log.d("Response -------->##########2?", VariablesGlobales.seleccionTotalCartasMesa[1].toString())
+        Log.d("Response -------->##########3?", VariablesGlobales.seleccionTotalCartasMesa[2].toString())
+        Log.d("Response -------->##########4?", VariablesGlobales.seleccionTotalCartasMesa[3].toString())
+        Log.d("Response -------->##########5?", VariablesGlobales.seleccionTotalCartasMesa[4].toString())
         return view
     }
+
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        colocarCarta()
+    }
+
+
+    override fun onPause() {
+        super.onPause()
+        var cartaSeleccionada = "Pausado"
+        Log.d("Response -------->Fragmento devuelve:  ", cartaSeleccionada)
+    }
+
+    fun colocarCarta(){
+
+
+        if (VariablesGlobales.posicionCarta != 0){
+
+            VariablesGlobales.seleccionTotalCartasMesa[VariablesGlobales.posicionCarta-1] = cartaSeleccionada
+            if(VariablesGlobales.posicionCarta == 1){
+              var btn =  ImageButton(context)
+
+                btn.findViewById<ImageButton>(R.id.anadirCarta1Mesa).setBackgroundResource(R.drawable._2h)
+
+
+
+            }
+            if(VariablesGlobales.posicionCarta == 2){
+
+            }
+            if(VariablesGlobales.posicionCarta == 3){
+
+            }
+            if(VariablesGlobales.posicionCarta == 4){
+
+            }
+            if(VariablesGlobales.posicionCarta == 5){
+
+            }
+            if(VariablesGlobales.posicionCarta == 6){
+
+            }
+            if(VariablesGlobales.posicionCarta == 7){
+
+            }
+
+                Log.d("Response -------->carta:  ", cartaSeleccionada)
+                Log.d("Response -------->mesa:  ", VariablesGlobales.posicionCarta.toString())
+            VariablesGlobales.posicionCarta = 0
+
+        }
+
+    }
+
+
+
 
     fun pedirDatosApi(viewModel: ApiViewModel) :String {
         var datos = binding.introducirCartas.text.toString()
@@ -135,6 +248,11 @@ class visualizarCartasSeleccionadasFragment : Fragment() {
         return mano
 
 
+    }
+
+     fun onclick(V: View){
+         var adapter = "yes"
+         Log.d("Response --------oooooooo>>>>", adapter)
     }
 
     private fun mostrarManosBaseDatos() {

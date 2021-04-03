@@ -9,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.uc3m.apppoker.R
 import com.uc3m.apppoker.databinding.FragmentCartasPicasBinding
+import com.uc3m.apppoker.util.VariablesGlobales
 
 
 class CartasPicasFragment : Fragment(){
@@ -22,10 +23,17 @@ class CartasPicasFragment : Fragment(){
 
         binding.`as`.setOnClickListener(){
             //view.findNavController().navigate("AS")
-            findNavController().navigate(R.id.action_cartascorazonesFragment_to_visualizarCartasSeleccionadasFragment)
+            val action = CartasPicasFragmentDirections.actionCartaspicasFragmentToVisualizarCartasSeleccionadasFragment("AS")
+
+           // findNavController().navigate(R.id.action_cartaspicasFragment_to_visualizarCartasSeleccionadasFragment)
+            findNavController().navigate(action)
+
         }
 
 
         return view
+    }
+    fun onClick(v: View){
+
     }
 }
