@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -32,6 +33,9 @@ class Principal : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+            // Evitamos que el usuario pueda navegar hacia atras
+        }
         binding = FragmentPrincipalBinding.inflate(inflater, container, false)
         val view = binding.root
 

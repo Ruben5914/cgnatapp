@@ -8,12 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.Toast
+import androidx.activity.addCallback
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -22,15 +22,12 @@ import com.uc3m.apppoker.R
 import com.uc3m.apppoker.databinding.FragmentVisualizarCartasSeleccionadasBinding
 
 import com.uc3m.apppoker.models.Hand
-import com.uc3m.apppoker.models.Usuario
 
 import com.uc3m.apppoker.repository.RepositoryApi
 import com.uc3m.apppoker.util.VariablesGlobales
-import com.uc3m.apppoker.util.VariablesGlobales.Companion.seleccionTotalCartasMesa
 import com.uc3m.apppoker.viewModels.ApiViewModel
 import com.uc3m.apppoker.viewModels.MainViewModelFactory
 import com.uc3m.apppoker.viewModels.UsuarioViewModel
-import okhttp3.internal.wait
 
 
 class VisualizarCartasSeleccionadasFragment : Fragment() {
@@ -47,11 +44,17 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
     private var cartaSeleccionada = "ninguna"
 
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
+
+
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+            // Evitamos que el usuario pueda navegar hacia atras
+        }
         val repositoryApi = RepositoryApi()
         val viewModelFactory = MainViewModelFactory(repositoryApi)
         val viewModel = ViewModelProvider(this, viewModelFactory).get(ApiViewModel::class.java)
@@ -61,6 +64,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
         binding = FragmentVisualizarCartasSeleccionadasBinding.inflate(inflater, container, false)
         val view = binding.root
+
 
 
         var mano: String
@@ -138,9 +142,116 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
         }
 
+        binding.anadirCarta8.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 8
+
+
+        }
+        binding.anadirCarta9.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 9
+
+
+        }
+        binding.anadirCarta10.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 10
+
+
+        }
+        binding.anadirCarta11.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 11
+
+
+        }
+        binding.anadirCarta12.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 12
+
+
+        }
+        binding.anadirCarta13.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 13
+
+
+        }
+        binding.anadirCarta14.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 14
+
+
+        }
+        binding.anadirCarta15.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 15
+
+
+        }
+        binding.anadirCarta16.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 16
+
+
+        }
+        binding.anadirCarta17.setOnClickListener() {
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment)
+            VariablesGlobales.posicionCarta = 17
+
+
+        }
+        binding.eliminar1.setOnClickListener(){
+            VariablesGlobales.seleccionTotalCartasJugadores[0] = null
+            VariablesGlobales.seleccionTotalCartasJugadores[1] = null
+            view.findViewById<ImageButton>(R.id.anadirCarta6).setBackgroundResource(R.drawable.addcard)
+            view.findViewById<ImageButton>(R.id.anadirCarta7).setBackgroundResource(R.drawable.addcard)
+        }
+        binding.eliminar2.setOnClickListener(){
+            VariablesGlobales.seleccionTotalCartasJugadores[2] = null
+            VariablesGlobales.seleccionTotalCartasJugadores[3] = null
+            view.findViewById<ImageButton>(R.id.anadirCarta8).setBackgroundResource(R.drawable.addcard)
+            view.findViewById<ImageButton>(R.id.anadirCarta9).setBackgroundResource(R.drawable.addcard)
+        }
+        binding.eliminar3.setOnClickListener(){
+            VariablesGlobales.seleccionTotalCartasJugadores[4] = null
+            VariablesGlobales.seleccionTotalCartasJugadores[5] = null
+            view.findViewById<ImageButton>(R.id.anadirCarta10).setBackgroundResource(R.drawable.addcard)
+            view.findViewById<ImageButton>(R.id.anadirCarta11).setBackgroundResource(R.drawable.addcard)
+        }
+        binding.eliminar4.setOnClickListener(){
+            VariablesGlobales.seleccionTotalCartasJugadores[6] = null
+            VariablesGlobales.seleccionTotalCartasJugadores[7] = null
+            view.findViewById<ImageButton>(R.id.anadirCarta12).setBackgroundResource(R.drawable.addcard)
+            view.findViewById<ImageButton>(R.id.anadirCarta13).setBackgroundResource(R.drawable.addcard)
+        }
+        binding.eliminar5.setOnClickListener(){
+            VariablesGlobales.seleccionTotalCartasJugadores[8] = null
+            VariablesGlobales.seleccionTotalCartasJugadores[9] = null
+            view.findViewById<ImageButton>(R.id.anadirCarta14).setBackgroundResource(R.drawable.addcard)
+            view.findViewById<ImageButton>(R.id.anadirCarta15).setBackgroundResource(R.drawable.addcard)
+        }
+
+        binding.botonSubmit.setOnClickListener(){
+
+            var datosCorrectos =  comprobarCartas(VariablesGlobales.seleccionTotalCartasMesa,VariablesGlobales.seleccionTotalCartasJugadores)
+
+
+            if (datosCorrectos){
+                VariablesGlobales.traducirCartas(VariablesGlobales.seleccionTotalCartasJugadores)
+                VariablesGlobales.traducirCartas(VariablesGlobales.seleccionTotalCartasMesa)
+              //  mano = pedirDatosApi(viewModel)
+               // Log.d("Response -------->Despues de la funcion llamada a API:  ", mano)
+            }
+
+
+
+
+        }
+
             cartaSeleccionada = args.CartasPicas
-            var cartas = arrayOf("_0c","js","_5d","ad")
-            VariablesGlobales.traducirCartas(cartas)
+
 
 
         return view
@@ -155,6 +266,20 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         Log.d("Response -------->##########3?", VariablesGlobales.seleccionTotalCartasMesa[2].toString())
         Log.d("Response -------->##########4?", VariablesGlobales.seleccionTotalCartasMesa[3].toString())
         Log.d("Response -------->##########5?", VariablesGlobales.seleccionTotalCartasMesa[4].toString())
+        Log.d("Response -------++++++++++++++++++++++++++++++++?", VariablesGlobales.seleccionTotalCartasMesa[0].toString())
+        Log.d("Response -------->#########1?", VariablesGlobales.seleccionTotalCartasJugadores[0].toString())
+        Log.d("Response -------->#########2?", VariablesGlobales.seleccionTotalCartasJugadores[1].toString())
+        Log.d("Response -------->#########3?", VariablesGlobales.seleccionTotalCartasJugadores[2].toString())
+        Log.d("Response -------->#########4?", VariablesGlobales.seleccionTotalCartasJugadores[3].toString())
+        Log.d("Response -------->#########5?", VariablesGlobales.seleccionTotalCartasJugadores[4].toString())
+        Log.d("Response -------->#########6?", VariablesGlobales.seleccionTotalCartasJugadores[5].toString())
+        Log.d("Response -------->#########7?", VariablesGlobales.seleccionTotalCartasJugadores[6].toString())
+        Log.d("Response -------->#########8?", VariablesGlobales.seleccionTotalCartasJugadores[7].toString())
+        Log.d("Response -------->#########9?", VariablesGlobales.seleccionTotalCartasJugadores[8].toString())
+        Log.d("Response -------->#########10?", VariablesGlobales.seleccionTotalCartasJugadores[9].toString())
+        Log.d("Response -------->#########11?", VariablesGlobales.seleccionTotalCartasJugadores[10].toString())
+        Log.d("Response -------->#########12?", VariablesGlobales.seleccionTotalCartasJugadores[11].toString())
+
     }
 
 
@@ -168,17 +293,38 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
         if (VariablesGlobales.posicionCarta != 0){
+            if (VariablesGlobales.posicionCarta <6) {
 
-            VariablesGlobales.seleccionTotalCartasMesa[VariablesGlobales.posicionCarta-1] = cartaSeleccionada
+                VariablesGlobales.seleccionTotalCartasMesa[VariablesGlobales.posicionCarta - 1] = cartaSeleccionada
+
+
+            }else{
+
+                VariablesGlobales.seleccionTotalCartasJugadores[VariablesGlobales.posicionCarta - 6] = cartaSeleccionada
+
+            }
             var n = 1
-            for (i in VariablesGlobales.seleccionTotalCartasMesa){
+            for (i in VariablesGlobales.seleccionTotalCartasMesa) {
 
-                if (i != null){
+                if (i != null) {
 
-                    view?.findViewById<ImageButton>(getResources().getIdentifier("anadirCarta"+n.toString(),"id", context?.getPackageName()))?.setBackgroundResource(getResources().getIdentifier(i,"drawable", context?.getPackageName()))
-                     }
+                    view?.findViewById<ImageButton>(getResources().getIdentifier("anadirCarta" + n.toString(), "id", context?.getPackageName()))?.setBackgroundResource(getResources().getIdentifier(i, "drawable", context?.getPackageName()))
+                }
                 n++
             }
+            var o = 6
+
+            for (i in VariablesGlobales.seleccionTotalCartasJugadores) {
+
+                if (i != null) {
+
+
+                    view?.findViewById<ImageButton>(getResources().getIdentifier("anadirCarta" + o.toString(), "id", context?.getPackageName()))?.setBackgroundResource(getResources().getIdentifier(i, "drawable", context?.getPackageName()))
+
+                }
+                o++
+            }
+
 
             VariablesGlobales.posicionCarta = 0
 
@@ -192,11 +338,11 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
     fun pedirDatosApi(viewModel: ApiViewModel) :String {
        // var datos = binding.introducirCartas.text.toString()
 
-        var mano: String
-         mano = "nulo"
-        /*
+       lateinit var  mano: String
+         //mano = "nulo"
 
 
+/*
                 var mesa: List<String> = datos.toString().split('/')
                 viewModel.getWinner(mesa.get(0), mesa.get(1))
 
@@ -223,7 +369,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
                 })
 
 
-        */
+*/
         return mano
 
 
@@ -236,7 +382,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
     private fun mostrarManosBaseDatos() {
         //Log.d("Response -------->>>>", usuarioViewModel.findUsuario(0))
-
+/*
         val adapter = ListAdapter()
         val recyclerView = binding.mostrarResultadoApi
         recyclerView.adapter = adapter
@@ -250,12 +396,83 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
 
-
+*/
     }
     private fun guardarEnBaseDatos (hand:String){
         Log.d("Response --------> 2", "")
         val hand = Hand(0, 1, hand)
         usuarioViewModel.addHandToUser(hand)
+    }
+
+    private fun comprobarCartas(mesa: Array<String?>, jugadores: Array<String?>): Boolean{
+
+        var contieneNull1 = false
+        var contieneNull2 = false
+        var finalPareja = false
+        for( i in mesa){
+            if (i == null){
+                Toast.makeText(context, "Faltan cartas en la mesa", Toast.LENGTH_SHORT).show()
+                return false
+            }
+        }
+        var todosNull = true
+        for( i in jugadores){
+            if (i != null){
+
+                todosNull = false
+            }
+        }
+        if (todosNull){
+            Toast.makeText(context, "Añadir al menos un jugador", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        for ((n,i) in jugadores.withIndex()){
+            if (n % 2 != 0){
+                finalPareja = true
+            }
+            if(!finalPareja){
+                contieneNull1 = ( i == null)
+            }else {
+                contieneNull2 = (i == null)
+            }
+            finalPareja = false
+
+
+            if (n % 2 != 0){
+                if (contieneNull1 != contieneNull2){
+                    Toast.makeText(context, "Jugador mal introducido", Toast.LENGTH_SHORT).show()
+                    return false
+                }
+            }
+
+        }
+
+
+        val cartas = arrayOfNulls<String>(mesa.size + jugadores.size)
+        for ((n,i) in mesa.withIndex()){
+            cartas[n] = i
+        }
+        var k = mesa.size
+        for ((n,i) in jugadores.withIndex()){
+            k += n
+            cartas[k] = i
+            k -= n
+        }
+
+        for((n, i) in cartas.withIndex()){
+            for ((k, j) in cartas.withIndex()){
+                if (n != k ){
+                    if (i == j && i != null ){
+                        Toast.makeText(context, "No puede haber cartas repetidas", Toast.LENGTH_SHORT).show()
+                        return false
+                    }
+                }
+
+            }
+        }
+
+
+        return true
     }
 
 

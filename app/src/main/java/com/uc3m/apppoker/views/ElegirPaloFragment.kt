@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.navigation.fragment.findNavController
 import com.uc3m.apppoker.R
 import com.uc3m.apppoker.databinding.FragmentElegirPaloBinding
@@ -18,6 +19,10 @@ class elegirPaloFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+            // Evitamos que el usuario pueda navegar hacia atras
+        }
         binding = FragmentElegirPaloBinding.inflate(inflater, container, false)
         val view = binding.root
 

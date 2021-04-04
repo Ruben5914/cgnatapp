@@ -2,6 +2,7 @@ package com.uc3m.apppoker.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.addCallback
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.uc3m.apppoker.R
@@ -11,7 +12,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setupActionBarWithNavController(findNavController(R.id.fragment))
+
+       // setupActionBarWithNavController(findNavController(R.id.fragment))
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
@@ -21,6 +22,9 @@ class CartasCorazonesFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+            // Evitamos que el usuario pueda navegar hacia atras
+        }
         binding = FragmentCartasCorazonesBinding.inflate(inflater, container, false)
         val view = binding.root
 

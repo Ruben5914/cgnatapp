@@ -5,9 +5,10 @@ class VariablesGlobales {
 
         var posicionCarta = 0
         var seleccionTotalCartasMesa = arrayOfNulls<String>(5)
+        var seleccionTotalCartasJugadores = arrayOfNulls<String>(12)
 
 
-        fun traducirCartas(cartas: Array<String>):Array<String> {
+        fun traducirCartas(cartas: Array<String?>): Array<String?> {
             var n = 0
             for (i in cartas) {
 
