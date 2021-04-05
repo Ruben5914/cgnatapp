@@ -19,10 +19,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.uc3m.apppoker.R
 import com.uc3m.apppoker.databinding.FragmentVisualizarCartasSeleccionadasBinding
 
 import com.uc3m.apppoker.models.Hand
+import com.uc3m.apppoker.models.Mano
 
 import com.uc3m.apppoker.repository.RepositoryApi
 import com.uc3m.apppoker.util.VariablesGlobales
@@ -239,12 +242,32 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
             var datosCorrectos =  comprobarCartas(VariablesGlobales.seleccionTotalCartasMesa,VariablesGlobales.seleccionTotalCartasJugadores)
 
+            // Write a message to the database
+            val database = Firebase.database.reference
+           //val mano = Mano ()
+            //database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).setValue(mano)
+            //Escribir
 
 
+            //Leer
+            /*
+            database.child("users").child("usuario1").get().addOnSuccessListener {
+            Log.i("firebase", "Got value ${it.value}")
+        }.addOnFailureListener{
+            Log.e("firebase", "Error getting data", it)
+        }
+*/
             if (datosCorrectos){
                 VariablesGlobales.traducirCartas(VariablesGlobales.seleccionTotalCartasJugadores)
                 VariablesGlobales.traducirCartas(VariablesGlobales.seleccionTotalCartasMesa)
-                pedirDatosApi(viewModel)
+
+
+                var resultado = pedirDatosApi(viewModel)[2]
+
+
+
+
+                database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).child("mano")
 
 
             }
@@ -504,6 +527,43 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
         return true
+    }
+
+    private fun traducirResultado(mano: String): String{
+        if(mano == "high_card"){
+            return "cartaAlta"
+        }
+        if(mano == "pair"){
+            return "pareja"
+        }
+        if(mano == "high_card"){
+            return "doblePareja"
+        }
+        if(mano == "three_of_kind"){
+            return "trio"
+        }
+        if(mano == "straight"){
+            return "escalera"
+        }
+        if(mano == "flush"){
+            return "color"
+        }
+        if(mano == "full_house"){
+            return "full"
+        }
+        if(mano == "four_of_kind"){
+            return "poker"
+        }
+
+        if(mano == "straight_flush"){
+            return "escaleraColor"
+        }
+        if(mano == "royal_flush"){
+            return "escaleraReal"
+        }
+        return ""
+
+
     }
 
 
