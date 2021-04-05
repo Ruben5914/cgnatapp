@@ -28,7 +28,7 @@ class conexionApiFragment : Fragment() {
         var mesa =  "AC,KD,QH,JS,7C"
 
         var manos = "10S,8C"
-        viewModel.getWinner(mesa, manos)
+       // viewModel.getWinner(mesa, manos)
 
         viewModel.responseWinner.observe(this, Observer { response ->
 

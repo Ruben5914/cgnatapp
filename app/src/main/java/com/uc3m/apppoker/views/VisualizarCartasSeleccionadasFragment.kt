@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.addCallback
+import androidx.lifecycle.Observer
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -28,6 +29,7 @@ import com.uc3m.apppoker.util.VariablesGlobales
 import com.uc3m.apppoker.viewModels.ApiViewModel
 import com.uc3m.apppoker.viewModels.MainViewModelFactory
 import com.uc3m.apppoker.viewModels.UsuarioViewModel
+import java.lang.StringBuilder
 
 
 class VisualizarCartasSeleccionadasFragment : Fragment() {
@@ -238,11 +240,13 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
             var datosCorrectos =  comprobarCartas(VariablesGlobales.seleccionTotalCartasMesa,VariablesGlobales.seleccionTotalCartasJugadores)
 
 
+
             if (datosCorrectos){
                 VariablesGlobales.traducirCartas(VariablesGlobales.seleccionTotalCartasJugadores)
                 VariablesGlobales.traducirCartas(VariablesGlobales.seleccionTotalCartasMesa)
-              //  mano = pedirDatosApi(viewModel)
-               // Log.d("Response -------->Despues de la funcion llamada a API:  ", mano)
+                pedirDatosApi(viewModel)
+
+
             }
 
 
@@ -335,29 +339,56 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
 
-    fun pedirDatosApi(viewModel: ApiViewModel) :String {
+    fun pedirDatosApi(viewModel: ApiViewModel) : Array<String?> {
        // var datos = binding.introducirCartas.text.toString()
 
-       lateinit var  mano: String
-         //mano = "nulo"
+
+        var  respuesta = arrayOfNulls<String>(3)
 
 
-/*
-                var mesa: List<String> = datos.toString().split('/')
-                viewModel.getWinner(mesa.get(0), mesa.get(1))
+
+
+
+        var mesa = StringBuilder ("")
+        VariablesGlobales.seleccionTotalCartasMesa.joinTo(mesa,",")
+
+        val listaJugadores = mutableListOf<String>()
+        var manoJugador = ""
+        for ((n,i) in VariablesGlobales.seleccionTotalCartasJugadores.withIndex()){
+
+            if (i != null) {
+                if (n % 2 == 0) {
+                    manoJugador = i + ","
+                } else {
+                    manoJugador = manoJugador + i
+                    listaJugadores.add(manoJugador)
+                    manoJugador = ""
+                }
+            }
+
+
+        }
+
+
+                viewModel.getWinner(mesa.toString(), listaJugadores)
 
 
                 viewModel.responseWinner.observe(viewLifecycleOwner, Observer { response ->
 
                     if (response.isSuccessful) {
-                        val ganadores = response.body()?.winners?.get(0)?.result
+                        val cards = response.body()?.winners?.get(0)?.cards
+                        val hand = response.body()?.winners?.get(0)?.hand
+                        val result = response.body()?.winners?.get(0)?.result
                         // displayText = "The winner hand is: {ganadores.}"
                         Log.d("Response --------> 1", "")
-
-                        mano = ganadores.toString()
-                        guardarEnBaseDatos(mano)
-                        mostrarManosBaseDatos()
-                        Log.d("Response -------->La API devuelve?", ganadores.toString())
+                        respuesta[0] = cards.toString()
+                        respuesta[1] = hand.toString()
+                        respuesta[2] = result.toString()
+                        //guardarEnBaseDatos(mano)
+                       // mostrarManosBaseDatos()
+                        Log.d("Response -------->La API devuelve?", respuesta[0].toString())
+                        Log.d("Response -------->La API devuelve?", respuesta[1].toString())
+                        Log.d("Response -------->La API devuelve?", respuesta[2].toString())
                     } else {
 
                         Log.d("Response -------->>>>", response.code().toString())
@@ -369,8 +400,8 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
                 })
 
 
-*/
-        return mano
+
+        return respuesta
 
 
     }
@@ -480,4 +511,6 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
 }
+
+
 

@@ -6,7 +6,7 @@ import retrofit2.Response
 
 
 class RepositoryApi {
-    suspend fun getWinner (mesa: String, manos: String): Response<poker> {
+    suspend fun getWinner (mesa: String, manos: List<String>): Response<poker> {
 
         return RetrofitInstance.pokerAPI.getWinner(mesa, manos)
     }
