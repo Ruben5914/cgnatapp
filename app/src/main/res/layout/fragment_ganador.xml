@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pokerClarito"
+
+    tools:context="views.Ganador"
+
+android:layout_gravity="center"
+
+
+    android:orientation="horizontal"
+
+    >
+    <TextView
+
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_marginLeft="90dp"
+        android:layout_marginRight="90dp"
+        android:layout_columnSpan="5"
+
+
+            android:text="@string/mesa_introducida" />
+
+    <ImageView
+        android:layout_marginLeft="10dp"
+        android:id="@+id/mesa1"
+        android:layout_width="68dp"
+        android:layout_height="95dp"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:src="@drawable/addcard" />
+    <ImageView
+
+        android:id="@+id/mesa2"
+        android:layout_width="68dp"
+        android:layout_height="95dp"
+        android:layout_row="1"
+        android:layout_column="1"
+        android:src="@drawable/addcard" />
+    <ImageView
+
+        android:id="@+id/mesa3"
+        android:layout_width="68dp"
+        android:layout_height="95dp"
+        android:layout_row="1"
+        android:layout_column="2"
+        android:src="@drawable/addcard" />
+    <ImageView
+
+        android:id="@+id/mesa4"
+        android:layout_width="68dp"
+        android:layout_height="95dp"
+        android:layout_row="1"
+        android:layout_column="3"
+        android:src="@drawable/addcard" />
+    <ImageView
+
+        android:id="@+id/mesa5"
+        android:layout_width="68dp"
+        android:layout_height="95dp"
+        android:layout_row="1"
+        android:layout_column="4"
+        android:src="@drawable/addcard" />
+
+    <TextView
+        android:textStyle="bold"
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="2"
+        android:layout_column="0"
+        android:layout_columnSpan="10"
+        android:layout_marginLeft="90dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/mano_ganadora" />
+    <ImageView
+
+        android:id="@+id/mano1"
+
+        android:layout_width="68dp"
+        android:layout_height="95dp"
+        android:layout_row="3"
+        android:layout_column="1"
+        android:layout_gravity="right"
+        android:src="@drawable/addcard" />
+    <ImageView
+
+        android:layout_gravity="left"
+        android:id="@+id/mano2"
+        android:layout_width="68dp"
+        android:layout_height="95dp"
+        android:layout_row="3"
+        android:layout_column="2"
+        android:src="@drawable/addcard" />
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="90dp"
+        android:id="@+id/Manoganadora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_row="4"
+        android:layout_column="0"
+        android:layout_columnSpan="6"
+
+
+        android:text="La mano ganadora se forma con:" />
+
+    <ImageView
+       android:layout_marginLeft="10dp"
+        android:id="@+id/mesag1"
+        android:layout_width="68dp"
+        android:layout_height="95dp"
+        android:layout_row="5"
+        android:layout_column="0"
+        android:src="@drawable/addcard" />
+    <ImageView
+
+        android:id="@+id/mesag2"
+        android:layout_width="68dp"
+        android:layout_height="95dp"
+        android:layout_row="5"
+        android:layout_column="1"
+        android:src="@drawable/addcard" />
+    <ImageView
+
+        android:id="@+id/mesag3"
+        android:layout_width="68dp"
+        android:layout_height="95dp"
+        android:layout_row="5"
+        android:layout_column="2"
+        android:src="@drawable/addcard" />
+    <ImageView
+
+        android:id="@+id/mesag4"
+        android:layout_width="68dp"
+        android:layout_height="95dp"
+        android:layout_row="5"
+        android:layout_column="3"
+        android:src="@drawable/addcard" />
+    <ImageView
+
+        android:id="@+id/mesag5"
+        android:layout_width="68dp"
+        android:layout_height="95dp"
+        android:layout_row="5"
+        android:layout_column="4"
+        android:src="@drawable/addcard" />
+
+    <Button
+        android:id="@+id/NuevaConsulta"
+        android:layout_width="300dp"
+        android:layout_height="41dp"
+
+        android:layout_marginBottom="36dp"
+        android:text="Nueva consulta"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_row="6"
+        android:layout_column="0"
+        android:layout_columnSpan="6"
+         />
+
+
+</GridLayout>

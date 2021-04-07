@@ -70,7 +70,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginEnd="300dp"
         android:layout_marginBottom="12dp"
-
+        android:textStyle="bold"
         android:text="Añadir jugadores:"
         app:layout_constraintBottom_toTopOf="@+id/scrollJugadores"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,6 +85,7 @@
         android:layout_marginTop="52dp"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="20dp"
+        android:textStyle="bold"
         android:text="Selecciona las cartas de la mesa"
         app:layout_constraintBottom_toTopOf="@+id/anadirCarta3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,6 +98,7 @@
         android:layout_width="122dp"
         android:layout_height="41dp"
         android:layout_marginStart="68dp"
+
         android:layout_marginBottom="36dp"
         android:text="Log out"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -106,6 +108,7 @@
         android:id="@+id/botonSubmit"
         android:layout_width="120dp"
         android:layout_height="44dp"
+
 
         android:layout_margin="10dp"
         android:layout_marginTop="88dp"

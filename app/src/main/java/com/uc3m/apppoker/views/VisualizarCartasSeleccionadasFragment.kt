@@ -1,5 +1,8 @@
 package com.uc3m.apppoker.views
 
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 
 import android.util.Log
@@ -7,8 +10,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
-import android.widget.Toast
+import android.widget.*
 import androidx.activity.addCallback
 import androidx.lifecycle.Observer
 
@@ -18,6 +20,7 @@ import androidx.navigation.fragment.navArgs
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.errorprone.annotations.Var
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -55,6 +58,15 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        VariablesGlobales.seleccionTotalCartasMesa[0] = "_0c"
+        VariablesGlobales.seleccionTotalCartasMesa[1] = "_7c"
+        VariablesGlobales.seleccionTotalCartasMesa[2] = "_2c"
+        VariablesGlobales.seleccionTotalCartasMesa[3] = "_3c"
+        VariablesGlobales.seleccionTotalCartasMesa[4] = "_4c"
+
+
+        VariablesGlobales.seleccionTotalCartasJugadores[0] =  "_0h"
+        VariablesGlobales.seleccionTotalCartasJugadores[1] =  "_7h"
 
 
         val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
@@ -257,7 +269,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
                 VariablesGlobales.traducirCartas(VariablesGlobales.seleccionTotalCartasMesa)
 
 
-                var resultado = pedirDatosApi(viewModel)[2]
+                var resultado = pedirDatosApi(viewModel, view)[2]
 
 
 
@@ -355,7 +367,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
 
-    fun pedirDatosApi(viewModel: ApiViewModel) : Array<String?> {
+    fun pedirDatosApi(viewModel: ApiViewModel, V: View) : Array<String?> {
        // var datos = binding.introducirCartas.text.toString()
 
 
@@ -400,9 +412,24 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
                         respuesta[0] = cards.toString()
                         respuesta[1] = hand.toString()
                         respuesta[2] = result.toString()
-                        //guardarEnBaseDatos(mano)
-                       // mostrarManosBaseDatos()
+
+                        for((n,i) in respuesta[1]?.split(",")?.withIndex()!!){
+                            VariablesGlobales.handGanadora[n] = respuesta[1]?.split(",")?.get(n)
+                        }
+                        for((n,i) in respuesta[0]?.split(",")?.withIndex()!!){
+                            VariablesGlobales.jugadorGanador[n] = respuesta[0]?.split(",")?.get(n)
+                        }
+
+
+
+
+                        //guardarEnBaseDatos
                         almacenarResultadoBaseDatos(respuesta[2].toString())
+                        findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_Ganador)
+
+
+
+
 
 
                         Log.d("Response -------->La API devuelve?", respuesta[0].toString())

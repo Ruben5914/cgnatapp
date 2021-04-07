@@ -4,8 +4,14 @@ class VariablesGlobales {
     companion object {
 
         var posicionCarta = 0
+
+
         var seleccionTotalCartasMesa = arrayOfNulls<String>(5)
+
+        var jugadorGanador = arrayOfNulls<String>(2)
+        var handGanadora = arrayOfNulls<String>(5)
         var seleccionTotalCartasJugadores = arrayOfNulls<String>(12)
+
 
 
         fun traducirCartas(cartas: Array<String?>): Array<String?> {
@@ -173,6 +179,170 @@ class VariablesGlobales {
             return cartas
         }
 
+        fun traducirCartasInverso(cartas: Array<String?>): Array<String?> {
+            var n = 0
+            for (i in cartas) {
+
+                if (i == "10C") {
+                    cartas[n] = "_0c"
+                }
+                if (i == "10D") {
+                    cartas[n] = "_0d"
+                }
+                if (i == "10H") {
+                    cartas[n] = "_0h"
+                }
+                if (i == "10S") {
+                    cartas[n] = "_0s"
+                }
+                if (i == "2C") {
+                    cartas[n] = "_2c"
+                }
+                if (i == "2D") {
+                    cartas[n] = "_2d"
+                }
+                if (i == "2H") {
+                    cartas[n] = "_2h"
+                }
+                if (i == "2S") {
+                    cartas[n] = "_2s"
+                }
+                if (i == "3C") {
+                    cartas[n] = "_3c"
+                }
+                if (i == "3D") {
+                    cartas[n] = "_3d"
+                }
+                if (i == "3H") {
+                    cartas[n] = "_3h"
+                }
+                if (i == "3S") {
+                    cartas[n] = "_3s"
+                }
+                if (i == "4C") {
+                    cartas[n] = "_4c"
+                }
+                if (i == "4D") {
+                    cartas[n] = "_4d"
+                }
+                if (i == "4H") {
+                    cartas[n] = "_4h"
+                }
+                if (i == "4S") {
+                    cartas[n] = "_4s"
+                }
+                if (i == "5C") {
+                    cartas[n] = "_5c"
+                }
+                if (i == "5D") {
+                    cartas[n] = "_5d"
+                }
+                if (i == "5H") {
+                    cartas[n] = "_5h"
+                }
+                if (i == "5S") {
+                    cartas[n] = "_5s"
+                }
+                if (i == "6C") {
+                    cartas[n] = "_6c"
+                }
+                if (i == "6D") {
+                    cartas[n] = "_6d"
+                }
+                if (i == "6H") {
+                    cartas[n] = "_6h"
+                }
+                if (i == "6S") {
+                    cartas[n] = "_6s"
+                }
+                if (i == "7C") {
+                    cartas[n] = "_7c"
+                }
+                if (i == "7D") {
+                    cartas[n] = "_7d"
+                }
+                if (i == "7H") {
+                    cartas[n] = "_7h"
+                }
+                if (i == "7S") {
+                    cartas[n] = "_7s"
+                }
+                if (i == "8C") {
+                    cartas[n] = "_8c"
+                }
+                if (i == "8D") {
+                    cartas[n] = "_8d"
+                }
+                if (i == "8H") {
+                    cartas[n] = "_8h"
+                }
+                if (i == "8S") {
+                    cartas[n] = "_8s"
+                }
+                if (i == "9C") {
+                    cartas[n] = "_9c"
+                }
+                if (i == "9D") {
+                    cartas[n] = "_9d"
+                }
+                if (i == "9H") {
+                    cartas[n] = "_9h"
+                }
+                if (i == "9S") {
+                    cartas[n] = "_9s"
+                }
+                if (i == "AC") {
+                    cartas[n] = "ac"
+                }
+                if (i == "AD") {
+                    cartas[n] = "ad"
+                }
+                if (i == "AH") {
+                    cartas[n] = "ah"
+                }
+                if (i == "AS") {
+                    cartas[n] = "as"
+                }
+                if (i == "JC") {
+                    cartas[n] = "jc"
+                }
+                if (i == "JD") {
+                    cartas[n] = "jd"
+                }
+                if (i == "JH") {
+                    cartas[n] = "jh"
+                }
+                if (i == "JS") {
+                    cartas[n] = "js"
+                }
+                if (i == "QC") {
+                    cartas[n] = "qc"
+                }
+                if (i == "QD") {
+                    cartas[n] = "qd"
+                }
+                if (i == "QH") {
+                    cartas[n] = "qh"
+                }
+                if (i == "QS") {
+                    cartas[n] = "qs"
+                }
+                if (i == "KC") {
+                    cartas[n] = "kc"
+                }
+                if (i == "KD") {
+                    cartas[n] = "kd"
+                }
+                if (i == "KH") {
+                    cartas[n] = "kh"
+                }
+                if (i == "KS") {
+                    cartas[n] = "ks"
+                }
+                n++
+            }
+            return cartas
+        }
     }
 
 }

@@ -29,6 +29,9 @@
             android:name="CartasPicas"
             app:argType="string"
             android:defaultValue="ninguna" />
+        <action
+            android:id="@+id/action_visualizarCartasSeleccionadasFragment_to_Ganador"
+            app:destination="@id/Ganador" />
     </fragment>
     <fragment
         android:id="@+id/elegirPaloFragment"
@@ -83,6 +86,15 @@
         tools:layout="@layout/fragment_cartas_diamantes" >
         <action
             android:id="@+id/action_cartasdiamantesFragment_to_visualizarCartasSeleccionadasFragment"
+            app:destination="@id/visualizarCartasSeleccionadasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/Ganador"
+        android:name="com.uc3m.apppoker.views.Ganador"
+        android:label="fragment_ganador"
+        tools:layout="@layout/fragment_ganador" >
+        <action
+            android:id="@+id/action_Ganador_to_visualizarCartasSeleccionadasFragment"
             app:destination="@id/visualizarCartasSeleccionadasFragment" />
     </fragment>
 </navigation>
