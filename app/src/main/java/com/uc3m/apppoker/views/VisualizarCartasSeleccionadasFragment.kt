@@ -485,7 +485,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
         database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).child(resultadoTrad).get().addOnSuccessListener {
-            Log.d( "Eeeeeeeeeeeeeeeea", it.value.toString())
+
             var contador : Long = it.value as Long
             contador = contador + 1
             database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).child(resultadoTrad).setValue(contador)
