@@ -70,11 +70,12 @@
         android:layout_marginStart="50dp"
         android:layout_marginEnd="300dp"
         android:layout_marginBottom="12dp"
-        android:textStyle="bold"
         android:text="Añadir jugadores:"
+        android:textSize="19dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/scrollJugadores"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.367"
+        app:layout_constraintHorizontal_bias="0.155"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -86,21 +87,22 @@
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="20dp"
         android:textStyle="bold"
-        android:text="Selecciona las cartas de la mesa"
+        android:textSize="19dp"
+        android:text="Selecciona las cartas de la mesa:"
         app:layout_constraintBottom_toTopOf="@+id/anadirCarta3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <Button
+    <ImageButton
         android:id="@+id/BotonLogOut"
-        android:layout_width="122dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="68dp"
+        android:layout_width="99dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/signout"
 
-        android:layout_marginBottom="36dp"
-        android:text="Log out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/botonSubmit" />
 

@@ -9,9 +9,10 @@
         android:allowBackup="true"
         android:icon="@drawable/iconopokergroper"
         android:label="@string/app_name"
+
         android:roundIcon="@drawable/iconopokergroper"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppPoker">
+       android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

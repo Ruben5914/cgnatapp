@@ -58,6 +58,8 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        //Para hacer pruebas
+        /*
         VariablesGlobales.seleccionTotalCartasMesa[0] = "_0c"
         VariablesGlobales.seleccionTotalCartasMesa[1] = "_7c"
         VariablesGlobales.seleccionTotalCartasMesa[2] = "_2c"
@@ -68,7 +70,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         VariablesGlobales.seleccionTotalCartasJugadores[0] =  "_0h"
         VariablesGlobales.seleccionTotalCartasJugadores[1] =  "_7h"
 
-
+*/
         val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
             // Evitamos que el usuario pueda navegar hacia atras
         }

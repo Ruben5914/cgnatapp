@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/verdeChillon"
     tools:context="views.Principal">
 
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botonSignIn"
-        android:layout_width="352dp"
-        android:layout_height="54dp"
-        android:layout_marginBottom="228dp"
+        android:layout_width="301dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="184dp"
         android:backgroundTint="#fff"
         android:drawableStart="@drawable/google"
         android:paddingStart="40dp"
@@ -22,15 +23,14 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent" />
-
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botonGuest"
-        android:layout_width="352dp"
-        android:layout_height="54dp"
-        android:layout_marginBottom="144dp"
+        android:layout_width="304dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="100dp"
         android:backgroundTint="#fff"
         android:paddingStart="40dp"
         android:paddingEnd="40dp"
@@ -40,28 +40,42 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/mensajeInformativoInicioSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="72dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="32dp"
         android:text="Sign in to register all your hands and stats"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/botonSignIn"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/tituloApp"
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="168dp"
+
+        android:layout_width="214dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="100dp"
         android:text="APP POKER"
+        android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="181dp"
+        android:layout_height="177dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="120dp"
+        android:src="@drawable/iconopokergroper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloApp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
