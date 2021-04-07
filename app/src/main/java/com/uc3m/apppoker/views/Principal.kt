@@ -71,6 +71,7 @@ class Principal : Fragment() {
         val signInIntent = googleSignInClient.signInIntent
 
         startActivityForResult(signInIntent, RC_SIGN_IN)
+
     }
 
     override fun onActivityResult(
@@ -87,6 +88,7 @@ class Principal : Fragment() {
                 // Google Sign In was successful, authenticate with Firebase
                 val account = task.getResult(ApiException::class.java)!!
                 Log.d("Fragment Login", "firebaseAuthWithGoogle:" + account.id)
+
                 firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately

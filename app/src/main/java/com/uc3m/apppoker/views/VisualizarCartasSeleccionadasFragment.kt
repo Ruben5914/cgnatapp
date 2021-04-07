@@ -70,17 +70,12 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         binding = FragmentVisualizarCartasSeleccionadasBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        comprobarUsuarioEnBaseDatos()
+
 
 
         var mano: String
-       /* binding.botonEnviarInfoApi.setOnClickListener() {
-            mano = pedirDatosApi(viewModel)
-            Log.d("Response -------->Despues de la funcion llamada a API:  ", mano)
-            val usuario= Usuario  (0,"UsuarioRegistroGeneral")
-            usuarioViewModel.addUsuario(usuario)
 
-
-        }*/
         binding.BotonLogOut.setOnClickListener(){
 
             auth.signOut()
@@ -267,8 +262,6 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
 
-                database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).child("mano")
-
 
             }
 
@@ -409,6 +402,9 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
                         respuesta[2] = result.toString()
                         //guardarEnBaseDatos(mano)
                        // mostrarManosBaseDatos()
+                        almacenarResultadoBaseDatos(respuesta[2].toString())
+
+
                         Log.d("Response -------->La API devuelve?", respuesta[0].toString())
                         Log.d("Response -------->La API devuelve?", respuesta[1].toString())
                         Log.d("Response -------->La API devuelve?", respuesta[2].toString())
@@ -452,10 +448,46 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 */
     }
+
+    private fun almacenarResultadoBaseDatos (resultado : String){
+
+        var resultadoTrad = traducirResultado(resultado.toString())
+        val database = Firebase.database.reference
+
+
+        database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).child(resultadoTrad).get().addOnSuccessListener {
+            Log.d( "Eeeeeeeeeeeeeeeea", it.value.toString())
+            var contador : Long = it.value as Long
+            contador = contador + 1
+            database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).child(resultadoTrad).setValue(contador)
+        }.addOnFailureListener{
+            Log.e("firebase", "Error getting data", it)
+        }
+    }
     private fun guardarEnBaseDatos (hand:String){
         Log.d("Response --------> 2", "")
         val hand = Hand(0, 1, hand)
         usuarioViewModel.addHandToUser(hand)
+    }
+
+    private fun comprobarUsuarioEnBaseDatos (){
+
+
+        val database = Firebase.database.reference
+        database.child("users").get().addOnSuccessListener {
+            Log.i("firebase", "Got value ${it.value}")
+
+           if (!it.value.toString().contains(FirebaseAuth.getInstance().currentUser.email.toString().replace(".",""))){
+               val mano = Mano ()
+               database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).setValue(mano)
+
+           }
+        }.addOnFailureListener{
+            Log.e("firebase", "Error getting data", it)
+        }
+
+
+
     }
 
     private fun comprobarCartas(mesa: Array<String?>, jugadores: Array<String?>): Boolean{
