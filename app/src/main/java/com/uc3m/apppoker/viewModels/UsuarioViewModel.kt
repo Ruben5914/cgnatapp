@@ -7,6 +7,9 @@ import androidx.lifecycle.viewModelScope
 import com.uc3m.apppoker.models.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.io.IOException
+import java.security.KeyStore
+import javax.crypto.SecretKey
 
 
 class UsuarioViewModel(application: Application): AndroidViewModel(application) {
@@ -35,6 +38,21 @@ class UsuarioViewModel(application: Application): AndroidViewModel(application) 
         }
     }
 
+
+    fun checkKey(): Boolean {
+        val keystore: KeyStore = KeyStore.getInstance("AndroidKeyStore")
+        keystore.load(null)
+
+
+        try {
+            val secretKeyEntry: KeyStore.SecretKeyEntry? = keystore?.getEntry("MyKeyStore", null) as KeyStore.SecretKeyEntry
+        } catch (e: Exception){
+            return false
+        }
+        return true
+
+          //return secretKeyEntry.secretKey != null
+    }
 
 
 

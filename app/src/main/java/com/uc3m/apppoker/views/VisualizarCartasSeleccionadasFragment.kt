@@ -33,9 +33,14 @@ import com.uc3m.apppoker.models.Mano
 import com.uc3m.apppoker.repository.RepositoryApi
 import com.uc3m.apppoker.util.VariablesGlobales
 import com.uc3m.apppoker.viewModels.ApiViewModel
+import com.uc3m.apppoker.viewModels.EncryptModel
 import com.uc3m.apppoker.viewModels.MainViewModelFactory
 import com.uc3m.apppoker.viewModels.UsuarioViewModel
 import java.lang.StringBuilder
+import java.security.KeyStore
+import javax.crypto.Cipher
+import javax.crypto.SecretKey
+import javax.crypto.spec.IvParameterSpec
 
 
 class VisualizarCartasSeleccionadasFragment : Fragment() {
@@ -85,6 +90,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         val view = binding.root
 
         comprobarUsuarioEnBaseDatos()
+
 
 
 
@@ -484,14 +490,32 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         val database = Firebase.database.reference
 
 
-        database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).child(resultadoTrad).get().addOnSuccessListener {
+        //leo vector inicializacion
 
-            var contador : Long = it.value as Long
-            contador = contador + 1
-            database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).child(resultadoTrad).setValue(contador)
+        database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).child("IV"+resultadoTrad).get().addOnSuccessListener {
+            // database.child("users").child(encryptData(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","")).second.toString()).child(resultadoTrad).get().addOnSuccessListener {
+
+            var iv : ByteArray   = it.value as ByteArray
+            database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).child(resultadoTrad).get().addOnSuccessListener {
+                // database.child("users").child(encryptData(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","")).second.toString()).child(resultadoTrad).get().addOnSuccessListener {
+
+
+                var contador : Long = EncryptModel.decryptData(iv,it.value as ByteArray) as Long
+                contador = contador + 1
+                // database.child("users").child(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","").toString()).child(resultadoTrad).setValue(contador)
+                database.child("users").child(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","").toString()).child(resultadoTrad).setValue(EncryptModel.encryptData(contador.toString()).second)
+                database.child("users").child(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","").toString()).child("IV"+resultadoTrad).setValue(EncryptModel.encryptData(contador.toString()).first)
+
+            }.addOnFailureListener{
+                Log.e("firebase", "Error getting data", it)
+            }
+
+
         }.addOnFailureListener{
             Log.e("firebase", "Error getting data", it)
         }
+
+
     }
     private fun guardarEnBaseDatos (hand:String){
         Log.d("Response --------> 2", "")
@@ -506,10 +530,14 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         database.child("users").get().addOnSuccessListener {
             Log.i("firebase", "Got value ${it.value}")
 
-           if (!it.value.toString().contains(FirebaseAuth.getInstance().currentUser.email.toString().replace(".",""))){
+           // var emailEncriptado = encryptData(FirebaseAuth.getInstance().currentUser.email.toString().replace(".",""))
+
+
+            if (!it.value.toString().contains(FirebaseAuth.getInstance().currentUser.email.toString().replace(".",""))){
+          //  if (!it.value.toString().contains(emailEncriptado.second.toString())){
                val mano = Mano ()
                database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).setValue(mano)
-
+               // database.child("users").child(emailEncriptado.second.toString()).setValue(mano)
            }
         }.addOnFailureListener{
             Log.e("firebase", "Error getting data", it)
@@ -626,6 +654,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
     }
+
 
 
 

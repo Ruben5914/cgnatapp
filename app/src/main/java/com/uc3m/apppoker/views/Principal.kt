@@ -2,12 +2,15 @@ package com.uc3m.apppoker.views
 
 import android.content.Intent
 import android.os.Bundle
+import android.security.keystore.KeyGenParameterSpec
+import android.security.keystore.KeyProperties
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -18,6 +21,8 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.uc3m.apppoker.R
 import com.uc3m.apppoker.databinding.FragmentPrincipalBinding
 import com.uc3m.apppoker.viewModels.UsuarioViewModel
+import java.security.KeyStore
+import javax.crypto.KeyGenerator
 
 
 class Principal : Fragment() {
@@ -25,7 +30,7 @@ class Principal : Fragment() {
     private lateinit var binding: FragmentPrincipalBinding
     private lateinit var auth : FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
-
+    private lateinit var studentViewModel: UsuarioViewModel
     companion object{
         private const val RC_SIGN_IN = 120
     }
@@ -41,6 +46,22 @@ class Principal : Fragment() {
 
         auth = FirebaseAuth.getInstance()
         val user = auth.currentUser
+
+
+
+        studentViewModel = ViewModelProvider(this).get(UsuarioViewModel::class.java)
+
+        if (!studentViewModel.checkKey()){
+            val keyGenerator = KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES, "AndroidKeyStore")
+            val keyGenParameterSpec = KeyGenParameterSpec
+                    .Builder("MyKeyStore", KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT)
+                    .setBlockModes(KeyProperties.BLOCK_MODE_CBC)
+                    .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE)
+                    .build()
+
+            keyGenerator.init(keyGenParameterSpec)
+            keyGenerator.generateKey()
+        }
 
         if(user != null){
             findNavController().navigate(R.id.action_principal_to_visualizarCartasSeleccionadasFragment)
