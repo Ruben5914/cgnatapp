@@ -9,7 +9,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.widget.TextView
 import androidx.activity.addCallback
+import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -43,6 +48,18 @@ class Principal : Fragment() {
         }
         binding = FragmentPrincipalBinding.inflate(inflater, container, false)
         val view = binding.root
+        var animacion :Animation = AnimationUtils.loadAnimation(context,R.anim.animdeslizar)
+        var titulo: TextView = view.findViewById(R.id.tituloApp)
+        titulo.startAnimation(animacion)
+
+
+        var boton : AppCompatButton = view.findViewById(R.id.botonSignIn)
+        var animacion2 : Animation = AlphaAnimation(0.0f,1.0f)
+        animacion2.duration = 5000
+        boton.startAnimation(animacion2)
+
+        var texto : TextView = view.findViewById(R.id.mensajeInformativoInicioSesion)
+        texto.startAnimation(animacion2)
 
         auth = FirebaseAuth.getInstance()
         val user = auth.currentUser

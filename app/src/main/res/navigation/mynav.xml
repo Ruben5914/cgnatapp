@@ -23,7 +23,9 @@
         tools:layout="@layout/fragment_visualizar_cartas_seleccionadas" >
         <action
             android:id="@+id/action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment"
-            app:destination="@id/elegirPaloFragment" />
+            app:destination="@id/elegirPaloFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit" />
         <action
             android:id="@+id/action_visualizarCartasSeleccionadasFragment_to_principal"
             app:destination="@id/principal"
@@ -38,6 +40,11 @@
             app:destination="@id/Ganador"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_visualizarCartasSeleccionadasFragment_to_estadisticas"
+            app:destination="@id/estadisticas"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/elegirPaloFragment"
@@ -47,23 +54,23 @@
         <action
             android:id="@+id/action_elegirPaloFragment_to_cartaspicasFragment"
             app:destination="@id/cartaspicasFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@android:anim/fade_in" />
         <action
             android:id="@+id/action_elegirPaloFragment_to_cartascorazonesFragment"
             app:destination="@id/cartascorazonesFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit" />
         <action
             android:id="@+id/action_elegirPaloFragment_to_cartastrebolesFragment"
             app:destination="@id/cartastrebolesFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit" />
         <action
             android:id="@+id/action_elegirPaloFragment_to_cartasdiamantesFragment"
             app:destination="@id/cartasdiamantesFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit" />
     </fragment>
     <fragment
         android:id="@+id/cartaspicasFragment"
@@ -120,5 +127,16 @@
             app:destination="@id/visualizarCartasSeleccionadasFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/estadisticas"
+        android:name="com.uc3m.apppoker.views.Estadisticas"
+        android:label="fragment_estadisticas"
+        tools:layout="@layout/fragment_estadisticas" >
+        <action
+            android:id="@+id/action_estadisticas_to_visualizarCartasSeleccionadasFragment"
+            app:destination="@id/visualizarCartasSeleccionadasFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
 </navigation>

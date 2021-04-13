@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     android:background="@color/pokerClarito"
 
+
+
     tools:context="views.Ganador"
 
 android:layout_gravity="center"
@@ -15,7 +17,9 @@ android:layout_gravity="center"
     android:orientation="horizontal"
 
     >
+
     <TextView
+
 
         android:textStyle="bold"
         android:layout_marginTop="40dp"
@@ -27,7 +31,9 @@ android:layout_gravity="center"
         android:layout_marginLeft="90dp"
         android:layout_marginRight="90dp"
         android:layout_columnSpan="5"
-        android:textSize="19dp"
+        android:textSize="22dp"
+        android:fontFamily="@font/enchantedland"
+
 
 
             android:text="@string/mesa_introducida" />
@@ -75,7 +81,7 @@ android:layout_gravity="center"
 
     <TextView
         android:textStyle="bold"
-        android:textSize="19dp"
+        android:textSize="22dp"
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -86,6 +92,7 @@ android:layout_gravity="center"
         android:layout_marginRight="100dp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"
+        android:fontFamily="@font/enchantedland"
         android:text="@string/mano_ganadora" />
     <ImageView
 
@@ -109,7 +116,7 @@ android:layout_gravity="center"
 
     <TextView
         android:textStyle="bold"
-        android:textSize="19dp"
+        android:textSize="22dp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="50dp"
@@ -122,7 +129,7 @@ android:layout_gravity="center"
         android:layout_column="0"
         android:layout_columnSpan="6"
 
-
+        android:fontFamily="@font/enchantedland"
         android:text="La mano ganadora se forma con:" />
 
     <ImageView
@@ -166,19 +173,37 @@ android:layout_gravity="center"
         android:layout_column="4"
         android:src="@drawable/addcard" />
 
+    <TextView
+        android:textStyle="bold"
+        android:textSize="22dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="50dp"
+        android:id="@+id/resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_row="6"
+        android:layout_column="0"
+        android:layout_columnSpan="6"
+
+        android:fontFamily="@font/enchantedland"
+        android:text="El resultado es Escalera" />
     <Button
         android:id="@+id/NuevaConsulta"
         android:layout_width="300dp"
         android:layout_height="41dp"
+android:background="@drawable/boton"
 
-        android:backgroundTint="@color/rojoOscuro"
         android:layout_marginBottom="36dp"
         android:text="Nueva consulta"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="30dp"
-        android:layout_row="6"
+        android:layout_row="7"
         android:layout_column="0"
         android:layout_columnSpan="6"
+        android:fontFamily="@font/enchantedland"
          />
 
 

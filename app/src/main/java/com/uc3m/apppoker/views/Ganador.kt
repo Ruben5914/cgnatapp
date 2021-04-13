@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.TextView
+import androidx.activity.addCallback
 import androidx.navigation.fragment.findNavController
 import com.google.errorprone.annotations.Var
 import com.uc3m.apppoker.R
@@ -26,10 +28,14 @@ class Ganador : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
 
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+            // Evitamos que el usuario pueda navegar hacia atras
+        }
         binding = FragmentGanadorBinding.inflate(inflater, container, false)
         val view = binding.root
 
         colocarCarta(view)
+        colocarResultado(view)
 
         binding.NuevaConsulta.setOnClickListener(){
             VariablesGlobales.seleccionTotalCartasMesa = arrayOfNulls(5)
@@ -40,6 +46,8 @@ class Ganador : Fragment() {
 
         }
 
+
+
     return view
     }
 
@@ -47,9 +55,6 @@ class Ganador : Fragment() {
 
 
 private fun colocarCarta(view: View){
-
-
-
 
     var n = 1
     var seleccionTotalCartasMesaAux = arrayOfNulls<String>(5)
@@ -93,4 +98,9 @@ private fun colocarCarta(view: View){
 
 
 }
+
+    private fun colocarResultado(view: View){
+        var texto : TextView = view.findViewById(R.id.resultado)
+        texto.text = "El resultado es "+ VariablesGlobales.traducirResultadoBonito(VariablesGlobales.resultado)
+    }
 }

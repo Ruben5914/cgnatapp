@@ -1,20 +1,25 @@
 package com.uc3m.apppoker.models
 
+import android.util.Log
 import com.uc3m.apppoker.viewModels.EncryptModel
+import okio.ByteString.Companion.toByteString
+import okio.Utf8
 
- class Mano(
+data class Mano(var cartaAlta : Int = 0, var pareja : Int = 0, var doblePareja : Int = 0,
+                var trio : Int = 0, var escalera : Int = 0, var color : Int = 0, var full : Int = 0,
+                var poker : Int = 0, var escaleraColor : Int = 0, var escaleraReal : Int = 0)
 
-
-    var cartaAlta: String = "",
-    var pareja:String = "",
-    var doblePareja: String = "",
-    var trio: String = "",
-    var escalera: String = "",
-    var color: String = "",
-    var full: String = "",
-    var poker: String = "",
-    var escaleraColor: String = "",
-    var escaleraReal: String = "",
+/*
+    var cartaAlta: String = "0",
+    var pareja:String = "0",
+    var doblePareja: String = "0",
+    var trio: String = "0",
+    var escalera: String = "0",
+    var color: String = "0",
+    var full: String = "0",
+    var poker: String = "0",
+    var escaleraColor: String = "0",
+    var escaleraReal: String = "0",
     var prueba: String = "",
     var  IVcartaAlta: String= "",
     var IVpareja: String= "" ,
@@ -25,14 +30,19 @@ import com.uc3m.apppoker.viewModels.EncryptModel
     var IVfull: String = "",
     var IVpoker: String = "",
     var IVescaleraColor: String = "",
-    var IVescaleraReal: String= ""
+    var IVescaleraReal: String= "",
+
+
 
 
 
 ){
     init{
-        IVcartaAlta = EncryptModel.encryptData(cartaAlta.toString()).first.toString()
-        cartaAlta =  EncryptModel.encryptData(cartaAlta.toString()).second.toString()
+
+
+        IVcartaAlta = EncryptModel.encryptData(cartaAlta.toString()).first.decodeToString().toString()
+        Log.e("eeeeeeeeee1", IVcartaAlta)
+        cartaAlta =  EncryptModel.encryptData(cartaAlta.toString()).second.decodeToString().toString()
 
         IVpareja = EncryptModel.encryptData(pareja.toString()).first.toString()
         pareja =  EncryptModel.encryptData(pareja.toString()).second.toString()
@@ -65,5 +75,5 @@ import com.uc3m.apppoker.viewModels.EncryptModel
 
 
     }
-}
+}*/
 

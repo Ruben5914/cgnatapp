@@ -63,19 +63,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        //Para hacer pruebas
-        /*
-        VariablesGlobales.seleccionTotalCartasMesa[0] = "_0c"
-        VariablesGlobales.seleccionTotalCartasMesa[1] = "_7c"
-        VariablesGlobales.seleccionTotalCartasMesa[2] = "_2c"
-        VariablesGlobales.seleccionTotalCartasMesa[3] = "_3c"
-        VariablesGlobales.seleccionTotalCartasMesa[4] = "_4c"
 
-
-        VariablesGlobales.seleccionTotalCartasJugadores[0] =  "_0h"
-        VariablesGlobales.seleccionTotalCartasJugadores[1] =  "_7h"
-
-*/
         val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
             // Evitamos que el usuario pueda navegar hacia atras
         }
@@ -89,6 +77,8 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         binding = FragmentVisualizarCartasSeleccionadasBinding.inflate(inflater, container, false)
         val view = binding.root
 
+
+
         comprobarUsuarioEnBaseDatos()
 
 
@@ -96,7 +86,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
         var mano: String
 
-        binding.BotonLogOut.setOnClickListener(){
+        binding.BotonLogOutt.setOnClickListener(){
 
             auth.signOut()
             val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -253,6 +243,9 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
             view.findViewById<ImageButton>(R.id.anadirCarta15).setBackgroundResource(R.drawable.addcard)
         }
 
+        binding.botonestadisticas.setOnClickListener(){
+            findNavController().navigate(R.id.action_visualizarCartasSeleccionadasFragment_to_estadisticas)
+        }
         binding.botonSubmit.setOnClickListener(){
 
             var datosCorrectos =  comprobarCartas(VariablesGlobales.seleccionTotalCartasMesa,VariablesGlobales.seleccionTotalCartasJugadores)
@@ -294,6 +287,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
 
+
         return view
     }
 
@@ -329,47 +323,78 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         Log.d("Response -------->Fragmento devuelve:  ", cartaSeleccionada)
     }
 
-    private fun colocarCarta(){
+    private fun colocarCarta() {
 
 
-        if (VariablesGlobales.posicionCarta != 0){
-            if (VariablesGlobales.posicionCarta <6) {
-
-                VariablesGlobales.seleccionTotalCartasMesa[VariablesGlobales.posicionCarta - 1] = cartaSeleccionada
+        if (VariablesGlobales.posicionCarta != 0) {
+            if (VariablesGlobales.posicionCarta != 100) {
 
 
-            }else{
+                if (VariablesGlobales.posicionCarta < 6) {
 
-                VariablesGlobales.seleccionTotalCartasJugadores[VariablesGlobales.posicionCarta - 6] = cartaSeleccionada
-
-            }
-            var n = 1
-            for (i in VariablesGlobales.seleccionTotalCartasMesa) {
-
-                if (i != null) {
-
-                    view?.findViewById<ImageButton>(getResources().getIdentifier("anadirCarta" + n.toString(), "id", context?.getPackageName()))?.setBackgroundResource(getResources().getIdentifier(i, "drawable", context?.getPackageName()))
-                }
-                n++
-            }
-            var o = 6
-
-            for (i in VariablesGlobales.seleccionTotalCartasJugadores) {
-
-                if (i != null) {
+                    VariablesGlobales.seleccionTotalCartasMesa[VariablesGlobales.posicionCarta - 1] =
+                        cartaSeleccionada
 
 
-                    view?.findViewById<ImageButton>(getResources().getIdentifier("anadirCarta" + o.toString(), "id", context?.getPackageName()))?.setBackgroundResource(getResources().getIdentifier(i, "drawable", context?.getPackageName()))
+                } else {
+
+                    VariablesGlobales.seleccionTotalCartasJugadores[VariablesGlobales.posicionCarta - 6] =
+                        cartaSeleccionada
 
                 }
-                o++
             }
+                var n = 1
+                for (i in VariablesGlobales.seleccionTotalCartasMesa) {
+
+                    if (i != null) {
+
+                        view?.findViewById<ImageButton>(
+                            getResources().getIdentifier(
+                                "anadirCarta" + n.toString(),
+                                "id",
+                                context?.getPackageName()
+                            )
+                        )?.setBackgroundResource(
+                            getResources().getIdentifier(
+                                i,
+                                "drawable",
+                                context?.getPackageName()
+                            )
+                        )
+                    }
+                    n++
+                }
+                var o = 6
+
+                for (i in VariablesGlobales.seleccionTotalCartasJugadores) {
+
+                    if (i != null) {
 
 
-            VariablesGlobales.posicionCarta = 0
+                        view?.findViewById<ImageButton>(
+                            getResources().getIdentifier(
+                                "anadirCarta" + o.toString(),
+                                "id",
+                                context?.getPackageName()
+                            )
+                        )?.setBackgroundResource(
+                            getResources().getIdentifier(
+                                i,
+                                "drawable",
+                                context?.getPackageName()
+                            )
+                        )
+
+                    }
+                    o++
+                }
+
+
+                VariablesGlobales.posicionCarta = 0
+
+
 
         }
-
     }
 
 
@@ -427,6 +452,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
                         for((n,i) in respuesta[0]?.split(",")?.withIndex()!!){
                             VariablesGlobales.jugadorGanador[n] = respuesta[0]?.split(",")?.get(n)
                         }
+                        VariablesGlobales.resultado = result.toString()
 
 
 
@@ -465,63 +491,43 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
          Log.d("Response --------oooooooo>>>>", adapter)
     }
 
-    private fun mostrarManosBaseDatos() {
-        //Log.d("Response -------->>>>", usuarioViewModel.findUsuario(0))
-/*
-        val adapter = ListAdapter()
-        val recyclerView = binding.mostrarResultadoApi
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        usuarioViewModel = ViewModelProvider(this).get(UsuarioViewModel::class.java)
-        usuarioViewModel.readAllHands.observe(viewLifecycleOwner,{
-                hands -> adapter.setData( hands)
-        })
-
-
-
-
-*/
-    }
 
     private fun almacenarResultadoBaseDatos (resultado : String){
 
-        var resultadoTrad = traducirResultado(resultado.toString())
+        var resultadoTrad = VariablesGlobales.traducirResultado(resultado.toString())
         val database = Firebase.database.reference
 
 
         //leo vector inicializacion
 
-        database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).child("IV"+resultadoTrad).get().addOnSuccessListener {
+       // database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).child("IV"+resultadoTrad).get().addOnSuccessListener {
             // database.child("users").child(encryptData(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","")).second.toString()).child(resultadoTrad).get().addOnSuccessListener {
 
-            var iv : ByteArray   = it.value as ByteArray
-            database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).child(resultadoTrad).get().addOnSuccessListener {
+        //    var iv : ByteArray   = it.value as ByteArray
+            database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child(resultadoTrad).get().addOnSuccessListener {
                 // database.child("users").child(encryptData(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","")).second.toString()).child(resultadoTrad).get().addOnSuccessListener {
 
 
-                var contador : Long = EncryptModel.decryptData(iv,it.value as ByteArray) as Long
-                contador = contador + 1
-                // database.child("users").child(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","").toString()).child(resultadoTrad).setValue(contador)
-                database.child("users").child(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","").toString()).child(resultadoTrad).setValue(EncryptModel.encryptData(contador.toString()).second)
-                database.child("users").child(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","").toString()).child("IV"+resultadoTrad).setValue(EncryptModel.encryptData(contador.toString()).first)
+                var contador : Long = it.value.toString().toLong()
+                        //EncryptModel.decryptData(iv,it.value as ByteArray) as Long
+                        contador = contador + 1
+                 database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child(resultadoTrad).setValue(contador)
+               // database.child("users").child(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","").toString()).child(resultadoTrad).setValue(EncryptModel.encryptData(contador.toString()).second)
+               // database.child("users").child(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","").toString()).child("IV"+resultadoTrad).setValue(EncryptModel.encryptData(contador.toString()).first)
 
             }.addOnFailureListener{
                 Log.e("firebase", "Error getting data", it)
             }
 
-
+/*
         }.addOnFailureListener{
             Log.e("firebase", "Error getting data", it)
         }
-
+*/
 
     }
-    private fun guardarEnBaseDatos (hand:String){
-        Log.d("Response --------> 2", "")
-        val hand = Hand(0, 1, hand)
-        usuarioViewModel.addHandToUser(hand)
-    }
+
 
     private fun comprobarUsuarioEnBaseDatos (){
 
@@ -533,10 +539,10 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
            // var emailEncriptado = encryptData(FirebaseAuth.getInstance().currentUser.email.toString().replace(".",""))
 
 
-            if (!it.value.toString().contains(FirebaseAuth.getInstance().currentUser.email.toString().replace(".",""))){
+            if (!it.value.toString().contains(FirebaseAuth.getInstance().currentUser.uid.toString())){
           //  if (!it.value.toString().contains(emailEncriptado.second.toString())){
                val mano = Mano ()
-               database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).setValue(mano)
+               database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).setValue(mano)
                // database.child("users").child(emailEncriptado.second.toString()).setValue(mano)
            }
         }.addOnFailureListener{
@@ -618,42 +624,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         return true
     }
 
-    private fun traducirResultado(mano: String): String{
-        if(mano == "high_card"){
-            return "cartaAlta"
-        }
-        if(mano == "pair"){
-            return "pareja"
-        }
-        if(mano == "high_card"){
-            return "doblePareja"
-        }
-        if(mano == "three_of_kind"){
-            return "trio"
-        }
-        if(mano == "straight"){
-            return "escalera"
-        }
-        if(mano == "flush"){
-            return "color"
-        }
-        if(mano == "full_house"){
-            return "full"
-        }
-        if(mano == "four_of_kind"){
-            return "poker"
-        }
 
-        if(mano == "straight_flush"){
-            return "escaleraColor"
-        }
-        if(mano == "royal_flush"){
-            return "escaleraReal"
-        }
-        return ""
-
-
-    }
 
 
 

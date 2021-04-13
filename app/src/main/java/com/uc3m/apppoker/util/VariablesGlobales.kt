@@ -11,8 +11,83 @@ class VariablesGlobales {
         var jugadorGanador = arrayOfNulls<String>(2)
         var handGanadora = arrayOfNulls<String>(5)
         var seleccionTotalCartasJugadores = arrayOfNulls<String>(12)
+        var resultado = ""
 
 
+
+         fun traducirResultado(mano: String): String{
+            if(mano == "high_card"){
+                return "cartaAlta"
+            }
+            if(mano == "pair"){
+                return "pareja"
+            }
+            if(mano == "high_card"){
+                return "doblePareja"
+            }
+            if(mano == "three_of_kind"){
+                return "trio"
+            }
+            if(mano == "straight"){
+                return "escalera"
+            }
+            if(mano == "flush"){
+                return "color"
+            }
+            if(mano == "full_house"){
+                return "full"
+            }
+            if(mano == "four_of_kind"){
+                return "poker"
+            }
+
+            if(mano == "straight_flush"){
+                return "escaleraColor"
+            }
+            if(mano == "royal_flush"){
+                return "escaleraReal"
+            }
+            return ""
+
+
+        }
+
+        fun traducirResultadoBonito(mano: String): String{
+            if(mano == "high_card"){
+                return "Carta Alta"
+            }
+            if(mano == "pair"){
+                return "Pareja"
+            }
+            if(mano == "high_card"){
+                return "Doble Pareja"
+            }
+            if(mano == "three_of_kind"){
+                return "Trío"
+            }
+            if(mano == "straight"){
+                return "Escalera"
+            }
+            if(mano == "flush"){
+                return "Color"
+            }
+            if(mano == "full_house"){
+                return "Full"
+            }
+            if(mano == "four_of_kind"){
+                return "Poker"
+            }
+
+            if(mano == "straight_flush"){
+                return "Escalera de Color"
+            }
+            if(mano == "royal_flush"){
+                return "Escalera Real"
+            }
+            return ""
+
+
+        }
 
         fun traducirCartas(cartas: Array<String?>): Array<String?> {
             var n = 0
