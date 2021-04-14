@@ -15,6 +15,11 @@
             app:destination="@id/visualizarCartasSeleccionadasFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_principal_to_contrasena"
+            app:destination="@id/contrasena"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/visualizarCartasSeleccionadasFragment"
@@ -138,5 +143,32 @@
             app:destination="@id/visualizarCartasSeleccionadasFragment"
             app:enterAnim="@android:anim/slide_in_left"
             app:exitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_estadisticas_to_resetear"
+            app:destination="@id/resetear"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/contrasena"
+        android:name="com.uc3m.apppoker.views.contrasena"
+        android:label="fragment_contrasena"
+        tools:layout="@layout/fragment_contrasena" >
+        <action
+            android:id="@+id/action_contrasena_to_visualizarCartasSeleccionadasFragment"
+            app:destination="@id/visualizarCartasSeleccionadasFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetear"
+        android:name="com.uc3m.apppoker.views.resetear"
+        android:label="fragment_resetear"
+        tools:layout="@layout/fragment_resetear" >
+        <action
+            android:id="@+id/action_resetear_to_estadisticas"
+            app:destination="@id/estadisticas"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
     </fragment>
 </navigation>

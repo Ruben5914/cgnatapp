@@ -40,7 +40,7 @@ class Estadisticas : Fragment() {
         val database = Firebase.database.reference
 
 
-        database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("cartaAlta").get().addOnSuccessListener {
+        database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("cartaAlta").get().addOnSuccessListener {
 
 
             var label : TextView= view.findViewById(R.id.respuesta1)
@@ -49,7 +49,7 @@ class Estadisticas : Fragment() {
             var animacion : Animation = AnimationUtils.loadAnimation(context, R.anim.animcrecer)
             label.startAnimation(animacion)
 
-            database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("pareja").get().addOnSuccessListener {
+            database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("pareja").get().addOnSuccessListener {
 
 
                  label = view.findViewById(R.id.respuesta2)
@@ -58,7 +58,7 @@ class Estadisticas : Fragment() {
                 var animacion : Animation = AnimationUtils.loadAnimation(context, R.anim.animcrecer)
                 label.startAnimation(animacion)
 
-                database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("doblePareja").get().addOnSuccessListener {
+                database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("doblePareja").get().addOnSuccessListener {
 
 
                      label = view.findViewById(R.id.respuesta3)
@@ -68,7 +68,7 @@ class Estadisticas : Fragment() {
                     label.startAnimation(animacion)
 
 
-                    database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("trio").get().addOnSuccessListener {
+                    database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("trio").get().addOnSuccessListener {
 
 
                          label = view.findViewById(R.id.respuesta4)
@@ -78,7 +78,7 @@ class Estadisticas : Fragment() {
                         label.startAnimation(animacion)
 
 
-                        database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("escalera").get().addOnSuccessListener {
+                        database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("escalera").get().addOnSuccessListener {
 
 
                              label = view.findViewById(R.id.respuesta5)
@@ -88,7 +88,7 @@ class Estadisticas : Fragment() {
                             label.startAnimation(animacion)
 
 
-                            database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("color").get().addOnSuccessListener {
+                            database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("color").get().addOnSuccessListener {
 
 
                                  label = view.findViewById(R.id.respuesta6)
@@ -97,7 +97,7 @@ class Estadisticas : Fragment() {
                                 var animacion : Animation = AnimationUtils.loadAnimation(context, R.anim.animcrecer)
                                 label.startAnimation(animacion)
 
-                                database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("full").get().addOnSuccessListener {
+                                database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("full").get().addOnSuccessListener {
 
 
                                      label = view.findViewById(R.id.respuesta7)
@@ -106,7 +106,7 @@ class Estadisticas : Fragment() {
                                     var animacion : Animation = AnimationUtils.loadAnimation(context, R.anim.animcrecer)
                                     label.startAnimation(animacion)
 
-                                    database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("poker").get().addOnSuccessListener {
+                                    database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("poker").get().addOnSuccessListener {
 
 
                                          label = view.findViewById(R.id.respuesta8)
@@ -115,7 +115,7 @@ class Estadisticas : Fragment() {
                                         var animacion : Animation = AnimationUtils.loadAnimation(context, R.anim.animcrecer)
                                         label.startAnimation(animacion)
 
-                                        database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("escaleraColor").get().addOnSuccessListener {
+                                        database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("escaleraColor").get().addOnSuccessListener {
 
 
                                              label = view.findViewById(R.id.respuesta9)
@@ -124,7 +124,7 @@ class Estadisticas : Fragment() {
                                             var animacion : Animation = AnimationUtils.loadAnimation(context, R.anim.animcrecer)
                                             label.startAnimation(animacion)
 
-                                            database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("escaleraReal").get().addOnSuccessListener {
+                                            database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("escaleraReal").get().addOnSuccessListener {
 
 
                                                  label = view.findViewById(R.id.respuesta10)
@@ -189,6 +189,9 @@ class Estadisticas : Fragment() {
 
 
 
+        binding.botonreset.setOnClickListener(){
+            findNavController().navigate(R.id.action_estadisticas_to_resetear)
+        }
         binding.NuevaConsulta.setOnClickListener(){
             findNavController().navigate(R.id.action_estadisticas_to_visualizarCartasSeleccionadasFragment)
         }

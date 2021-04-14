@@ -1,6 +1,9 @@
 package com.uc3m.apppoker.viewModels
 
+import android.util.Log
+import java.math.BigInteger
 import java.security.KeyStore
+import java.security.MessageDigest
 import javax.crypto.Cipher
 import javax.crypto.SecretKey
 import javax.crypto.spec.IvParameterSpec
@@ -37,5 +40,39 @@ class EncryptModel {
             cipher.init(Cipher.DECRYPT_MODE, getKey(), spec)
             return cipher.doFinal(data).toString(Charsets.UTF_8).trim()
         }
+
+        fun md5(datos: String): String{
+
+            var md5Data : BigInteger = BigInteger("2")
+            var result: String = ""
+            try {
+
+                val md5 = MessageDigest.getInstance("MD5")
+                val md5HashBytes = md5.digest(datos.toByteArray()).toTypedArray()
+
+                result = byteArrayToHexString(md5HashBytes)
+            }catch (e: Exception){
+                Log.e("Error al hacer el hash", "error hash")
+                result = "error"
+            }
+
+
+            return result
+        }
+        private fun byteArrayToHexString( array: Array<Byte> ): String {
+
+            var result = StringBuilder(array.size * 2)
+
+            for ( byte in array ) {
+
+                val toAppend =
+                        String.format("%2X", byte).replace(" ", "0") // hexadecimal
+                result.append(toAppend).append("-")
+            }
+            result.setLength(result.length - 1) // remove last '-'
+
+            return result.toString()
+        }
+
     }
 }

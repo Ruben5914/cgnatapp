@@ -23,6 +23,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.uc3m.apppoker.R
 import com.uc3m.apppoker.databinding.FragmentPrincipalBinding
 import com.uc3m.apppoker.viewModels.UsuarioViewModel
@@ -81,7 +83,19 @@ class Principal : Fragment() {
         }
 
         if(user != null){
-            findNavController().navigate(R.id.action_principal_to_visualizarCartasSeleccionadasFragment)
+            val database = Firebase.database.reference
+            database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).get().addOnSuccessListener {
+                if(it.value.toString().contains("contraseña")){
+                    findNavController().navigate(R.id.action_principal_to_visualizarCartasSeleccionadasFragment)
+                }else{
+                    findNavController().navigate(R.id.action_principal_to_contrasena)
+                }
+
+            }.addOnFailureListener{
+                Log.e("firebase", "Error getting data", it)
+            }
+
+
         }
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -144,7 +158,17 @@ class Principal : Fragment() {
                         Log.d("Fragment Login", "signInWithCredential:success")
                         val user = auth.currentUser
                         if(user != null){
-                            findNavController().navigate(R.id.action_principal_to_visualizarCartasSeleccionadasFragment)
+                            val database = Firebase.database.reference
+                            database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).get().addOnSuccessListener {
+                                if(it.value.toString().contains("contraseña")){
+                                    findNavController().navigate(R.id.action_principal_to_visualizarCartasSeleccionadasFragment)
+                                }else{
+                                    findNavController().navigate(R.id.action_principal_to_contrasena)
+                                }
+
+                            }.addOnFailureListener{
+                                Log.e("firebase", "Error getting data", it)
+                            }
                         }
                     } else {
                         Log.w("Fragment Login", "signInWithCredential:failure", task.exception)

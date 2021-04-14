@@ -32,6 +32,19 @@
         android:fontFamily="@font/enchantedland"
         android:text="Estadísticas recopiladas:" />
 
+    <Button
+        android:id="@+id/botonreset"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_row="11"
+        android:layout_column="1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/botonrojo"
+        android:fontFamily="@font/enchantedland"
+        android:text="Reset"
+        android:textSize="15dp" />
+
     <TextView
         android:textStyle="bold"
         android:textSize="25dp"
@@ -327,22 +340,22 @@
         android:text="" />
 
 
-
     <Button
         android:id="@+id/NuevaConsulta"
-        android:layout_width="300dp"
-        android:layout_height="41dp"
-        android:textSize="20dp"
-        android:background="@drawable/boton"
-        android:layout_marginBottom="36dp"
-        android:text="Menú principal"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="30dp"
+        android:layout_width="199dp"
+        android:layout_height="wrap_content"
         android:layout_row="11"
         android:layout_column="0"
         android:layout_columnSpan="6"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/boton"
         android:fontFamily="@font/enchantedland"
-        />
+        android:text="Menú principal"
+        android:textSize="20dp" />
+
+
 
 
 </GridLayout>

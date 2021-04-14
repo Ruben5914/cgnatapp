@@ -79,6 +79,8 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
 
+
+
         comprobarUsuarioEnBaseDatos()
 
 
@@ -88,6 +90,13 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
         binding.BotonLogOutt.setOnClickListener(){
 
+            //Tras cerrar sesion se ponen las variables globales por defecto
+            VariablesGlobales.posicionCarta = 0
+            VariablesGlobales.seleccionTotalCartasMesa = arrayOfNulls<String>(5)
+            VariablesGlobales.jugadorGanador = arrayOfNulls<String>(2)
+            VariablesGlobales.handGanadora = arrayOfNulls<String>(5)
+            VariablesGlobales.seleccionTotalCartasJugadores = arrayOfNulls<String>(12)
+            VariablesGlobales.resultado = ""
             auth.signOut()
             val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -251,7 +260,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
             var datosCorrectos =  comprobarCartas(VariablesGlobales.seleccionTotalCartasMesa,VariablesGlobales.seleccionTotalCartasJugadores)
 
             // Write a message to the database
-            val database = Firebase.database.reference
+            //val database = Firebase.database.reference
            //val mano = Mano ()
             //database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).setValue(mano)
             //Escribir
@@ -505,14 +514,14 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
             // database.child("users").child(encryptData(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","")).second.toString()).child(resultadoTrad).get().addOnSuccessListener {
 
         //    var iv : ByteArray   = it.value as ByteArray
-            database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child(resultadoTrad).get().addOnSuccessListener {
+            database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child(resultadoTrad).get().addOnSuccessListener {
                 // database.child("users").child(encryptData(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","")).second.toString()).child(resultadoTrad).get().addOnSuccessListener {
 
 
                 var contador : Long = it.value.toString().toLong()
                         //EncryptModel.decryptData(iv,it.value as ByteArray) as Long
                         contador = contador + 1
-                 database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child(resultadoTrad).setValue(contador)
+                 database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child(resultadoTrad).setValue(contador)
                // database.child("users").child(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","").toString()).child(resultadoTrad).setValue(EncryptModel.encryptData(contador.toString()).second)
                // database.child("users").child(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","").toString()).child("IV"+resultadoTrad).setValue(EncryptModel.encryptData(contador.toString()).first)
 
@@ -533,16 +542,16 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
 
 
         val database = Firebase.database.reference
-        database.child("users").get().addOnSuccessListener {
-            Log.i("firebase", "Got value ${it.value}")
+        database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").get().addOnSuccessListener {
+
 
            // var emailEncriptado = encryptData(FirebaseAuth.getInstance().currentUser.email.toString().replace(".",""))
 
 
-            if (!it.value.toString().contains(FirebaseAuth.getInstance().currentUser.uid.toString())){
+            if (it.value == null){
           //  if (!it.value.toString().contains(emailEncriptado.second.toString())){
                val mano = Mano ()
-               database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).setValue(mano)
+               database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").setValue(mano)
                // database.child("users").child(emailEncriptado.second.toString()).setValue(mano)
            }
         }.addOnFailureListener{
