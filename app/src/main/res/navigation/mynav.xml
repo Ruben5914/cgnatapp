@@ -151,7 +151,7 @@
     </fragment>
     <fragment
         android:id="@+id/contrasena"
-        android:name="com.uc3m.apppoker.views.contrasena"
+        android:name="com.uc3m.apppoker.views.Contrasena"
         android:label="fragment_contrasena"
         tools:layout="@layout/fragment_contrasena" >
         <action
@@ -162,7 +162,7 @@
     </fragment>
     <fragment
         android:id="@+id/resetear"
-        android:name="com.uc3m.apppoker.views.resetear"
+        android:name="com.uc3m.apppoker.views.Resetear"
         android:label="fragment_resetear"
         tools:layout="@layout/fragment_resetear" >
         <action

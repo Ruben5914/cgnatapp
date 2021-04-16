@@ -22,7 +22,7 @@ class CartasCorazonesFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+         requireActivity().onBackPressedDispatcher.addCallback(this) {
             // Evitamos que el usuario pueda navegar hacia atras
         }
         binding = FragmentCartasCorazonesBinding.inflate(inflater, container, false)

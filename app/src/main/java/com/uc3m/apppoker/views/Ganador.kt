@@ -26,9 +26,9 @@ class Ganador : Fragment() {
 
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+         requireActivity().onBackPressedDispatcher.addCallback(this) {
             // Evitamos que el usuario pueda navegar hacia atras
         }
         binding = FragmentGanadorBinding.inflate(inflater, container, false)
@@ -40,7 +40,8 @@ class Ganador : Fragment() {
         binding.NuevaConsulta.setOnClickListener(){
             VariablesGlobales.seleccionTotalCartasMesa = arrayOfNulls(5)
             VariablesGlobales.seleccionTotalCartasJugadores = arrayOfNulls(12)
-            findNavController().navigate(R.id.action_Ganador_to_visualizarCartasSeleccionadasFragment)
+            findNavController()
+                    .navigate(R.id.action_Ganador_to_visualizarCartasSeleccionadasFragment)
 
 
 
@@ -57,14 +58,18 @@ class Ganador : Fragment() {
 private fun colocarCarta(view: View){
 
     var n = 1
-    var seleccionTotalCartasMesaAux = arrayOfNulls<String>(5)
+    val seleccionTotalCartasMesaAux = arrayOfNulls<String>(5)
     VariablesGlobales.seleccionTotalCartasMesa.copyInto(seleccionTotalCartasMesaAux)
-      VariablesGlobales.traducirCartasInverso(seleccionTotalCartasMesaAux).copyInto(seleccionTotalCartasMesaAux)
+      VariablesGlobales.traducirCartasInverso(seleccionTotalCartasMesaAux)
+              .copyInto(seleccionTotalCartasMesaAux)
         for (i in seleccionTotalCartasMesaAux) {
 
             if (i != null) {
 
-                view?.findViewById<ImageView>(getResources().getIdentifier("mesa" + n.toString(), "id", context?.getPackageName()))?.setImageResource(getResources().getIdentifier(i, "drawable", context?.getPackageName()))
+                view.findViewById<ImageView>(getResources()
+                        .getIdentifier("mesa" + n.toString(), "id", context
+                        ?.getPackageName()))?.setImageResource(getResources()
+                        .getIdentifier(i, "drawable", context?.getPackageName()))
             }
             n++
         }
@@ -75,7 +80,10 @@ private fun colocarCarta(view: View){
 
         if (i != null) {
 
-            view?.findViewById<ImageView>(getResources().getIdentifier("mesag" + n.toString(), "id", context?.getPackageName()))?.setImageResource(getResources().getIdentifier(i, "drawable", context?.getPackageName()))
+            view.findViewById<ImageView>(getResources()
+                    .getIdentifier("mesag" + n.toString(), "id", context
+                            ?.getPackageName()))?.setImageResource(getResources()
+                    .getIdentifier(i, "drawable", context?.getPackageName()))
         }
         n++
     }
@@ -84,7 +92,10 @@ private fun colocarCarta(view: View){
 
         if (i != null) {
 
-            view?.findViewById<ImageView>(getResources().getIdentifier("mano" + n.toString(), "id", context?.getPackageName()))?.setImageResource(getResources().getIdentifier(i, "drawable", context?.getPackageName()))
+            view.findViewById<ImageView>(getResources()
+                    .getIdentifier("mano" + n.toString(), "id", context
+                            ?.getPackageName()))?.setImageResource(getResources()
+                    .getIdentifier(i, "drawable", context?.getPackageName()))
         }
         n++
     }
@@ -100,7 +111,8 @@ private fun colocarCarta(view: View){
 }
 
     private fun colocarResultado(view: View){
-        var texto : TextView = view.findViewById(R.id.resultado)
-        texto.text = "El resultado es "+ VariablesGlobales.traducirResultadoBonito(VariablesGlobales.resultado)
+        val texto : TextView = view.findViewById(R.id.resultado)
+        texto.text = "El resultado es "+ VariablesGlobales
+                .traducirResultadoBonito(VariablesGlobales.resultado)
     }
 }

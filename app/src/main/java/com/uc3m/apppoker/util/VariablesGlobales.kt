@@ -4,16 +4,11 @@ class VariablesGlobales {
     companion object {
 
         var posicionCarta = 0
-
-
         var seleccionTotalCartasMesa = arrayOfNulls<String>(5)
-
         var jugadorGanador = arrayOfNulls<String>(2)
         var handGanadora = arrayOfNulls<String>(5)
         var seleccionTotalCartasJugadores = arrayOfNulls<String>(12)
         var resultado = ""
-
-
 
          fun traducirResultado(mano: String): String{
             if(mano == "high_card"){
@@ -48,8 +43,6 @@ class VariablesGlobales {
                 return "escaleraReal"
             }
             return ""
-
-
         }
 
         fun traducirResultadoBonito(mano: String): String{
@@ -85,8 +78,6 @@ class VariablesGlobales {
                 return "Escalera Real"
             }
             return ""
-
-
         }
 
         fun traducirCartas(cartas: Array<String?>): Array<String?> {

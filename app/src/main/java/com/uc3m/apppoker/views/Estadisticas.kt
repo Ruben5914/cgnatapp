@@ -28,9 +28,9 @@ class Estadisticas : Fragment() {
 
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+         requireActivity().onBackPressedDispatcher.addCallback(this) {
             // Evitamos que el usuario pueda navegar hacia atras
         }
         binding = FragmentEstadisticasBinding.inflate(inflater, container, false)
@@ -40,7 +40,10 @@ class Estadisticas : Fragment() {
         val database = Firebase.database.reference
 
 
-        database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("cartaAlta").get().addOnSuccessListener {
+        database.child("users")
+                .child(FirebaseAuth.getInstance().currentUser.uid)
+                .child("estadisticas")
+                .child("cartaAlta").get().addOnSuccessListener {
 
 
             var label : TextView= view.findViewById(R.id.respuesta1)
@@ -49,7 +52,10 @@ class Estadisticas : Fragment() {
             var animacion : Animation = AnimationUtils.loadAnimation(context, R.anim.animcrecer)
             label.startAnimation(animacion)
 
-            database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("pareja").get().addOnSuccessListener {
+            database.child("users")
+                    .child(FirebaseAuth.getInstance().currentUser.uid)
+                    .child("estadisticas")
+                    .child("pareja").get().addOnSuccessListener {
 
 
                  label = view.findViewById(R.id.respuesta2)
@@ -58,103 +64,130 @@ class Estadisticas : Fragment() {
                 var animacion : Animation = AnimationUtils.loadAnimation(context, R.anim.animcrecer)
                 label.startAnimation(animacion)
 
-                database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("doblePareja").get().addOnSuccessListener {
+                database.child("users")
+                        .child(FirebaseAuth.getInstance().currentUser.uid)
+                        .child("estadisticas")
+                        .child("doblePareja").get().addOnSuccessListener {
 
 
                      label = view.findViewById(R.id.respuesta3)
                     label.text = it.value.toString()
                     label.textSize = 22F
-                    var animacion : Animation = AnimationUtils.loadAnimation(context, R.anim.animcrecer)
+                    var animacion : Animation = AnimationUtils.loadAnimation(
+                            context, R.anim.animcrecer)
                     label.startAnimation(animacion)
 
 
-                    database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("trio").get().addOnSuccessListener {
+                    database.child("users")
+                            .child(FirebaseAuth.getInstance().currentUser.uid)
+                            .child("estadisticas")
+                            .child("trio").get().addOnSuccessListener {
 
 
                          label = view.findViewById(R.id.respuesta4)
                         label.text = it.value.toString()
                         label.textSize = 22F
-                        var animacion : Animation = AnimationUtils.loadAnimation(context, R.anim.animcrecer)
+                        var animacion : Animation = AnimationUtils.loadAnimation(
+                                context, R.anim.animcrecer)
                         label.startAnimation(animacion)
 
 
-                        database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("escalera").get().addOnSuccessListener {
+                        database.child("users")
+                                .child(FirebaseAuth.getInstance().currentUser.uid)
+                                .child("estadisticas")
+                                .child("escalera").get().addOnSuccessListener {
 
 
                              label = view.findViewById(R.id.respuesta5)
                             label.text = it.value.toString()
                             label.textSize = 22F
-                            var animacion : Animation = AnimationUtils.loadAnimation(context, R.anim.animcrecer)
+                            var animacion : Animation = AnimationUtils.loadAnimation(
+                                    context, R.anim.animcrecer)
                             label.startAnimation(animacion)
 
 
-                            database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("color").get().addOnSuccessListener {
+                            database.child("users")
+                                    .child(FirebaseAuth.getInstance().currentUser.uid)
+                                    .child("estadisticas")
+                                    .child("color").get().addOnSuccessListener {
 
 
                                  label = view.findViewById(R.id.respuesta6)
                                 label.text = it.value.toString()
                                 label.textSize = 22F
-                                var animacion : Animation = AnimationUtils.loadAnimation(context, R.anim.animcrecer)
+                                var animacion : Animation = AnimationUtils.loadAnimation(
+                                        context, R.anim.animcrecer)
                                 label.startAnimation(animacion)
 
-                                database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("full").get().addOnSuccessListener {
+                                database.child("users")
+                                        .child(FirebaseAuth.getInstance().currentUser.uid)
+                                        .child("estadisticas")
+                                        .child("full").get().addOnSuccessListener {
 
 
                                      label = view.findViewById(R.id.respuesta7)
                                     label.text = it.value.toString()
                                     label.textSize = 22F
-                                    var animacion : Animation = AnimationUtils.loadAnimation(context, R.anim.animcrecer)
+                                    var animacion : Animation = AnimationUtils.loadAnimation(
+                                            context, R.anim.animcrecer)
                                     label.startAnimation(animacion)
 
-                                    database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("poker").get().addOnSuccessListener {
+                                    database.child("users")
+                                            .child(FirebaseAuth.getInstance().currentUser.uid)
+                                            .child("estadisticas")
+                                            .child("poker").get().addOnSuccessListener {
 
 
                                          label = view.findViewById(R.id.respuesta8)
                                         label.text = it.value.toString()
                                         label.textSize = 22F
-                                        var animacion : Animation = AnimationUtils.loadAnimation(context, R.anim.animcrecer)
+                                        var animacion : Animation = AnimationUtils
+                                                .loadAnimation(context, R.anim.animcrecer)
                                         label.startAnimation(animacion)
 
-                                        database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("escaleraColor").get().addOnSuccessListener {
+                                        database.child("users")
+                                                .child(FirebaseAuth.getInstance().currentUser.uid)
+                                                .child("estadisticas")
+                                                .child("escaleraColor")
+                                                .get().addOnSuccessListener {
 
 
                                              label = view.findViewById(R.id.respuesta9)
                                             label.text = it.value.toString()
                                             label.textSize = 22F
-                                            var animacion : Animation = AnimationUtils.loadAnimation(context, R.anim.animcrecer)
+                                            var animacion : Animation = AnimationUtils
+                                                    .loadAnimation(context, R.anim.animcrecer)
                                             label.startAnimation(animacion)
 
-                                            database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").child("escaleraReal").get().addOnSuccessListener {
+                                            database.child("users")
+                                                    .child(FirebaseAuth.getInstance().currentUser.uid)
+                                                    .child("estadisticas")
+                                                    .child("escaleraReal")
+                                                    .get().addOnSuccessListener {
 
 
                                                  label = view.findViewById(R.id.respuesta10)
                                                 label.text = it.value.toString()
                                                 label.textSize = 22F
-                                                var animacion : Animation = AnimationUtils.loadAnimation(context, R.anim.animcrecer)
+                                                var animacion : Animation = AnimationUtils
+                                                        .loadAnimation(context, R.anim.animcrecer)
                                                 label.startAnimation(animacion)
-
-
-
 
                                             }.addOnFailureListener{
                                                 Log.e("firebase", "Error getting data", it)
                                             }
 
-
                                         }.addOnFailureListener{
                                             Log.e("firebase", "Error getting data", it)
                                         }
-
 
                                     }.addOnFailureListener{
                                         Log.e("firebase", "Error getting data", it)
                                     }
 
-
                                 }.addOnFailureListener{
                                     Log.e("firebase", "Error getting data", it)
                                 }
-
 
                             }.addOnFailureListener{
                                 Log.e("firebase", "Error getting data", it)
@@ -168,65 +201,26 @@ class Estadisticas : Fragment() {
                         Log.e("firebase", "Error getting data", it)
                     }
 
-
                 }.addOnFailureListener{
                     Log.e("firebase", "Error getting data", it)
                 }
 
-
-
             }.addOnFailureListener{
                 Log.e("firebase", "Error getting data", it)
             }
-
-
-
 
         }.addOnFailureListener{
             Log.e("firebase", "Error getting data", it)
         }
 
 
-
-
         binding.botonreset.setOnClickListener(){
             findNavController().navigate(R.id.action_estadisticas_to_resetear)
         }
         binding.NuevaConsulta.setOnClickListener(){
-            findNavController().navigate(R.id.action_estadisticas_to_visualizarCartasSeleccionadasFragment)
+            findNavController().navigate(
+                    R.id.action_estadisticas_to_visualizarCartasSeleccionadasFragment)
         }
-
-        /*
-      //  database.child("users").child(FirebaseAuth.getInstance().currentUser.email.replace(".","")).child("ivcartaAlta").get().addOnSuccessListener {
-        database.child("users").child(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","")).child("cartaAlta").get().addOnSuccessListener {
-
-
-           // var iv: ByteArray = it.value.toString().encodeToByteArray()
-
-
-            database.child("users")
-                .child(FirebaseAuth.getInstance().currentUser.email.replace(".", ""))
-                .child("cartaAlta").get().addOnSuccessListener {
-                    // database.child("users").child(encryptData(FirebaseAuth.getInstance().currentUser.email.toString().replace(".","")).second.toString()).child(resultadoTrad).get().addOnSuccessListener {
-
-
-
-                    var contador: String =
-                       // EncryptModel.decryptData(iv, it.value.toString().encodeToByteArray()) as String
-
-                     var label : TextView= view.findViewById(R.id.respuesta1)
-                    label.text = it.value.toString()
-                    label.textSize = 19F
-
-
-                }.addOnFailureListener {
-                    Log.e("firebase", "Error getting data", it)
-                }
-
-
-        }*/
-
-
             return view
         }
     }

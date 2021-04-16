@@ -22,28 +22,28 @@ import com.uc3m.apppoker.databinding.FragmentContrasenaBinding
 import com.uc3m.apppoker.viewModels.EncryptModel
 
 
-class contrasena : Fragment() {
+class Contrasena : Fragment() {
 
     private lateinit var binding: FragmentContrasenaBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+    ): View {
+         requireActivity().onBackPressedDispatcher.addCallback(this) {
             // Evitamos que el usuario pueda navegar hacia atras
         }
         binding = FragmentContrasenaBinding.inflate(inflater, container, false)
         val view = binding.root
-        var contrasena1: EditText = view.findViewById(R.id.editTextTextPassword)
+        val contrasena1: EditText = view.findViewById(R.id.editTextTextPassword)
 
-        var contrasena2: EditText = view.findViewById(R.id.editTextTextPassword2)
+        val contrasena2: EditText = view.findViewById(R.id.editTextTextPassword2)
 
-        var encabezado: TextView = view.findViewById(R.id.textocontrasena1)
-        var encabezado1: TextView = view.findViewById(R.id.textocontrasena2)
-        var encabezado2: TextView = view.findViewById(R.id.textocontrasena3)
-        var boton: Button = view.findViewById(R.id.botonconfirmarcontrasena)
-        var animacion2 : Animation = AlphaAnimation(0.0f,1.0f)
+        val encabezado: TextView = view.findViewById(R.id.textocontrasena1)
+        val encabezado1: TextView = view.findViewById(R.id.textocontrasena2)
+        val encabezado2: TextView = view.findViewById(R.id.textocontrasena3)
+        val boton: Button = view.findViewById(R.id.botonconfirmarcontrasena)
+        val animacion2 : Animation = AlphaAnimation(0.0f,1.0f)
         animacion2.duration = 5000
 
         boton.startAnimation(animacion2)
