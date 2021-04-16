@@ -55,13 +55,9 @@ class contrasena : Fragment() {
         binding.botonconfirmarcontrasena.setOnClickListener(){
 
 
-
-
-
-
             if (contrasena1.text.toString() == contrasena2.text.toString()){
                 val database = Firebase.database.reference
-                database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("contraseña").setValue(EncryptModel.md5(contrasena1.text.toString()))
+                database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("contraseña").setValue(EncryptModel.generateStorngPasswordHash(contrasena1.text.toString()))
                 findNavController().navigate(R.id.action_contrasena_to_visualizarCartasSeleccionadasFragment)
 
 

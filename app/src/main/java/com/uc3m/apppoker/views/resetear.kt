@@ -38,7 +38,8 @@ class resetear : Fragment() {
             var contrasena: EditText = view.findViewById(R.id.editTextTextPassword3)
             val database = Firebase.database.reference
             database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("contraseña").get().addOnSuccessListener {
-                if (EncryptModel.md5(contrasena.text.toString() )== it.value.toString()){
+               // if (EncryptModel.md5(contrasena.text.toString() )== it.value.toString()){
+                if (EncryptModel.validatePassword(contrasena.text.toString(),it.value.toString())){
                     val mano = Mano ()
                     database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).child("estadisticas").setValue(mano)
                     findNavController().navigate(R.id.action_resetear_to_estadisticas)

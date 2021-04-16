@@ -10,8 +10,5 @@ class RepositoryApi {
 
         return RetrofitInstance.pokerAPI.getWinner(mesa, manos)
     }
-    /*suspend fun getPlayers (): Response<players> {
-        return RetrofitInstance.pokerAPI.getPlayers()
-    }
-*/
+
 }

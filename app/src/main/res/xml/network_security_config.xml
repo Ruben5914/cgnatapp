@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted= "false">
+
+        <domain includeSubdomains = "true">pokerapi.dev</domain>
+        <pin-set>
+            <pin digest="SHA-256">u8pwQx09TKSYlyrUpr4LK5f61Oaq8cvAkVn5O02oHik=</pin>
+        </pin-set>
+    </domain-config>
+</network-security-config>

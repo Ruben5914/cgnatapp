@@ -22,7 +22,7 @@ class VariablesGlobales {
             if(mano == "pair"){
                 return "pareja"
             }
-            if(mano == "high_card"){
+            if(mano == "two_pair"){
                 return "doblePareja"
             }
             if(mano == "three_of_kind"){
@@ -59,7 +59,7 @@ class VariablesGlobales {
             if(mano == "pair"){
                 return "Pareja"
             }
-            if(mano == "high_card"){
+            if(mano == "two_pair"){
                 return "Doble Pareja"
             }
             if(mano == "three_of_kind"){
