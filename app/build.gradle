@@ -11,7 +11,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.uc3m.apppoker"
+        applicationId 'com.uc3m.cgnatapp'
         minSdkVersion 28
         targetSdkVersion 30
         versionCode 1

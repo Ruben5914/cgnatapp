@@ -1,42 +1,41 @@
 {
   "project_info": {
-    "project_number": "804172464095",
-    "firebase_url": "https://apppoker-406f4-default-rtdb.firebaseio.com",
-    "project_id": "apppoker-406f4",
-    "storage_bucket": "apppoker-406f4.appspot.com"
+    "project_number": "946106972611",
+    "project_id": "cgnatapp",
+    "storage_bucket": "cgnatapp.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:804172464095:android:0ab30024710af611dfce6a",
+        "mobilesdk_app_id": "1:946106972611:android:716ce9a5e1b2d48de32576",
         "android_client_info": {
-          "package_name": "com.uc3m.apppoker"
+          "package_name": "com.uc3m.cgnatapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "804172464095-oaq7lhmti1a3aeeotl8787jj0og0depf.apps.googleusercontent.com",
+          "client_id": "946106972611-9e86cetofo4hsr8l4hjgv58rn4bn1213.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.uc3m.apppoker",
-            "certificate_hash": "784ba9edc550789abadcc1b1d4a66c9263f0b2fe"
+            "package_name": "com.uc3m.cgnatapp",
+            "certificate_hash": "fe1dce4500585c41acd7d8d3ada813da4cb40c4c"
           }
         },
         {
-          "client_id": "804172464095-6mkpi9n3mh7s5a2n3s79acp7d5uptaah.apps.googleusercontent.com",
+          "client_id": "946106972611-d8lm4s1h93a96gldopi5a9ajmjdc40ff.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC6EMtyu7w2p8LOitdxZUcLsU9jGgsKPzg"
+          "current_key": "AIzaSyC8Erte-VjyjV26dX_YWsi4uleBO6id_tc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "804172464095-6mkpi9n3mh7s5a2n3s79acp7d5uptaah.apps.googleusercontent.com",
+              "client_id": "946106972611-d8lm4s1h93a96gldopi5a9ajmjdc40ff.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
