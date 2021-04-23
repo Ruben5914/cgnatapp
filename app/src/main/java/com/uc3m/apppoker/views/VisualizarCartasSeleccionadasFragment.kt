@@ -31,7 +31,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
     private lateinit var binding: FragmentVisualizarCartasSeleccionadasBinding
     private lateinit var auth : FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
-   // private val args: VisualizarCartasSeleccionadasFragmentArgs by navArgs()
+    private val args: VisualizarCartasSeleccionadasFragmentArgs by navArgs()
     private val modelVisualizarCartasSeleccionadas = VisualizarCartasSeleccionadasModel()
 
     private var cartaSeleccionada = "ninguna"
@@ -59,8 +59,8 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         val view = binding.root
 
         modelVisualizarCartasSeleccionadas.comprobarUsuarioEnBaseDatos()
-        //val traceresult = TraceRoute.traceRoute("www.google.com")
-        //Log.d("eee",traceresult?.message.toString())
+        val traceresult = TraceRoute.traceRoute("www.google.com")
+        Log.d("eee",traceresult?.message.toString())
 
 
 
@@ -270,8 +270,8 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
             }
         }
 
-           // cartaSeleccionada = args.CartasPicas
-        cartaSeleccionada = "AS"
+           cartaSeleccionada = args.CartasPicas
+
         return view
     }
 

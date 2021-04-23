@@ -1,4 +1,3 @@
-include ':libraryTraceroute'
 include ':app'
 include ':library'
 rootProject.name = "cgnatapp"

@@ -3,6 +3,7 @@ buildscript {
     ext.kotlin_version = "1.4.21"
     repositories {
         google()
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/central/' }
         jcenter()
 
     }
@@ -13,7 +14,7 @@ buildscript {
 
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
 
-        classpath 'com.novoda:bintray-release:0.8.0'
+        classpath 'com.novoda:bintray-release:0.8.1'
         classpath "org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.18"
 
 
@@ -25,6 +26,7 @@ buildscript {
 allprojects {
     repositories {
         google()
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/central/' }
         jcenter()
     }
 }
