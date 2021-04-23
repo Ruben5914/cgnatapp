@@ -2,6 +2,7 @@ package com.uc3m.apppoker.views
 
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -22,7 +23,7 @@ import com.uc3m.apppoker.repository.RepositoryApi
 import com.uc3m.apppoker.util.VariablesGlobales
 import com.uc3m.apppoker.viewModels.ApiViewModel
 import com.uc3m.apppoker.viewModels.MainViewModelFactory
-
+import com.wandroid.traceroute.TraceRoute
 
 
 class VisualizarCartasSeleccionadasFragment : Fragment() {
@@ -30,7 +31,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
     private lateinit var binding: FragmentVisualizarCartasSeleccionadasBinding
     private lateinit var auth : FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
-    private val args: VisualizarCartasSeleccionadasFragmentArgs by navArgs()
+   // private val args: VisualizarCartasSeleccionadasFragmentArgs by navArgs()
     private val modelVisualizarCartasSeleccionadas = VisualizarCartasSeleccionadasModel()
 
     private var cartaSeleccionada = "ninguna"
@@ -58,6 +59,8 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         val view = binding.root
 
         modelVisualizarCartasSeleccionadas.comprobarUsuarioEnBaseDatos()
+        //val traceresult = TraceRoute.traceRoute("www.google.com")
+        //Log.d("eee",traceresult?.message.toString())
 
 
 
@@ -267,8 +270,8 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
             }
         }
 
-            cartaSeleccionada = args.CartasPicas
-
+           // cartaSeleccionada = args.CartasPicas
+        cartaSeleccionada = "AS"
         return view
     }
 
