@@ -1,16 +1,10 @@
 package com.uc3m.apppoker.models
 
-data class  contenido(
-        var cards: String,
-        var hand: String,
-        var result: String
-)
 
 
-data class poker(
+data class ip(
+        val ip : String
+        )
 
-        val winners : List<contenido>,
-        val players: List<contenido>
-)
 
 

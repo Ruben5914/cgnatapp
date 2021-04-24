@@ -4,7 +4,8 @@ package com.uc3m.apppoker.util
 //distintas clases (que no son private)
 class Constants {
     companion object {
-        const val POKER_URL = "https://api.pokerapi.dev/"
+        //const val POKER_URL = "https://api.pokerapi.dev/"
+        const val IP_URL = "https://api.ipify.org/"
     }
 
 }

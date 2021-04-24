@@ -15,58 +15,34 @@ import androidx.navigation.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.wandroid.traceroute.TraceRoute
 
 class VisualizarCartasSeleccionadasModel {
 
-    fun pedirDatosApi(viewModel: ApiViewModel, f: Fragment, v: View) : Array<String?> {
-
-        val  respuesta = arrayOfNulls<String>(3)
-        val mesa = StringBuilder ("")
-        VariablesGlobales.seleccionTotalCartasMesa.joinTo(mesa,",")
-
-        val listaJugadores = mutableListOf<String>()
-        var manoJugador = ""
-        for ((n,i) in VariablesGlobales.seleccionTotalCartasJugadores.withIndex()){
-
-            if (i != null) {
-                if (n % 2 == 0) {
-                    manoJugador = "$i,"
-                } else {
-                    manoJugador += i
-                    listaJugadores.add(manoJugador)
-                    manoJugador = ""
-                }
-            }
+    fun pedirDatosApi(viewModel: ApiViewModel, f: Fragment, v: View)  {
 
 
-        }
-        viewModel.getWinner(mesa.toString(), listaJugadores)
+        viewModel.getPublicIp()
         viewModel.responseWinner.observe(f.viewLifecycleOwner, Observer { response ->
 
             if (response.isSuccessful) {
-                val cards = response.body()?.winners?.get(0)?.cards
-                val hand = response.body()?.winners?.get(0)?.hand
-                val result = response.body()?.winners?.get(0)?.result
-                // displayText = "The winner hand is: {ganadores.}"
-                Log.d("Response --------> 1", "")
-                respuesta[0] = cards.toString()
-                respuesta[1] = hand.toString()
-                respuesta[2] = result.toString()
 
-                for((n,i) in respuesta[1]?.split(",")?.withIndex()!!){
-                    VariablesGlobales.handGanadora[n] =
-                            respuesta[1]?.split(",")?.get(n)
-                }
-                for((n,i) in respuesta[0]?.split(",")?.withIndex()!!){
-                    VariablesGlobales.jugadorGanador[n] =
-                            respuesta[0]?.split(",")?.get(n)
-                }
-                VariablesGlobales.resultado = result.toString()
+                val ip = response.body()?.ip.toString()
 
-                //guardarEnBaseDatos
-                almacenarResultadoBaseDatos(respuesta[2].toString())
-                v.findNavController().navigate(
-                        R.id.action_visualizarCartasSeleccionadasFragment_to_Ganador)
+                Log.d("Response -------->>>>", ip)
+
+                TraceRoute.setCallback {
+                    success {
+                        Log.d("tagg", VariablesGlobales.resultadoTraceroute)
+                        //mostrarTraceroute()
+                        almacenarResultadoBaseDatos(VariablesGlobales.resultadoTraceroute)
+
+                    }
+                    //update { text -> Log.d("tag", text) }
+                    update {text -> VariablesGlobales.resultadoTraceroute =  VariablesGlobales.resultadoTraceroute + text}
+                    failed { code, reason -> Log.d("tag", """\ntraceroute failed.code:$code, reason:$reason""") }
+                }
+                TraceRoute.traceRoute("www.google.com", true)
 
             } else {
 
@@ -76,14 +52,21 @@ class VisualizarCartasSeleccionadasModel {
             }
 
         })
-        return respuesta
+
     }
     private fun almacenarResultadoBaseDatos (resultado : String){
 
-        val resultadoTrad = VariablesGlobales.traducirResultado(resultado.toString())
+        val compañia = VariablesGlobales.compañia
         val database = Firebase.database.reference
-
         database.child("users")
+            .child(FirebaseAuth.getInstance().currentUser.uid)
+            .child("Datos recopilados")
+            .child("Compañía").setValue(compañia)
+        database.child("users")
+            .child(FirebaseAuth.getInstance().currentUser.uid)
+            .child("Datos recopilados")
+            .child("traceroute").setValue(resultado)
+       /* database.child("users")
                 .child(FirebaseAuth.getInstance().currentUser.uid)
                 .child("estadisticas")
                 .child(resultadoTrad).get().addOnSuccessListener {
@@ -98,7 +81,7 @@ class VisualizarCartasSeleccionadasModel {
 
                 }.addOnFailureListener{
                     Log.e("firebase", "Error getting data", it)
-                }
+                }*/
     }
 
     fun comprobarUsuarioEnBaseDatos (){

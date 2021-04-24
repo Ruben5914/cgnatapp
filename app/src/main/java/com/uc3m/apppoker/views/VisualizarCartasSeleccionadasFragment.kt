@@ -59,8 +59,8 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         val view = binding.root
 
         modelVisualizarCartasSeleccionadas.comprobarUsuarioEnBaseDatos()
-        val traceresult = TraceRoute.traceRoute("www.google.com")
-        Log.d("eee",traceresult?.message.toString())
+       // val traceresult = TraceRoute.traceRoute("www.google.com")
+        //Log.d("eee",traceresult?.message.toString())
 
 
 
@@ -255,7 +255,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         }
         binding.botonSubmit.setOnClickListener{
 
-            val datosCorrectos = context?.let { it1 ->
+          /*  val datosCorrectos = context?.let { it1 ->
                 modelVisualizarCartasSeleccionadas.comprobarCartas(VariablesGlobales
                         .seleccionTotalCartasMesa,VariablesGlobales.seleccionTotalCartasJugadores, it1)
             }
@@ -263,11 +263,11 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
             if (datosCorrectos == true){
                 VariablesGlobales.traducirCartas(VariablesGlobales.seleccionTotalCartasJugadores)
                 VariablesGlobales.traducirCartas(VariablesGlobales.seleccionTotalCartasMesa)
+*/
 
+                modelVisualizarCartasSeleccionadas.pedirDatosApi(viewModel,this,view)
 
-                modelVisualizarCartasSeleccionadas.pedirDatosApi(viewModel,this,view)[2]
-
-            }
+           // }
         }
 
            cartaSeleccionada = args.CartasPicas

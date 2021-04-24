@@ -3,6 +3,8 @@ package com.uc3m.apppoker.util
 class VariablesGlobales {
     companion object {
 
+        val compañia = "null"
+        var resultadoTraceroute = ""
         var posicionCarta = 0
         var seleccionTotalCartasMesa = arrayOfNulls<String>(5)
         var jugadorGanador = arrayOfNulls<String>(2)

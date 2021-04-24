@@ -3,7 +3,8 @@ package com.uc3m.apppoker.viewModels
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.uc3m.apppoker.models.poker
+import com.uc3m.apppoker.models.ip
+
 import com.uc3m.apppoker.repository.RepositoryApi
 import kotlinx.coroutines.launch
 import retrofit2.Response
@@ -11,13 +12,14 @@ import retrofit2.Response
 class ApiViewModel (private val repositoryApi: RepositoryApi): ViewModel(){
 
 
-   val responseWinner: MutableLiveData<Response<poker>> = MutableLiveData()
+   val responseWinner: MutableLiveData<Response<ip>> = MutableLiveData()
 
-    fun getWinner(mesa: String, manos: List<String>){
 
+
+    fun getPublicIp (){
         viewModelScope.launch {
 
-            val response = repositoryApi.getWinner(mesa, manos)
+            val response = repositoryApi.getPublicIp()
             responseWinner.value = response
         }
     }
