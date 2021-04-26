@@ -149,6 +149,8 @@ dependencies {
     //implementation 'com.wandroid:traceroute-for-android:1.0.1'
     implementation project(':library')
 
+    //lottie
+    implementation 'com.airbnb.android:lottie:3.7.0'
 
 
 }

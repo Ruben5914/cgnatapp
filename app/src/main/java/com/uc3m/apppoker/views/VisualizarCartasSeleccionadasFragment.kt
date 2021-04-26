@@ -118,7 +118,7 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         mostrardatos.text = VariablesGlobales.resultadoTraceroute
 
         var animacion : Animation = AlphaAnimation(0.0f,1.0f)
-        animacion.duration = 5000
+        animacion.duration = 6000
         presentardatos.visibility = View.VISIBLE
         presentardatos.startAnimation(animacion)
         mostrardatos.visibility = View.VISIBLE

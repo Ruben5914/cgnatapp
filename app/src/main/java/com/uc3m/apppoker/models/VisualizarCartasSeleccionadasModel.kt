@@ -37,16 +37,35 @@ class VisualizarCartasSeleccionadasModel {
                 Log.d("Response -------->>>>", ip)
 
                 val botonStart: Button = v.findViewById(R.id.botonSubmit)
+                val botonlogout: Button = v.findViewById(R.id.BotonLogOutt)
                 val infoInicial: TextView = v.findViewById(R.id.textoInicial)
                 var animacion : Animation = AlphaAnimation(1.0f,0.0f)
-                animacion.duration = 5000
+                var animacion2 : Animation = AlphaAnimation(0.0f,1.0f)
+                val textocargando: TextView = v.findViewById(R.id.textocargando)
+                animacion2.duration = 6000
+                animacion.duration = 3000
                 botonStart.startAnimation(animacion)
                 botonStart.visibility = View.GONE
                 infoInicial.startAnimation(animacion)
                 infoInicial.visibility = View.GONE
+                botonlogout.startAnimation(animacion)
+                botonlogout.visibility = View.GONE
+
+                val lottie: com.airbnb.lottie.LottieAnimationView = v.findViewById(R.id.animacionLottie)
+                lottie.visibility = View.VISIBLE
+                lottie.startAnimation(animacion2)
+                textocargando.visibility = View.VISIBLE
+                textocargando.startAnimation(animacion2)
+
 
                 TraceRoute.setCallback {
                     success {
+                        lottie.startAnimation(animacion)
+                        lottie.visibility = View.GONE
+                        textocargando.startAnimation(animacion)
+                        textocargando.visibility = View.GONE
+                        botonlogout.visibility =View.VISIBLE
+                        botonlogout.startAnimation(animacion)
                         Log.d("tagg", VariablesGlobales.resultadoTraceroute)
                        val viewVisualizarResultado = VisualizarCartasSeleccionadasFragment ()
                         viewVisualizarResultado.mostrarTraceroute(v)
