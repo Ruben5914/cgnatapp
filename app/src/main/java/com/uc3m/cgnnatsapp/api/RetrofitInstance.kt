@@ -1,6 +1,6 @@
-package com.uc3m.apppoker.api
+package com.uc3m.cgnnatsapp.api
 
-import com.uc3m.apppoker.util.Constants.Companion.IP_URL
+import com.uc3m.cgnnatsapp.util.Constants.Companion.IP_URL
 import okhttp3.CertificatePinner
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

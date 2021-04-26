@@ -1,11 +1,11 @@
-package com.uc3m.apppoker.viewModels
+package com.uc3m.cgnnatsapp.viewModels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.uc3m.apppoker.models.ip
+import com.uc3m.cgnnatsapp.models.ip
 
-import com.uc3m.apppoker.repository.RepositoryApi
+import com.uc3m.cgnnatsapp.repository.RepositoryApi
 import kotlinx.coroutines.launch
 import retrofit2.Response
 

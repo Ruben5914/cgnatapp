@@ -1,4 +1,4 @@
-package com.uc3m.apppoker.views
+package com.uc3m.cgnnatsapp.views
 
 import android.content.Intent
 import android.os.Bundle
@@ -22,10 +22,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
-import com.uc3m.apppoker.R
-import com.uc3m.apppoker.databinding.FragmentPrincipalBinding
+import com.uc3m.cgnnatsapp.R
+import com.uc3m.cgnnatsapp.databinding.FragmentPrincipalBinding
 
 
 

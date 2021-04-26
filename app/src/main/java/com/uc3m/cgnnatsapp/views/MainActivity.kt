@@ -1,11 +1,9 @@
-package com.uc3m.apppoker.views
+package com.uc3m.cgnnatsapp.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.addCallback
 import androidx.navigation.findNavController
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.uc3m.apppoker.R
+import com.uc3m.cgnnatsapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

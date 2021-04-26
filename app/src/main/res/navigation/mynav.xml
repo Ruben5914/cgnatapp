@@ -7,20 +7,20 @@
 
     <fragment
         android:id="@+id/principal"
-        android:name="com.uc3m.apppoker.views.Principal"
+        android:name="com.uc3m.cgnnatsapp.views.Principal"
         android:label="fragment_principal"
         tools:layout="@layout/fragment_principal" >
         <action
             android:id="@+id/action_principal_to_visualizarCartasSeleccionadasFragment"
-            app:destination="@id/visualizarCartasSeleccionadasFragment"
+            app:destination="@id/realizarTraceroute"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
-        android:id="@+id/visualizarCartasSeleccionadasFragment"
-        android:name="com.uc3m.apppoker.views.VisualizarCartasSeleccionadasFragment"
-        android:label="fragment_visualizar_cartas_seleccionadas"
-        tools:layout="@layout/fragment_visualizar_cartas_seleccionadas" >
+        android:id="@+id/realizarTraceroute"
+        android:name="com.uc3m.cgnnatsapp.views.RealizarTracerouteFragment"
+        android:label="fragment_realizarTraceroute"
+        tools:layout="@layout/fragment_realizar_traceroute">
         <action
             android:id="@+id/action_visualizarCartasSeleccionadasFragment_to_principal"
             app:destination="@id/principal"
@@ -28,7 +28,7 @@
             app:exitAnim="@android:anim/fade_out" />
         <argument
             android:name="CartasPicas"
-            app:argType="string"
-            android:defaultValue="ninguna" />
+            android:defaultValue="ninguna"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -1,9 +1,8 @@
-package com.uc3m.apppoker.viewModels
+package com.uc3m.cgnnatsapp.viewModels
 
 import android.util.Log
 import java.math.BigInteger
 import java.security.KeyStore
-import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 import java.security.SecureRandom
 import java.security.spec.InvalidKeySpecException

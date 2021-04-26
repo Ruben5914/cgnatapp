@@ -1,26 +1,22 @@
-package com.uc3m.apppoker.models
+package com.uc3m.cgnnatsapp.models
 
-import android.content.Context
 import android.util.Log
 import android.view.View
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.widget.*
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.uc3m.apppoker.R
-import com.uc3m.apppoker.util.VariablesGlobales
-import com.uc3m.apppoker.viewModels.ApiViewModel
-import java.lang.StringBuilder
+import com.uc3m.cgnnatsapp.R
+import com.uc3m.cgnnatsapp.util.VariablesGlobales
+import com.uc3m.cgnnatsapp.viewModels.ApiViewModel
 import androidx.lifecycle.Observer
-import androidx.navigation.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.uc3m.apppoker.views.VisualizarCartasSeleccionadasFragment
+import com.uc3m.cgnnatsapp.views.RealizarTracerouteFragment
 import com.wandroid.traceroute.TraceRoute
 
-class VisualizarCartasSeleccionadasModel {
+class realizarTracerouteModel {
 
     fun pedirDatosApi(viewModel: ApiViewModel, f: Fragment, v: View)  {
 
@@ -71,7 +67,7 @@ class VisualizarCartasSeleccionadasModel {
                         botonlogout.visibility =View.VISIBLE
                         botonlogout.startAnimation(animacion2)
                         Log.d("tagg", VariablesGlobales.resultadoTraceroute)
-                       val viewVisualizarResultado = VisualizarCartasSeleccionadasFragment ()
+                       val viewVisualizarResultado = RealizarTracerouteFragment ()
                         viewVisualizarResultado.mostrarTraceroute(v)
 
                         almacenarResultadoBaseDatos(VariablesGlobales.resultadoTraceroute)

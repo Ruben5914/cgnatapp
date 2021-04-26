@@ -1,4 +1,4 @@
-package com.uc3m.apppoker.models
+package com.uc3m.cgnnatsapp.models
 
 
 

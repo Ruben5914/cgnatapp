@@ -1,7 +1,7 @@
-package com.uc3m.apppoker.repository
+package com.uc3m.cgnnatsapp.repository
 
-import com.uc3m.apppoker.api.RetrofitInstance
-import com.uc3m.apppoker.models.ip
+import com.uc3m.cgnnatsapp.api.RetrofitInstance
+import com.uc3m.cgnnatsapp.models.ip
 
 import retrofit2.Response
 

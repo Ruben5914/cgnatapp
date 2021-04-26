@@ -1,4 +1,4 @@
-package com.uc3m.apppoker
+package com.uc3m.cgnnatsapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

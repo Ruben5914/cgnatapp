@@ -1,4 +1,4 @@
-package com.uc3m.apppoker.util
+package com.uc3m.cgnnatsapp.util
 
 
 class Constants {
