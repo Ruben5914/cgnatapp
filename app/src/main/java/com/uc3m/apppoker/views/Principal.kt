@@ -68,18 +68,9 @@ class Principal : Fragment() {
 
 
         if(user != null){
-            val database = Firebase.database.reference
-            database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).get().addOnSuccessListener {
-                if(it.value.toString().contains("contraseña")){
+
+
                     findNavController().navigate(R.id.action_principal_to_visualizarCartasSeleccionadasFragment)
-                }else{
-                    findNavController().navigate(R.id.action_principal_to_contrasena)
-                }
-
-            }.addOnFailureListener{
-                Log.e("firebase", "Error getting data", it)
-            }
-
 
         }
 
@@ -143,17 +134,9 @@ class Principal : Fragment() {
                         Log.d("Fragment Login", "signInWithCredential:success")
                         val user = auth.currentUser
                         if(user != null){
-                            val database = Firebase.database.reference
-                            database.child("users").child(FirebaseAuth.getInstance().currentUser.uid).get().addOnSuccessListener {
-                                if(it.value.toString().contains("contraseña")){
-                                    findNavController().navigate(R.id.action_principal_to_visualizarCartasSeleccionadasFragment)
-                                }else{
-                                    findNavController().navigate(R.id.action_principal_to_contrasena)
-                                }
 
-                            }.addOnFailureListener{
-                                Log.e("firebase", "Error getting data", it)
-                            }
+                                    findNavController().navigate(R.id.action_principal_to_visualizarCartasSeleccionadasFragment)
+
                         }
                     } else {
                         Log.w("Fragment Login", "signInWithCredential:failure", task.exception)

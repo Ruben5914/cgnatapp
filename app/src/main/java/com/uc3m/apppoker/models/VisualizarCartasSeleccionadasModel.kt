@@ -5,9 +5,7 @@ import android.util.Log
 import android.view.View
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.uc3m.apppoker.R
@@ -42,6 +40,8 @@ class VisualizarCartasSeleccionadasModel {
                 var animacion : Animation = AlphaAnimation(1.0f,0.0f)
                 var animacion2 : Animation = AlphaAnimation(0.0f,1.0f)
                 val textocargando: TextView = v.findViewById(R.id.textocargando)
+                val seleccion: ScrollView = v.findViewById(R.id.scrollradio)
+                val textoresultado: TextView = v.findViewById(R.id.textoresultado)
                 animacion2.duration = 6000
                 animacion.duration = 3000
                 botonStart.startAnimation(animacion)
@@ -50,6 +50,8 @@ class VisualizarCartasSeleccionadasModel {
                 infoInicial.visibility = View.GONE
                 botonlogout.startAnimation(animacion)
                 botonlogout.visibility = View.GONE
+                seleccion.startAnimation(animacion)
+                seleccion.visibility = View.GONE
 
                 val lottie: com.airbnb.lottie.LottieAnimationView = v.findViewById(R.id.animacionLottie)
                 lottie.visibility = View.VISIBLE
@@ -60,12 +62,14 @@ class VisualizarCartasSeleccionadasModel {
 
                 TraceRoute.setCallback {
                     success {
+                        textocargando.visibility = View.VISIBLE
+                        textocargando.startAnimation(animacion2)
                         lottie.startAnimation(animacion)
                         lottie.visibility = View.GONE
                         textocargando.startAnimation(animacion)
                         textocargando.visibility = View.GONE
                         botonlogout.visibility =View.VISIBLE
-                        botonlogout.startAnimation(animacion)
+                        botonlogout.startAnimation(animacion2)
                         Log.d("tagg", VariablesGlobales.resultadoTraceroute)
                        val viewVisualizarResultado = VisualizarCartasSeleccionadasFragment ()
                         viewVisualizarResultado.mostrarTraceroute(v)
@@ -107,7 +111,7 @@ class VisualizarCartasSeleccionadasModel {
             .setValue(FirebaseAuth.getInstance().currentUser.displayName)
 
     }
-
+/*
     fun comprobarUsuarioEnBaseDatos (){
 
         val database = Firebase.database.reference
@@ -128,7 +132,7 @@ class VisualizarCartasSeleccionadasModel {
 
 
 
-    }
+    }*/
 
 
 

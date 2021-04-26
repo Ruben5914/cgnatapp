@@ -60,17 +60,13 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
                 .inflate(inflater, container, false)
         val view = binding.root
 
-        modelVisualizarCartasSeleccionadas.comprobarUsuarioEnBaseDatos()
+        //modelVisualizarCartasSeleccionadas.comprobarUsuarioEnBaseDatos()
 
 
         binding.BotonLogOutt.setOnClickListener{
 
             //Tras cerrar sesion se ponen las variables globales por defecto
-            VariablesGlobales.posicionCarta = 0
-            VariablesGlobales.seleccionTotalCartasMesa = arrayOfNulls(5)
-            VariablesGlobales.jugadorGanador = arrayOfNulls(2)
-            VariablesGlobales.handGanadora = arrayOfNulls(5)
-            VariablesGlobales.seleccionTotalCartasJugadores = arrayOfNulls(12)
+
             VariablesGlobales.resultado = ""
             auth.signOut()
             val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -100,18 +96,92 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
                 VariablesGlobales.traducirCartas(VariablesGlobales.seleccionTotalCartasMesa)
 */
 
+            val eleccion1 : RadioButton = view.findViewById(R.id.Vodafone)
+            val eleccion2 : RadioButton = view.findViewById(R.id.Movistar)
+            val eleccion3 : RadioButton = view.findViewById(R.id.Orange)
+            val eleccion4 : RadioButton = view.findViewById(R.id.O2)
+            val eleccion5 : RadioButton = view.findViewById(R.id.Jazztel)
+            val eleccion6 : RadioButton = view.findViewById(R.id.Yoigo)
+            val eleccion7 : RadioButton = view.findViewById(R.id.Lowi)
+            val eleccion8 : RadioButton = view.findViewById(R.id.Adamo)
+            val eleccion9 : RadioButton = view.findViewById(R.id.Amena)
+            val eleccion10 : RadioButton = view.findViewById(R.id.DigiMobil)
+            val eleccion11 : RadioButton = view.findViewById(R.id.Pepephone)
+            val eleccion12 : RadioButton = view.findViewById(R.id.Euskatel)
+            val eleccion13 : RadioButton = view.findViewById(R.id.Otro)
+
+
+
+            if (eleccion1.isChecked){
+                VariablesGlobales.compañia = "Vodafone"
                 modelVisualizarCartasSeleccionadas.pedirDatosApi(viewModel,this,view)
+            }else{
+            if (eleccion2.isChecked){
+                VariablesGlobales.compañia = "Movistar"
+                modelVisualizarCartasSeleccionadas.pedirDatosApi(viewModel,this,view)
+            }else{
+            if (eleccion3.isChecked){
+                VariablesGlobales.compañia = "Orange"
+                modelVisualizarCartasSeleccionadas.pedirDatosApi(viewModel,this,view)
+            }else{
+            if (eleccion4.isChecked){
+                VariablesGlobales.compañia = "O2"
+                modelVisualizarCartasSeleccionadas.pedirDatosApi(viewModel,this,view)
+            }else{
+            if (eleccion5.isChecked){
+                VariablesGlobales.compañia = "Jazztel"
+                modelVisualizarCartasSeleccionadas.pedirDatosApi(viewModel,this,view)
+            }else{
+            if (eleccion6.isChecked){
+                VariablesGlobales.compañia = "Yoigo"
+                modelVisualizarCartasSeleccionadas.pedirDatosApi(viewModel,this,view)
+            }else{
+            if (eleccion7.isChecked){
+                VariablesGlobales.compañia = "Lowi"
+                modelVisualizarCartasSeleccionadas.pedirDatosApi(viewModel,this,view)
+            }else{
+            if (eleccion8.isChecked){
+                VariablesGlobales.compañia = "Adamo"
+                modelVisualizarCartasSeleccionadas.pedirDatosApi(viewModel,this,view)
+            }else{
+            if (eleccion9.isChecked){
+                VariablesGlobales.compañia = "Amena"
+                modelVisualizarCartasSeleccionadas.pedirDatosApi(viewModel,this,view)
+            }else{
+            if (eleccion10.isChecked){
+                VariablesGlobales.compañia = "DigiMovil"
+                modelVisualizarCartasSeleccionadas.pedirDatosApi(viewModel,this,view)
+            }else{
+            if (eleccion11.isChecked){
+                VariablesGlobales.compañia = "Pepephone"
+                modelVisualizarCartasSeleccionadas.pedirDatosApi(viewModel,this,view)
+            }else{
+            if (eleccion12.isChecked){
+                VariablesGlobales.compañia = "Euskatel"
+                modelVisualizarCartasSeleccionadas.pedirDatosApi(viewModel,this,view)
+            }else{
+            if (eleccion13.isChecked){
+                VariablesGlobales.compañia = "Otro"
+                modelVisualizarCartasSeleccionadas.pedirDatosApi(viewModel,this,view)
+            }else{
+                Toast.makeText(context, "Señale la compañía que utiliza", Toast.LENGTH_LONG).show()
+
+
+            } } }}}}}}}}}}}
+
+
 
            // }
         }
 
-           cartaSeleccionada = args.CartasPicas
+
 
         return view
     }
     fun mostrarTraceroute(v : View){
 
         val presentardatos : TextView = v.findViewById(R.id.textoresultado)
+        val mostrardatosscroll: ScrollView = v.findViewById(R.id.textomostrarresultadoscroll)
         val mostrardatos: TextView = v.findViewById(R.id.textomostrarresultado)
 
 
@@ -121,8 +191,8 @@ class VisualizarCartasSeleccionadasFragment : Fragment() {
         animacion.duration = 6000
         presentardatos.visibility = View.VISIBLE
         presentardatos.startAnimation(animacion)
-        mostrardatos.visibility = View.VISIBLE
-        mostrardatos.startAnimation(animacion)
+        mostrardatosscroll.visibility = View.VISIBLE
+        mostrardatosscroll.startAnimation(animacion)
 
 
     }

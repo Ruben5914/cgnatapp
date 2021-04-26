@@ -4,26 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/pokerClarito"
+    android:background="@color/naranja"
     tools:context="views.VisualizarCartasSeleccionadasFragment">
 
 
     <TextView
         android:id="@+id/textoInicial"
-        android:layout_width="316dp"
-        android:layout_height="86dp"
+        android:layout_width="319dp"
+        android:layout_height="117dp"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
         android:fontFamily="@font/enchantedland"
-        android:text="Presiona Start para realizar un traceroute a su ip pública, el resultado se mostrará por pantalla y se almacenará en la base de datos."
+        android:text="Indique su proveedor de internet y presione Start para realizar un traceroute a su ip pública, el resultado se mostrará por pantalla y se almacenará en la base de datos."
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.407"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.226" />
+        app:layout_constraintVertical_bias="0.122" />
 
     <Button
         android:id="@+id/BotonLogOutt"
@@ -38,7 +38,7 @@
         android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -52,24 +52,14 @@
         android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.453" />
+        app:layout_constraintVertical_bias="0.75" />
 
-    <TextView
-        android:id="@+id/textomostrarresultado"
-        android:layout_width="326dp"
-        android:layout_height="372dp"
-        android:text="TextView"
-        android:visibility="gone"
-        android:isScrollContainer="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.451" />
+
+
+
 
     <TextView
         android:id="@+id/textoresultado"
@@ -80,6 +70,7 @@
         android:text="El resultado del traceroute a su ip pública es el siguiente:"
         android:textSize="25dp"
         android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -117,5 +108,181 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.218" />
+
+    <ScrollView
+        android:id="@+id/scrollradio"
+        android:layout_width="136dp"
+        android:layout_height="214dp"
+        android:fadeScrollbars="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499">
+
+
+        <RadioGroup
+            android:id="@+id/eleccion"
+            android:layout_width="134dp"
+            android:layout_height="wrap_content"
+            android:isScrollContainer="true"
+            android:scrollbarStyle="outsideInset"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.736"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.476">
+
+            <RadioButton
+                android:id="@+id/Vodafone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vodafone"
+
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="412dp" />
+
+            <RadioButton
+                android:id="@+id/Orange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:text="Orange"
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="412dp" />
+
+            <RadioButton
+                android:id="@+id/Movistar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:text="Movistar"
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="412dp" />
+
+            <RadioButton
+                android:id="@+id/O2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:text="O2"
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="412dp" />
+
+            <RadioButton
+                android:id="@+id/Jazztel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:text="Jazztel"
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="412dp" />
+
+            <RadioButton
+                android:id="@+id/Yoigo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:text="Yoigo"
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="412dp" />
+
+            <RadioButton
+                android:id="@+id/Lowi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:text="Lowi"
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="412dp" />
+
+            <RadioButton
+                android:id="@+id/Adamo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:text="Adamo"
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="412dp" />
+
+            <RadioButton
+                android:id="@+id/Amena"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:text="Amena"
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="412dp" />
+
+            <RadioButton
+                android:id="@+id/DigiMobil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:text="DigiMobil"
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="412dp" />
+
+            <RadioButton
+                android:id="@+id/Pepephone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:text="Pepephone"
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="412dp" />
+
+            <RadioButton
+                android:id="@+id/Euskatel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:text="Euskatel"
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="412dp" />
+
+            <RadioButton
+                android:id="@+id/Otro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="true"
+                android:text="Otro"
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="412dp" />
+
+        </RadioGroup>
+
+
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/textomostrarresultadoscroll"
+        android:layout_width="292dp"
+        android:visibility="gone"
+        android:fadeScrollbars="false"
+        android:layout_height="382dp"
+        android:background="@drawable/cubo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textomostrarresultado"
+            android:padding="15dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.451" />
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

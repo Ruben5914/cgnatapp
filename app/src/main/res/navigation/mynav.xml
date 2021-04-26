@@ -15,22 +15,12 @@
             app:destination="@id/visualizarCartasSeleccionadasFragment"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out" />
-        <action
-            android:id="@+id/action_principal_to_contrasena"
-            app:destination="@id/contrasena"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/visualizarCartasSeleccionadasFragment"
         android:name="com.uc3m.apppoker.views.VisualizarCartasSeleccionadasFragment"
         android:label="fragment_visualizar_cartas_seleccionadas"
         tools:layout="@layout/fragment_visualizar_cartas_seleccionadas" >
-        <action
-            android:id="@+id/action_visualizarCartasSeleccionadasFragment_to_elegirPaloFragment"
-            app:destination="@id/elegirPaloFragment"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_open_exit" />
         <action
             android:id="@+id/action_visualizarCartasSeleccionadasFragment_to_principal"
             app:destination="@id/principal"
@@ -40,135 +30,5 @@
             android:name="CartasPicas"
             app:argType="string"
             android:defaultValue="ninguna" />
-        <action
-            android:id="@+id/action_visualizarCartasSeleccionadasFragment_to_Ganador"
-            app:destination="@id/Ganador"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
-        <action
-            android:id="@+id/action_visualizarCartasSeleccionadasFragment_to_estadisticas"
-            app:destination="@id/estadisticas"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
-    </fragment>
-    <fragment
-        android:id="@+id/elegirPaloFragment"
-        android:name="com.uc3m.apppoker.views.elegirPaloFragment"
-        android:label="fragment_elegir_palo"
-        tools:layout="@layout/fragment_elegir_palo" >
-        <action
-            android:id="@+id/action_elegirPaloFragment_to_cartaspicasFragment"
-            app:destination="@id/cartaspicasFragment"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@android:anim/fade_in" />
-        <action
-            android:id="@+id/action_elegirPaloFragment_to_cartascorazonesFragment"
-            app:destination="@id/cartascorazonesFragment"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_open_exit" />
-        <action
-            android:id="@+id/action_elegirPaloFragment_to_cartastrebolesFragment"
-            app:destination="@id/cartastrebolesFragment"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_open_exit" />
-        <action
-            android:id="@+id/action_elegirPaloFragment_to_cartasdiamantesFragment"
-            app:destination="@id/cartasdiamantesFragment"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_open_exit" />
-    </fragment>
-    <fragment
-        android:id="@+id/cartaspicasFragment"
-        android:name="com.uc3m.apppoker.views.CartasPicasFragment"
-        android:label="fragment_cartas_picas"
-        tools:layout="@layout/fragment_cartas_picas" >
-        <action
-            android:id="@+id/action_cartaspicasFragment_to_visualizarCartasSeleccionadasFragment"
-
-            app:destination="@id/visualizarCartasSeleccionadasFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
-    </fragment>
-    <fragment
-        android:id="@+id/cartascorazonesFragment"
-        android:name="com.uc3m.apppoker.views.CartasCorazonesFragment"
-        android:label="fragment_cartas_corazones"
-        tools:layout="@layout/fragment_cartas_corazones" >
-        <action
-            android:id="@+id/action_cartascorazonesFragment_to_visualizarCartasSeleccionadasFragment"
-            app:destination="@id/visualizarCartasSeleccionadasFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
-    </fragment>
-    <fragment
-        android:id="@+id/cartastrebolesFragment"
-        android:name="com.uc3m.apppoker.views.CartasTrebolesFragment"
-        android:label="fragment_cartas_treboles"
-        tools:layout="@layout/fragment_cartas_treboles" >
-        <action
-            android:id="@+id/action_cartastrebolesFragment_to_visualizarCartasSeleccionadasFragment"
-            app:destination="@id/visualizarCartasSeleccionadasFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
-    </fragment>
-    <fragment
-        android:id="@+id/cartasdiamantesFragment"
-        android:name="com.uc3m.apppoker.views.CartasDiamantesFragment"
-        android:label="fragment_cartas_diamantes"
-        tools:layout="@layout/fragment_cartas_diamantes" >
-        <action
-            android:id="@+id/action_cartasdiamantesFragment_to_visualizarCartasSeleccionadasFragment"
-            app:destination="@id/visualizarCartasSeleccionadasFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
-    </fragment>
-    <fragment
-        android:id="@+id/Ganador"
-        android:name="com.uc3m.apppoker.views.Ganador"
-        android:label="fragment_ganador"
-        tools:layout="@layout/fragment_ganador" >
-        <action
-            android:id="@+id/action_Ganador_to_visualizarCartasSeleccionadasFragment"
-            app:destination="@id/visualizarCartasSeleccionadasFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
-    </fragment>
-    <fragment
-        android:id="@+id/estadisticas"
-        android:name="com.uc3m.apppoker.views.Estadisticas"
-        android:label="fragment_estadisticas"
-        tools:layout="@layout/fragment_estadisticas" >
-        <action
-            android:id="@+id/action_estadisticas_to_visualizarCartasSeleccionadasFragment"
-            app:destination="@id/visualizarCartasSeleccionadasFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
-        <action
-            android:id="@+id/action_estadisticas_to_resetear"
-            app:destination="@id/resetear"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
-    </fragment>
-    <fragment
-        android:id="@+id/contrasena"
-        android:name="com.uc3m.apppoker.views.Contrasena"
-        android:label="fragment_contrasena"
-        tools:layout="@layout/fragment_contrasena" >
-        <action
-            android:id="@+id/action_contrasena_to_visualizarCartasSeleccionadasFragment"
-            app:destination="@id/visualizarCartasSeleccionadasFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
-    </fragment>
-    <fragment
-        android:id="@+id/resetear"
-        android:name="com.uc3m.apppoker.views.Resetear"
-        android:label="fragment_resetear"
-        tools:layout="@layout/fragment_resetear" >
-        <action
-            android:id="@+id/action_resetear_to_estadisticas"
-            app:destination="@id/estadisticas"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
     </fragment>
 </navigation>
