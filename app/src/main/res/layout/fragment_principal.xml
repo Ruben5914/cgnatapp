@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
+    android:background="@drawable/logowifi"
     tools:context="views.Principal">
 
 
@@ -30,9 +30,10 @@
         android:id="@+id/mensajeInformativoInicioSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="36dp"
-        android:text="Sign in to register all your hands and stats"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="28dp"
+        android:text="Sign in to register the data"
+        android:textSize="18dp"
         android:textStyle="bold"
 
         app:layout_constraintBottom_toTopOf="@+id/botonSignIn"
@@ -49,7 +50,7 @@
         android:layout_marginEnd="10dp"
         android:fontFamily="@font/typekeys"
         android:paddingTop="10dp"
-        android:text="POKERSTATS"
+        android:text="CGNatsApp"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

@@ -3,6 +3,10 @@ package com.uc3m.apppoker.models
 import android.content.Context
 import android.util.Log
 import android.view.View
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -15,6 +19,7 @@ import androidx.navigation.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.uc3m.apppoker.views.VisualizarCartasSeleccionadasFragment
 import com.wandroid.traceroute.TraceRoute
 
 class VisualizarCartasSeleccionadasModel {
@@ -31,10 +36,21 @@ class VisualizarCartasSeleccionadasModel {
 
                 Log.d("Response -------->>>>", ip)
 
+                val botonStart: Button = v.findViewById(R.id.botonSubmit)
+                val infoInicial: TextView = v.findViewById(R.id.textoInicial)
+                var animacion : Animation = AlphaAnimation(1.0f,0.0f)
+                animacion.duration = 5000
+                botonStart.startAnimation(animacion)
+                botonStart.visibility = View.GONE
+                infoInicial.startAnimation(animacion)
+                infoInicial.visibility = View.GONE
+
                 TraceRoute.setCallback {
                     success {
                         Log.d("tagg", VariablesGlobales.resultadoTraceroute)
-                        //mostrarTraceroute()
+                       val viewVisualizarResultado = VisualizarCartasSeleccionadasFragment ()
+                        viewVisualizarResultado.mostrarTraceroute(v)
+
                         almacenarResultadoBaseDatos(VariablesGlobales.resultadoTraceroute)
 
                     }
@@ -66,22 +82,11 @@ class VisualizarCartasSeleccionadasModel {
             .child(FirebaseAuth.getInstance().currentUser.uid)
             .child("Datos recopilados")
             .child("traceroute").setValue(resultado)
-       /* database.child("users")
-                .child(FirebaseAuth.getInstance().currentUser.uid)
-                .child("estadisticas")
-                .child(resultadoTrad).get().addOnSuccessListener {
+        database.child("users")
+            .child(FirebaseAuth.getInstance().currentUser.uid)
+            .child("Usuario")
+            .setValue(FirebaseAuth.getInstance().currentUser.displayName)
 
-                    var contador : Long = it.value.toString().toLong()
-                    //EncryptModel.decryptData(iv,it.value as ByteArray) as Long
-                    contador = contador + 1
-                    database.child("users")
-                            .child(FirebaseAuth.getInstance().currentUser.uid)
-                            .child("estadisticas")
-                            .child(resultadoTrad).setValue(contador)
-
-                }.addOnFailureListener{
-                    Log.e("firebase", "Error getting data", it)
-                }*/
     }
 
     fun comprobarUsuarioEnBaseDatos (){
@@ -106,76 +111,6 @@ class VisualizarCartasSeleccionadasModel {
 
     }
 
-    fun comprobarCartas(mesa: Array<String?>, jugadores: Array<String?>, context: Context): Boolean{
-
-        var contieneNull1 = false
-        var contieneNull2 = false
-        var finalPareja = false
-        for( i in mesa){
-            if (i == null){
-                Toast.makeText(context, "Faltan cartas en la mesa", Toast.LENGTH_SHORT).show()
-                return false
-            }
-        }
-        var todosNull = true
-        for( i in jugadores){
-            if (i != null){
-
-                todosNull = false
-            }
-        }
-        if (todosNull){
-            Toast.makeText(context, "Añadir al menos un jugador", Toast.LENGTH_SHORT).show()
-            return false
-        }
-        for ((n,i) in jugadores.withIndex()){
-            if (n % 2 != 0){
-                finalPareja = true
-            }
-            if(!finalPareja){
-                contieneNull1 = ( i == null)
-            }else {
-                contieneNull2 = (i == null)
-            }
-            finalPareja = false
 
 
-            if (n % 2 != 0){
-                if (contieneNull1 != contieneNull2){
-                    Toast.makeText(context, "Jugador mal introducido", Toast.LENGTH_SHORT)
-                            .show()
-                    return false
-                }
-            }
-
-        }
-
-
-        val cartas = arrayOfNulls<String>(mesa.size + jugadores.size)
-        for ((n,i) in mesa.withIndex()){
-            cartas[n] = i
-        }
-        var k = mesa.size
-        for ((n,i) in jugadores.withIndex()){
-            k += n
-            cartas[k] = i
-            k -= n
-        }
-
-        for((n, i) in cartas.withIndex()){
-            for ((k, j) in cartas.withIndex()){
-                if (n != k ){
-                    if (i == j && i != null ){
-                        Toast.makeText(context,
-                                "No puede haber cartas repetidas", Toast.LENGTH_SHORT).show()
-                        return false
-                    }
-                }
-
-            }
-        }
-
-
-        return true
-    }
 }
